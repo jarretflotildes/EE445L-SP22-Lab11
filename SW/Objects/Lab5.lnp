@@ -1,0 +1,23 @@
+--cpu=Cortex-M4 --fpu=SoftVFP
+".\objects\rgb.o"
+".\objects\startup.o"
+".\objects\launchpad.o"
+".\objects\timer0a.o"
+".\objects\texas.o"
+".\objects\pll.o"
+".\objects\switches.o"
+".\objects\timer4a.o"
+".\objects\led.o"
+".\objects\timer2a.o"
+".\objects\timer1a.o"
+".\objects\music.o"
+".\objects\sound.o"
+".\objects\accelerometer.o"
+".\objects\timer3a.o"
+".\objects\i2c1.o"
+".\objects\lab11.o"
+".\objects\motion.o"
+--library_type=microlib --strict --scatter ".\Objects\Lab5.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Lab5.map" -o .\Objects\Lab5.axf

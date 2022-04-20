@@ -1,0 +1,931 @@
+Component: ARM Compiler 6.16 Tool: armlink [5dfeaa00]
+
+==============================================================================
+
+Section Cross References
+
+    rgb.o(.text.RGBInit) refers to led.o(.text.LED_Init) for LED_Init
+    rgb.o(.text.RGBInit) refers to timer0a.o(.text.Timer0A_Init) for Timer0A_Init
+    rgb.o(.text.RGBInit) refers to rgb.o(.text.RGBStep) for RGBStep
+    rgb.o(.ARM.exidx.text.RGBInit) refers to rgb.o(.text.RGBInit) for [Anonymous Symbol]
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_0On) for LED_0On
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_0Off) for LED_0Off
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_1On) for LED_1On
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_1Off) for LED_1Off
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_2On) for LED_2On
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_2Off) for LED_2Off
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_3On) for LED_3On
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_3Off) for LED_3Off
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_4Off) for LED_4Off
+    rgb.o(.text.RGBStep) refers to led.o(.text.LED_4On) for LED_4On
+    rgb.o(.text.RGBStep) refers to rgb.o(.bss.state) for [Anonymous Symbol]
+    rgb.o(.ARM.exidx.text.RGBStep) refers to rgb.o(.text.RGBStep) for [Anonymous Symbol]
+    rgb.o(.text.RGBStart) refers to timer0a.o(.text.Timer0A_Init) for Timer0A_Init
+    rgb.o(.text.RGBStart) refers to rgb.o(.text.RGBStep) for RGBStep
+    rgb.o(.ARM.exidx.text.RGBStart) refers to rgb.o(.text.RGBStart) for [Anonymous Symbol]
+    rgb.o(.text.RGBStop) refers to timer0a.o(.text.Timer0A_Stop) for Timer0A_Stop
+    rgb.o(.text.RGBStop) refers to rgb.o(.bss.state) for [Anonymous Symbol]
+    rgb.o(.ARM.exidx.text.RGBStop) refers to rgb.o(.text.RGBStop) for [Anonymous Symbol]
+    startup.o(RESET) refers to startup.o(STACK) for StackMem
+    startup.o(RESET) refers to switches.o(.text.GPIOPortA_Handler) for GPIOPortA_Handler
+    startup.o(RESET) refers to motion.o(.text.GPIOPortB_Handler) for GPIOPortB_Handler
+    startup.o(RESET) refers to timer0a.o(.text.Timer0A_Handler) for Timer0A_Handler
+    startup.o(RESET) refers to switches.o(.text.Timer1A_Handler) for Timer1A_Handler
+    startup.o(RESET) refers to switches.o(.text.Timer2A_Handler) for Timer2A_Handler
+    startup.o(RESET) refers to timer3a.o(.text.Timer3A_Handler) for Timer3A_Handler
+    startup.o(RESET) refers to timer4a.o(.text.Timer4A_Handler) for Timer4A_Handler
+    startup.o(RESET) refers to texas.o(.text.Timer5A_Handler) for Timer5A_Handler
+    startup.o(RESET) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    launchpad.o(.ARM.exidx.text.LaunchPad_Init) refers to launchpad.o(.text.LaunchPad_Init) for [Anonymous Symbol]
+    launchpad.o(.ARM.exidx.text.LaunchPad_Input) refers to launchpad.o(.text.LaunchPad_Input) for [Anonymous Symbol]
+    launchpad.o(.text.LaunchPad_WaitForTouch) refers to launchpad.o(.text.DelayMs) for DelayMs
+    launchpad.o(.ARM.exidx.text.LaunchPad_WaitForTouch) refers to launchpad.o(.text.LaunchPad_WaitForTouch) for [Anonymous Symbol]
+    launchpad.o(.ARM.exidx.text.DelayMs) refers to launchpad.o(.text.DelayMs) for [Anonymous Symbol]
+    launchpad.o(.text.LaunchPad_WaitForRelease) refers to launchpad.o(.text.DelayMs) for DelayMs
+    launchpad.o(.ARM.exidx.text.LaunchPad_WaitForRelease) refers to launchpad.o(.text.LaunchPad_WaitForRelease) for [Anonymous Symbol]
+    launchpad.o(.ARM.exidx.text.LaunchPad_Output) refers to launchpad.o(.text.LaunchPad_Output) for [Anonymous Symbol]
+    timer0a.o(.text.Timer0A_Init) refers to timer0a.o(.bss.PeriodicTask0) for PeriodicTask0
+    timer0a.o(.ARM.exidx.text.Timer0A_Init) refers to timer0a.o(.text.Timer0A_Init) for [Anonymous Symbol]
+    timer0a.o(.text.Timer0A_Handler) refers to timer0a.o(.bss.PeriodicTask0) for PeriodicTask0
+    timer0a.o(.ARM.exidx.text.Timer0A_Handler) refers to timer0a.o(.text.Timer0A_Handler) for [Anonymous Symbol]
+    timer0a.o(.ARM.exidx.text.Timer0A_Stop) refers to timer0a.o(.text.Timer0A_Stop) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.Scope) refers to texas.o(.text.Scope) for [Anonymous Symbol]
+    texas.o(.text.Timer5A_Init) refers to startup.o(.text) for StartCritical
+    texas.o(.text.Timer5A_Init) refers to texas.o(.bss.PeriodicTask5) for PeriodicTask5
+    texas.o(.ARM.exidx.text.Timer5A_Init) refers to texas.o(.text.Timer5A_Init) for [Anonymous Symbol]
+    texas.o(.text.Timer5A_Handler) refers to texas.o(.bss.PeriodicTask5) for PeriodicTask5
+    texas.o(.ARM.exidx.text.Timer5A_Handler) refers to texas.o(.text.Timer5A_Handler) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.Timer5A_Stop) refers to texas.o(.text.Timer5A_Stop) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.UART_Init) refers to texas.o(.text.UART_Init) for [Anonymous Symbol]
+    texas.o(.text.ADC1_InitPD3) refers to texas.o(.text.OUTLINED_FUNCTION_1) for OUTLINED_FUNCTION_1
+    texas.o(.text.ADC1_InitPD3) refers to texas.o(.text.OUTLINED_FUNCTION_3) for OUTLINED_FUNCTION_3
+    texas.o(.ARM.exidx.text.ADC1_InitPD3) refers to texas.o(.text.ADC1_InitPD3) for [Anonymous Symbol]
+    texas.o(.text.ADC1_Init_PD2) refers to texas.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    texas.o(.text.ADC1_Init_PD2) refers to texas.o(.text.OUTLINED_FUNCTION_1) for OUTLINED_FUNCTION_1
+    texas.o(.text.ADC1_Init_PD2) refers to texas.o(.text.OUTLINED_FUNCTION_3) for OUTLINED_FUNCTION_3
+    texas.o(.ARM.exidx.text.ADC1_Init_PD2) refers to texas.o(.text.ADC1_Init_PD2) for [Anonymous Symbol]
+    texas.o(.text.ADC1_Init_PE2) refers to texas.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    texas.o(.ARM.exidx.text.ADC1_Init_PE2) refers to texas.o(.text.ADC1_Init_PE2) for [Anonymous Symbol]
+    texas.o(.text.ADC1_Init_PB5) refers to texas.o(.text.OUTLINED_FUNCTION_1) for OUTLINED_FUNCTION_1
+    texas.o(.text.ADC1_Init_PB5) refers to texas.o(.text.OUTLINED_FUNCTION_3) for OUTLINED_FUNCTION_3
+    texas.o(.ARM.exidx.text.ADC1_Init_PB5) refers to texas.o(.text.ADC1_Init_PB5) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.LogicAnalyzerA) refers to texas.o(.text.LogicAnalyzerA) for [Anonymous Symbol]
+    texas.o(.text.LogicAnalyzerB) refers to texas.o(.text.OUTLINED_FUNCTION_2) for OUTLINED_FUNCTION_2
+    texas.o(.ARM.exidx.text.LogicAnalyzerB) refers to texas.o(.text.LogicAnalyzerB) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.LogicAnalyzerC) refers to texas.o(.text.LogicAnalyzerC) for [Anonymous Symbol]
+    texas.o(.text.LogicAnalyzerE) refers to texas.o(.text.OUTLINED_FUNCTION_2) for OUTLINED_FUNCTION_2
+    texas.o(.ARM.exidx.text.LogicAnalyzerE) refers to texas.o(.text.LogicAnalyzerE) for [Anonymous Symbol]
+    texas.o(.text.LogicAnalyzerF) refers to texas.o(.text.OUTLINED_FUNCTION_2) for OUTLINED_FUNCTION_2
+    texas.o(.ARM.exidx.text.LogicAnalyzerF) refers to texas.o(.text.LogicAnalyzerF) for [Anonymous Symbol]
+    texas.o(.text.TExaS_Init) refers to pll.o(.text.PLL_Init) for PLL_Init
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.UART_Init) for UART_Init
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.ADC1_InitPD3) for ADC1_InitPD3
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.ADC1_Init_PD2) for ADC1_Init_PD2
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.ADC1_Init_PE2) for ADC1_Init_PE2
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.ADC1_Init_PB5) for ADC1_Init_PB5
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.Timer5A_Init) for Timer5A_Init
+    texas.o(.text.TExaS_Init) refers to startup.o(.text) for EnableInterrupts
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.Scope) for Scope
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.LogicAnalyzerF) for LogicAnalyzerF
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.LogicAnalyzerE) for LogicAnalyzerE
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.LogicAnalyzerC) for LogicAnalyzerC
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.LogicAnalyzerB) for LogicAnalyzerB
+    texas.o(.text.TExaS_Init) refers to texas.o(.text.LogicAnalyzerA) for LogicAnalyzerA
+    texas.o(.ARM.exidx.text.TExaS_Init) refers to texas.o(.text.TExaS_Init) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.TExaS_Stop) refers to texas.o(.text.TExaS_Stop) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.OUTLINED_FUNCTION_0) refers to texas.o(.text.OUTLINED_FUNCTION_0) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.OUTLINED_FUNCTION_1) refers to texas.o(.text.OUTLINED_FUNCTION_1) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.OUTLINED_FUNCTION_2) refers to texas.o(.text.OUTLINED_FUNCTION_2) for [Anonymous Symbol]
+    texas.o(.ARM.exidx.text.OUTLINED_FUNCTION_3) refers to texas.o(.text.OUTLINED_FUNCTION_3) for [Anonymous Symbol]
+    pll.o(.ARM.exidx.text.PLL_Init) refers to pll.o(.text.PLL_Init) for [Anonymous Symbol]
+    switches.o(.text.Port_A_Init) refers to switches.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    switches.o(.ARM.exidx.text.Port_A_Init) refers to switches.o(.text.Port_A_Init) for [Anonymous Symbol]
+    switches.o(.text.SwitchInit) refers to switches.o(.text.Port_A_Init) for Port_A_Init
+    switches.o(.text.SwitchInit) refers to switches.o(.bss.GameFlag) for GameFlag
+    switches.o(.ARM.exidx.text.SwitchInit) refers to switches.o(.text.SwitchInit) for [Anonymous Symbol]
+    switches.o(.text.GPIOPortA_Handler) refers to timer2a.o(.text.Timer2Arm) for Timer2Arm
+    switches.o(.text.GPIOPortA_Handler) refers to timer1a.o(.text.Timer1Arm) for Timer1Arm
+    switches.o(.text.GPIOPortA_Handler) refers to switches.o(.bss.GameFlag) for GameFlag
+    switches.o(.ARM.exidx.text.GPIOPortA_Handler) refers to switches.o(.text.GPIOPortA_Handler) for [Anonymous Symbol]
+    switches.o(.text.Timer1A_Handler) refers to switches.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    switches.o(.text.Timer1A_Handler) refers to switches.o(.text.GPIOArmSWBoth) for GPIOArmSWBoth
+    switches.o(.ARM.exidx.text.Timer1A_Handler) refers to switches.o(.text.Timer1A_Handler) for [Anonymous Symbol]
+    switches.o(.text.GPIOArmSWBoth) refers to switches.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    switches.o(.ARM.exidx.text.GPIOArmSWBoth) refers to switches.o(.text.GPIOArmSWBoth) for [Anonymous Symbol]
+    switches.o(.text.Timer2A_Handler) refers to switches.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    switches.o(.text.Timer2A_Handler) refers to switches.o(.text.GPIOArmSWBoth) for GPIOArmSWBoth
+    switches.o(.ARM.exidx.text.Timer2A_Handler) refers to switches.o(.text.Timer2A_Handler) for [Anonymous Symbol]
+    switches.o(.ARM.exidx.text.OUTLINED_FUNCTION_0) refers to switches.o(.text.OUTLINED_FUNCTION_0) for [Anonymous Symbol]
+    timer4a.o(.text.Timer4A_Init) refers to timer4a.o(.bss.PeriodicTask4) for PeriodicTask4
+    timer4a.o(.ARM.exidx.text.Timer4A_Init) refers to timer4a.o(.text.Timer4A_Init) for [Anonymous Symbol]
+    timer4a.o(.text.Timer4A_Handler) refers to timer4a.o(.bss.PeriodicTask4) for PeriodicTask4
+    timer4a.o(.ARM.exidx.text.Timer4A_Handler) refers to timer4a.o(.text.Timer4A_Handler) for [Anonymous Symbol]
+    timer4a.o(.ARM.exidx.text.Timer4A_Stop) refers to timer4a.o(.text.Timer4A_Stop) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_Init) refers to led.o(.text.LED_Init) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_0Toggle) refers to led.o(.text.LED_0Toggle) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_0On) refers to led.o(.text.LED_0On) for [Anonymous Symbol]
+    led.o(.text.LED_0Off) refers to led.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    led.o(.ARM.exidx.text.LED_0Off) refers to led.o(.text.LED_0Off) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_1On) refers to led.o(.text.LED_1On) for [Anonymous Symbol]
+    led.o(.text.LED_1Off) refers to led.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    led.o(.ARM.exidx.text.LED_1Off) refers to led.o(.text.LED_1Off) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_1Toggle) refers to led.o(.text.LED_1Toggle) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_2On) refers to led.o(.text.LED_2On) for [Anonymous Symbol]
+    led.o(.text.LED_2Off) refers to led.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    led.o(.ARM.exidx.text.LED_2Off) refers to led.o(.text.LED_2Off) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_2Toggle) refers to led.o(.text.LED_2Toggle) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_3On) refers to led.o(.text.LED_3On) for [Anonymous Symbol]
+    led.o(.text.LED_3Off) refers to led.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    led.o(.ARM.exidx.text.LED_3Off) refers to led.o(.text.LED_3Off) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_4Toggle) refers to led.o(.text.LED_4Toggle) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_4On) refers to led.o(.text.LED_4On) for [Anonymous Symbol]
+    led.o(.text.LED_4Off) refers to led.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    led.o(.ARM.exidx.text.LED_4Off) refers to led.o(.text.LED_4Off) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.OUTLINED_FUNCTION_0) refers to led.o(.text.OUTLINED_FUNCTION_0) for [Anonymous Symbol]
+    timer2a.o(.ARM.exidx.text.Timer2Arm) refers to timer2a.o(.text.Timer2Arm) for [Anonymous Symbol]
+    timer2a.o(.ARM.exidx.text.Timer2A_Stop) refers to timer2a.o(.text.Timer2A_Stop) for [Anonymous Symbol]
+    timer1a.o(.text.Timer1A_Init) refers to timer1a.o(.bss.PeriodicTask1) for PeriodicTask1
+    timer1a.o(.ARM.exidx.text.Timer1A_Init) refers to timer1a.o(.text.Timer1A_Init) for [Anonymous Symbol]
+    timer1a.o(.ARM.exidx.text.Timer1Arm) refers to timer1a.o(.text.Timer1Arm) for [Anonymous Symbol]
+    timer1a.o(.ARM.exidx.text.Timer1A_Stop) refers to timer1a.o(.text.Timer1A_Stop) for [Anonymous Symbol]
+    music.o(.text.Note_Handler) refers to sound.o(.text.SoundOut) for SoundOut
+    music.o(.text.Note_Handler) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.text.Note_Handler) refers to music.o(.rodata.wave2) for wave2
+    music.o(.ARM.exidx.text.Note_Handler) refers to music.o(.text.Note_Handler) for [Anonymous Symbol]
+    music.o(.text.Note_Handler2) refers to sound.o(.text.SoundOut) for SoundOut
+    music.o(.text.Note_Handler2) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.text.Note_Handler2) refers to music.o(.rodata.wave2) for wave2
+    music.o(.ARM.exidx.text.Note_Handler2) refers to music.o(.text.Note_Handler2) for [Anonymous Symbol]
+    music.o(.text.Song_Handler) refers to music.o(.text.Note_Stop) for Note_Stop
+    music.o(.text.Song_Handler) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.ARM.exidx.text.Song_Handler) refers to music.o(.text.Song_Handler) for [Anonymous Symbol]
+    music.o(.text.Victory_Handler) refers to sound.o(.text.SoundOut) for SoundOut
+    music.o(.text.Victory_Handler) refers to timer4a.o(.text.Timer4A_Stop) for Timer4A_Stop
+    music.o(.text.Victory_Handler) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.text.Victory_Handler) refers to music.o(.data.win) for win
+    music.o(.ARM.exidx.text.Victory_Handler) refers to music.o(.text.Victory_Handler) for [Anonymous Symbol]
+    music.o(.text.Music_Init) refers to sound.o(.text.SoundInit) for SoundInit
+    music.o(.text.Music_Init) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.ARM.exidx.text.Music_Init) refers to music.o(.text.Music_Init) for [Anonymous Symbol]
+    music.o(.text.Note_Play) refers to timer4a.o(.text.Timer4A_Init) for Timer4A_Init
+    music.o(.text.Note_Play) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.text.Note_Play) refers to music.o(.text.Note_Handler) for Note_Handler
+    music.o(.ARM.exidx.text.Note_Play) refers to music.o(.text.Note_Play) for [Anonymous Symbol]
+    music.o(.text.Note_Play2) refers to timer4a.o(.text.Timer4A_Init) for Timer4A_Init
+    music.o(.text.Note_Play2) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.text.Note_Play2) refers to music.o(.text.Note_Handler2) for Note_Handler2
+    music.o(.ARM.exidx.text.Note_Play2) refers to music.o(.text.Note_Play2) for [Anonymous Symbol]
+    music.o(.text.Note_Stop) refers to timer4a.o(.text.Timer4A_Stop) for Timer4A_Stop
+    music.o(.text.Note_Stop) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.ARM.exidx.text.Note_Stop) refers to music.o(.text.Note_Stop) for [Anonymous Symbol]
+    music.o(.text.SmashSong_Play) refers to music.o(.text.Note_Play) for Note_Play
+    music.o(.text.SmashSong_Play) refers to timer3a.o(.text.Timer3A_Init) for Timer3A_Init
+    music.o(.text.SmashSong_Play) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.text.SmashSong_Play) refers to music.o(.rodata.SmashTheme) for SmashTheme
+    music.o(.text.SmashSong_Play) refers to music.o(.text.Song_Handler) for Song_Handler
+    music.o(.ARM.exidx.text.SmashSong_Play) refers to music.o(.text.SmashSong_Play) for [Anonymous Symbol]
+    music.o(.text.FightSong_Play) refers to music.o(.text.Note_Play) for Note_Play
+    music.o(.text.FightSong_Play) refers to timer3a.o(.text.Timer3A_Init) for Timer3A_Init
+    music.o(.text.FightSong_Play) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.text.FightSong_Play) refers to music.o(.rodata.GuilesTheme) for GuilesTheme
+    music.o(.text.FightSong_Play) refers to music.o(.text.Song_Handler) for Song_Handler
+    music.o(.ARM.exidx.text.FightSong_Play) refers to music.o(.text.FightSong_Play) for [Anonymous Symbol]
+    music.o(.text.VictoryPlay) refers to timer4a.o(.text.Timer4A_Init) for Timer4A_Init
+    music.o(.text.VictoryPlay) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.text.VictoryPlay) refers to music.o(.text.Victory_Handler) for Victory_Handler
+    music.o(.ARM.exidx.text.VictoryPlay) refers to music.o(.text.VictoryPlay) for [Anonymous Symbol]
+    music.o(.text.VictoryStop) refers to timer4a.o(.text.Timer4A_Stop) for Timer4A_Stop
+    music.o(.ARM.exidx.text.VictoryStop) refers to music.o(.text.VictoryStop) for [Anonymous Symbol]
+    music.o(.text.Song_Stop) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.ARM.exidx.text.Song_Stop) refers to music.o(.text.Song_Stop) for [Anonymous Symbol]
+    music.o(.text.getStopFlag) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.ARM.exidx.text.getStopFlag) refers to music.o(.text.getStopFlag) for [Anonymous Symbol]
+    music.o(.text.setWaitFlag) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.ARM.exidx.text.setWaitFlag) refers to music.o(.text.setWaitFlag) for [Anonymous Symbol]
+    music.o(.text.Song_Rewind) refers to music.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    music.o(.ARM.exidx.text.Song_Rewind) refers to music.o(.text.Song_Rewind) for [Anonymous Symbol]
+    sound.o(.ARM.exidx.text.SoundInit) refers to sound.o(.text.SoundInit) for [Anonymous Symbol]
+    sound.o(.ARM.exidx.text.SoundOut) refers to sound.o(.text.SoundOut) for [Anonymous Symbol]
+    accelerometer.o(.text.AccelerationInit) refers to i2c1.o(.text.I2C1_Init) for I2C1_Init
+    accelerometer.o(.text.AccelerationInit) refers to i2c1.o(.text.I2C1_Send2) for I2C1_Send2
+    accelerometer.o(.text.AccelerationInit) refers to accelerometer.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    accelerometer.o(.ARM.exidx.text.AccelerationInit) refers to accelerometer.o(.text.AccelerationInit) for [Anonymous Symbol]
+    accelerometer.o(.text.runTest) refers to i2c1.o(.text.I2C1_RecvTest) for I2C1_RecvTest
+    accelerometer.o(.ARM.exidx.text.runTest) refers to accelerometer.o(.text.runTest) for [Anonymous Symbol]
+    accelerometer.o(.text.startMeasurements) refers to texas.o(.text.Timer5A_Init) for Timer5A_Init
+    accelerometer.o(.text.startMeasurements) refers to accelerometer.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    accelerometer.o(.text.startMeasurements) refers to accelerometer.o(.text.measureAcceleration) for measureAcceleration
+    accelerometer.o(.ARM.exidx.text.startMeasurements) refers to accelerometer.o(.text.startMeasurements) for [Anonymous Symbol]
+    accelerometer.o(.text.measureAcceleration) refers to i2c1.o(.text.I2C1_Recv6) for I2C1_Recv6
+    accelerometer.o(.text.measureAcceleration) refers to texas.o(.text.Timer5A_Stop) for Timer5A_Stop
+    accelerometer.o(.text.measureAcceleration) refers to accelerometer.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    accelerometer.o(.text.measureAcceleration) refers to accelerometer.o(.bss.DumpAccelerationZ) for DumpAccelerationZ
+    accelerometer.o(.text.measureAcceleration) refers to accelerometer.o(.bss.DumpAccelerationY) for DumpAccelerationY
+    accelerometer.o(.text.measureAcceleration) refers to accelerometer.o(.bss.DumpAccelerationX) for DumpAccelerationX
+    accelerometer.o(.ARM.exidx.text.measureAcceleration) refers to accelerometer.o(.text.measureAcceleration) for [Anonymous Symbol]
+    accelerometer.o(.text.getMaxAcceleration) refers to accelerometer.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    accelerometer.o(.ARM.exidx.text.getMaxAcceleration) refers to accelerometer.o(.text.getMaxAcceleration) for [Anonymous Symbol]
+    timer3a.o(.text.Timer3A_Init) refers to timer3a.o(.bss.PeriodicTask3) for PeriodicTask3
+    timer3a.o(.ARM.exidx.text.Timer3A_Init) refers to timer3a.o(.text.Timer3A_Init) for [Anonymous Symbol]
+    timer3a.o(.text.Timer3A_Handler) refers to timer3a.o(.bss.PeriodicTask3) for PeriodicTask3
+    timer3a.o(.ARM.exidx.text.Timer3A_Handler) refers to timer3a.o(.text.Timer3A_Handler) for [Anonymous Symbol]
+    timer3a.o(.ARM.exidx.text.Timer3A_Stop) refers to timer3a.o(.text.Timer3A_Stop) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_Init) refers to i2c1.o(.text.I2C1_Init) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_Send) refers to i2c1.o(.text.I2C1_Send) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_Send1) refers to i2c1.o(.text.I2C1_Send1) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_Send2) refers to i2c1.o(.text.I2C1_Send2) for [Anonymous Symbol]
+    i2c1.o(.text.I2C1_Send3) refers to i2c1.o(.text.OUTLINED_FUNCTION_2) for OUTLINED_FUNCTION_2
+    i2c1.o(.text.I2C1_Send3) refers to i2c1.o(.text.OUTLINED_FUNCTION_1) for OUTLINED_FUNCTION_1
+    i2c1.o(.ARM.exidx.text.I2C1_Send3) refers to i2c1.o(.text.I2C1_Send3) for [Anonymous Symbol]
+    i2c1.o(.text.I2C1_Send4) refers to i2c1.o(.text.OUTLINED_FUNCTION_2) for OUTLINED_FUNCTION_2
+    i2c1.o(.text.I2C1_Send4) refers to i2c1.o(.text.OUTLINED_FUNCTION_1) for OUTLINED_FUNCTION_1
+    i2c1.o(.ARM.exidx.text.I2C1_Send4) refers to i2c1.o(.text.I2C1_Send4) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_Recv1) refers to i2c1.o(.text.I2C1_Recv1) for [Anonymous Symbol]
+    i2c1.o(.text.I2C1_Recv) refers to i2c1.o(.text.OUTLINED_FUNCTION_0) for OUTLINED_FUNCTION_0
+    i2c1.o(.ARM.exidx.text.I2C1_Recv) refers to i2c1.o(.text.I2C1_Recv) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_Recv2) refers to i2c1.o(.text.I2C1_Recv2) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_Recv3) refers to i2c1.o(.text.I2C1_Recv3) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_RecvTest) refers to i2c1.o(.text.I2C1_RecvTest) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_Recv6) refers to i2c1.o(.text.I2C1_Recv6) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.I2C1_SendData) refers to i2c1.o(.text.I2C1_SendData) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.OUTLINED_FUNCTION_0) refers to i2c1.o(.text.OUTLINED_FUNCTION_0) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.OUTLINED_FUNCTION_1) refers to i2c1.o(.text.OUTLINED_FUNCTION_1) for [Anonymous Symbol]
+    i2c1.o(.ARM.exidx.text.OUTLINED_FUNCTION_2) refers to i2c1.o(.text.OUTLINED_FUNCTION_2) for [Anonymous Symbol]
+    lab11.o(.text.main) refers to startup.o(.text) for DisableInterrupts
+    lab11.o(.text.main) refers to pll.o(.text.PLL_Init) for PLL_Init
+    lab11.o(.text.main) refers to launchpad.o(.text.LaunchPad_Init) for LaunchPad_Init
+    lab11.o(.ARM.exidx.text.main) refers to lab11.o(.text.main) for [Anonymous Symbol]
+    motion.o(.ARM.exidx.text.motionPortBInit) refers to motion.o(.text.motionPortBInit) for [Anonymous Symbol]
+    motion.o(.ARM.exidx.text.GPIOPortB_Handler) refers to motion.o(.text.GPIOPortB_Handler) for [Anonymous Symbol]
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to lab11.o(.text.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to lab11.o(.text.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing rgb.o(.text), (0 bytes).
+    Removing rgb.o(.text.RGBInit), (28 bytes).
+    Removing rgb.o(.ARM.exidx.text.RGBInit), (8 bytes).
+    Removing rgb.o(.text.RGBStep), (176 bytes).
+    Removing rgb.o(.ARM.exidx.text.RGBStep), (8 bytes).
+    Removing rgb.o(.text.RGBStart), (20 bytes).
+    Removing rgb.o(.ARM.exidx.text.RGBStart), (8 bytes).
+    Removing rgb.o(.text.RGBStop), (20 bytes).
+    Removing rgb.o(.ARM.exidx.text.RGBStop), (8 bytes).
+    Removing rgb.o(.bss.state), (1 bytes).
+    Removing startup.o(HEAP), (0 bytes).
+    Removing launchpad.o(.text), (0 bytes).
+    Removing launchpad.o(.ARM.exidx.text.LaunchPad_Init), (8 bytes).
+    Removing launchpad.o(.text.LaunchPad_Input), (24 bytes).
+    Removing launchpad.o(.ARM.exidx.text.LaunchPad_Input), (8 bytes).
+    Removing launchpad.o(.text.LaunchPad_WaitForTouch), (28 bytes).
+    Removing launchpad.o(.ARM.exidx.text.LaunchPad_WaitForTouch), (8 bytes).
+    Removing launchpad.o(.text.DelayMs), (32 bytes).
+    Removing launchpad.o(.ARM.exidx.text.DelayMs), (8 bytes).
+    Removing launchpad.o(.text.LaunchPad_WaitForRelease), (44 bytes).
+    Removing launchpad.o(.ARM.exidx.text.LaunchPad_WaitForRelease), (8 bytes).
+    Removing launchpad.o(.text.LaunchPad_Output), (12 bytes).
+    Removing launchpad.o(.ARM.exidx.text.LaunchPad_Output), (8 bytes).
+    Removing timer0a.o(.text), (0 bytes).
+    Removing timer0a.o(.text.Timer0A_Init), (104 bytes).
+    Removing timer0a.o(.ARM.exidx.text.Timer0A_Init), (8 bytes).
+    Removing timer0a.o(.ARM.exidx.text.Timer0A_Handler), (8 bytes).
+    Removing timer0a.o(.text.Timer0A_Stop), (24 bytes).
+    Removing timer0a.o(.ARM.exidx.text.Timer0A_Stop), (8 bytes).
+    Removing texas.o(.text), (0 bytes).
+    Removing texas.o(.text.Scope), (20 bytes).
+    Removing texas.o(.ARM.exidx.text.Scope), (8 bytes).
+    Removing texas.o(.text.Timer5A_Init), (156 bytes).
+    Removing texas.o(.ARM.exidx.text.Timer5A_Init), (8 bytes).
+    Removing texas.o(.ARM.exidx.text.Timer5A_Handler), (8 bytes).
+    Removing texas.o(.text.Timer5A_Stop), (36 bytes).
+    Removing texas.o(.ARM.exidx.text.Timer5A_Stop), (8 bytes).
+    Removing texas.o(.text.UART_Init), (124 bytes).
+    Removing texas.o(.ARM.exidx.text.UART_Init), (8 bytes).
+    Removing texas.o(.text.ADC1_InitPD3), (132 bytes).
+    Removing texas.o(.ARM.exidx.text.ADC1_InitPD3), (8 bytes).
+    Removing texas.o(.text.ADC1_Init_PD2), (100 bytes).
+    Removing texas.o(.ARM.exidx.text.ADC1_Init_PD2), (8 bytes).
+    Removing texas.o(.text.ADC1_Init_PE2), (120 bytes).
+    Removing texas.o(.ARM.exidx.text.ADC1_Init_PE2), (8 bytes).
+    Removing texas.o(.text.ADC1_Init_PB5), (132 bytes).
+    Removing texas.o(.ARM.exidx.text.ADC1_Init_PB5), (8 bytes).
+    Removing texas.o(.text.LogicAnalyzerA), (24 bytes).
+    Removing texas.o(.ARM.exidx.text.LogicAnalyzerA), (8 bytes).
+    Removing texas.o(.text.LogicAnalyzerB), (16 bytes).
+    Removing texas.o(.ARM.exidx.text.LogicAnalyzerB), (8 bytes).
+    Removing texas.o(.text.LogicAnalyzerC), (24 bytes).
+    Removing texas.o(.ARM.exidx.text.LogicAnalyzerC), (8 bytes).
+    Removing texas.o(.text.LogicAnalyzerE), (16 bytes).
+    Removing texas.o(.ARM.exidx.text.LogicAnalyzerE), (8 bytes).
+    Removing texas.o(.text.LogicAnalyzerF), (16 bytes).
+    Removing texas.o(.ARM.exidx.text.LogicAnalyzerF), (8 bytes).
+    Removing texas.o(.text.TExaS_Init), (204 bytes).
+    Removing texas.o(.ARM.exidx.text.TExaS_Init), (8 bytes).
+    Removing texas.o(.text.TExaS_Stop), (36 bytes).
+    Removing texas.o(.ARM.exidx.text.TExaS_Stop), (8 bytes).
+    Removing texas.o(.text.OUTLINED_FUNCTION_0), (44 bytes).
+    Removing texas.o(.ARM.exidx.text.OUTLINED_FUNCTION_0), (8 bytes).
+    Removing texas.o(.text.OUTLINED_FUNCTION_1), (24 bytes).
+    Removing texas.o(.ARM.exidx.text.OUTLINED_FUNCTION_1), (8 bytes).
+    Removing texas.o(.text.OUTLINED_FUNCTION_2), (10 bytes).
+    Removing texas.o(.ARM.exidx.text.OUTLINED_FUNCTION_2), (8 bytes).
+    Removing texas.o(.text.OUTLINED_FUNCTION_3), (18 bytes).
+    Removing texas.o(.ARM.exidx.text.OUTLINED_FUNCTION_3), (8 bytes).
+    Removing pll.o(.text), (0 bytes).
+    Removing pll.o(.ARM.exidx.text.PLL_Init), (8 bytes).
+    Removing switches.o(.text), (0 bytes).
+    Removing switches.o(.text.Port_A_Init), (148 bytes).
+    Removing switches.o(.ARM.exidx.text.Port_A_Init), (8 bytes).
+    Removing switches.o(.text.SwitchInit), (20 bytes).
+    Removing switches.o(.ARM.exidx.text.SwitchInit), (8 bytes).
+    Removing switches.o(.ARM.exidx.text.GPIOPortA_Handler), (8 bytes).
+    Removing switches.o(.ARM.exidx.text.Timer1A_Handler), (8 bytes).
+    Removing switches.o(.ARM.exidx.text.GPIOArmSWBoth), (8 bytes).
+    Removing switches.o(.ARM.exidx.text.Timer2A_Handler), (8 bytes).
+    Removing switches.o(.ARM.exidx.text.OUTLINED_FUNCTION_0), (8 bytes).
+    Removing timer4a.o(.text), (0 bytes).
+    Removing timer4a.o(.text.Timer4A_Init), (84 bytes).
+    Removing timer4a.o(.ARM.exidx.text.Timer4A_Init), (8 bytes).
+    Removing timer4a.o(.ARM.exidx.text.Timer4A_Handler), (8 bytes).
+    Removing timer4a.o(.text.Timer4A_Stop), (24 bytes).
+    Removing timer4a.o(.ARM.exidx.text.Timer4A_Stop), (8 bytes).
+    Removing led.o(.text), (0 bytes).
+    Removing led.o(.text.LED_Init), (60 bytes).
+    Removing led.o(.ARM.exidx.text.LED_Init), (8 bytes).
+    Removing led.o(.text.LED_0Toggle), (16 bytes).
+    Removing led.o(.ARM.exidx.text.LED_0Toggle), (8 bytes).
+    Removing led.o(.text.LED_0On), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_0On), (8 bytes).
+    Removing led.o(.text.LED_0Off), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_0Off), (8 bytes).
+    Removing led.o(.text.LED_1On), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_1On), (8 bytes).
+    Removing led.o(.text.LED_1Off), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_1Off), (8 bytes).
+    Removing led.o(.text.LED_1Toggle), (16 bytes).
+    Removing led.o(.ARM.exidx.text.LED_1Toggle), (8 bytes).
+    Removing led.o(.text.LED_2On), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_2On), (8 bytes).
+    Removing led.o(.text.LED_2Off), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_2Off), (8 bytes).
+    Removing led.o(.text.LED_2Toggle), (16 bytes).
+    Removing led.o(.ARM.exidx.text.LED_2Toggle), (8 bytes).
+    Removing led.o(.text.LED_3On), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_3On), (8 bytes).
+    Removing led.o(.text.LED_3Off), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_3Off), (8 bytes).
+    Removing led.o(.text.LED_4Toggle), (16 bytes).
+    Removing led.o(.ARM.exidx.text.LED_4Toggle), (8 bytes).
+    Removing led.o(.text.LED_4On), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_4On), (8 bytes).
+    Removing led.o(.text.LED_4Off), (12 bytes).
+    Removing led.o(.ARM.exidx.text.LED_4Off), (8 bytes).
+    Removing led.o(.text.OUTLINED_FUNCTION_0), (6 bytes).
+    Removing led.o(.ARM.exidx.text.OUTLINED_FUNCTION_0), (8 bytes).
+    Removing timer2a.o(.text), (0 bytes).
+    Removing timer2a.o(.ARM.exidx.text.Timer2Arm), (8 bytes).
+    Removing timer2a.o(.text.Timer2A_Stop), (24 bytes).
+    Removing timer2a.o(.ARM.exidx.text.Timer2A_Stop), (8 bytes).
+    Removing timer2a.o(.bss.PeriodicTask2), (4 bytes).
+    Removing timer1a.o(.text), (0 bytes).
+    Removing timer1a.o(.text.Timer1A_Init), (84 bytes).
+    Removing timer1a.o(.ARM.exidx.text.Timer1A_Init), (8 bytes).
+    Removing timer1a.o(.ARM.exidx.text.Timer1Arm), (8 bytes).
+    Removing timer1a.o(.text.Timer1A_Stop), (24 bytes).
+    Removing timer1a.o(.ARM.exidx.text.Timer1A_Stop), (8 bytes).
+    Removing timer1a.o(.bss.PeriodicTask1), (4 bytes).
+    Removing music.o(.text), (0 bytes).
+    Removing music.o(.text.Note_Handler), (32 bytes).
+    Removing music.o(.ARM.exidx.text.Note_Handler), (8 bytes).
+    Removing music.o(.text.Note_Handler2), (40 bytes).
+    Removing music.o(.ARM.exidx.text.Note_Handler2), (8 bytes).
+    Removing music.o(.text.Song_Handler), (40 bytes).
+    Removing music.o(.ARM.exidx.text.Song_Handler), (8 bytes).
+    Removing music.o(.text.Victory_Handler), (48 bytes).
+    Removing music.o(.ARM.exidx.text.Victory_Handler), (8 bytes).
+    Removing music.o(.text.Music_Init), (28 bytes).
+    Removing music.o(.ARM.exidx.text.Music_Init), (8 bytes).
+    Removing music.o(.text.Note_Play), (24 bytes).
+    Removing music.o(.ARM.exidx.text.Note_Play), (8 bytes).
+    Removing music.o(.text.Note_Play2), (24 bytes).
+    Removing music.o(.ARM.exidx.text.Note_Play2), (8 bytes).
+    Removing music.o(.text.Note_Stop), (24 bytes).
+    Removing music.o(.ARM.exidx.text.Note_Stop), (8 bytes).
+    Removing music.o(.text.SmashSong_Play), (64 bytes).
+    Removing music.o(.ARM.exidx.text.SmashSong_Play), (8 bytes).
+    Removing music.o(.text.FightSong_Play), (72 bytes).
+    Removing music.o(.ARM.exidx.text.FightSong_Play), (8 bytes).
+    Removing music.o(.text.VictoryPlay), (28 bytes).
+    Removing music.o(.ARM.exidx.text.VictoryPlay), (8 bytes).
+    Removing music.o(.text.VictoryStop), (4 bytes).
+    Removing music.o(.ARM.exidx.text.VictoryStop), (8 bytes).
+    Removing music.o(.text.Song_Stop), (20 bytes).
+    Removing music.o(.ARM.exidx.text.Song_Stop), (8 bytes).
+    Removing music.o(.text.getStopFlag), (12 bytes).
+    Removing music.o(.ARM.exidx.text.getStopFlag), (8 bytes).
+    Removing music.o(.text.setWaitFlag), (12 bytes).
+    Removing music.o(.ARM.exidx.text.setWaitFlag), (8 bytes).
+    Removing music.o(.text.Song_Rewind), (12 bytes).
+    Removing music.o(.ARM.exidx.text.Song_Rewind), (8 bytes).
+    Removing music.o(.data.fighting), (31176 bytes).
+    Removing music.o(.data.win), (28048 bytes).
+    Removing music.o(.rodata.wave), (128 bytes).
+    Removing music.o(.rodata.wave2), (128 bytes).
+    Removing music.o(.rodata.SmashTheme), (448 bytes).
+    Removing music.o(.rodata.SmashThemeChord), (448 bytes).
+    Removing music.o(.rodata.GuilesTheme), (504 bytes).
+    Removing music.o(.bss..L_MergedGlobals), (20 bytes).
+    Removing sound.o(.text), (0 bytes).
+    Removing sound.o(.text.SoundInit), (128 bytes).
+    Removing sound.o(.ARM.exidx.text.SoundInit), (8 bytes).
+    Removing sound.o(.text.SoundOut), (28 bytes).
+    Removing sound.o(.ARM.exidx.text.SoundOut), (8 bytes).
+    Removing accelerometer.o(.text), (0 bytes).
+    Removing accelerometer.o(.text.AccelerationInit), (48 bytes).
+    Removing accelerometer.o(.ARM.exidx.text.AccelerationInit), (8 bytes).
+    Removing accelerometer.o(.text.runTest), (20 bytes).
+    Removing accelerometer.o(.ARM.exidx.text.runTest), (8 bytes).
+    Removing accelerometer.o(.text.startMeasurements), (28 bytes).
+    Removing accelerometer.o(.ARM.exidx.text.startMeasurements), (8 bytes).
+    Removing accelerometer.o(.text.measureAcceleration), (140 bytes).
+    Removing accelerometer.o(.ARM.exidx.text.measureAcceleration), (8 bytes).
+    Removing accelerometer.o(.text.getMaxAcceleration), (12 bytes).
+    Removing accelerometer.o(.ARM.exidx.text.getMaxAcceleration), (8 bytes).
+    Removing accelerometer.o(.bss.DumpAccelerationX), (400 bytes).
+    Removing accelerometer.o(.bss.DumpAccelerationY), (400 bytes).
+    Removing accelerometer.o(.bss.DumpAccelerationZ), (400 bytes).
+    Removing accelerometer.o(.bss..L_MergedGlobals), (18 bytes).
+    Removing timer3a.o(.text), (0 bytes).
+    Removing timer3a.o(.text.Timer3A_Init), (84 bytes).
+    Removing timer3a.o(.ARM.exidx.text.Timer3A_Init), (8 bytes).
+    Removing timer3a.o(.ARM.exidx.text.Timer3A_Handler), (8 bytes).
+    Removing timer3a.o(.text.Timer3A_Stop), (24 bytes).
+    Removing timer3a.o(.ARM.exidx.text.Timer3A_Stop), (8 bytes).
+    Removing i2c1.o(.text), (0 bytes).
+    Removing i2c1.o(.text.I2C1_Init), (124 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Init), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Send), (144 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Send), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Send1), (40 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Send1), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Send2), (68 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Send2), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Send3), (76 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Send3), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Send4), (96 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Send4), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Recv1), (60 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Recv1), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Recv), (144 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Recv), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Recv2), (80 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Recv2), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Recv3), (72 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Recv3), (8 bytes).
+    Removing i2c1.o(.text.I2C1_RecvTest), (84 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_RecvTest), (8 bytes).
+    Removing i2c1.o(.text.I2C1_Recv6), (168 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_Recv6), (8 bytes).
+    Removing i2c1.o(.text.I2C1_SendData), (84 bytes).
+    Removing i2c1.o(.ARM.exidx.text.I2C1_SendData), (8 bytes).
+    Removing i2c1.o(.text.OUTLINED_FUNCTION_0), (16 bytes).
+    Removing i2c1.o(.ARM.exidx.text.OUTLINED_FUNCTION_0), (8 bytes).
+    Removing i2c1.o(.text.OUTLINED_FUNCTION_1), (8 bytes).
+    Removing i2c1.o(.ARM.exidx.text.OUTLINED_FUNCTION_1), (8 bytes).
+    Removing i2c1.o(.text.OUTLINED_FUNCTION_2), (14 bytes).
+    Removing i2c1.o(.ARM.exidx.text.OUTLINED_FUNCTION_2), (8 bytes).
+    Removing lab11.o(.text), (0 bytes).
+    Removing lab11.o(.ARM.exidx.text.main), (8 bytes).
+    Removing lab11.o(.ARM.use_no_argv), (4 bytes).
+    Removing motion.o(.text), (0 bytes).
+    Removing motion.o(.text.motionPortBInit), (2 bytes).
+    Removing motion.o(.ARM.exidx.text.motionPortBInit), (8 bytes).
+    Removing motion.o(.ARM.exidx.text.GPIOPortB_Handler), (8 bytes).
+
+239 unused section(s) (total 67709 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    Accelerometer.c                          0x00000000   Number         0  accelerometer.o ABSOLUTE
+    I2C1.c                                   0x00000000   Number         0  i2c1.o ABSOLUTE
+    LED.c                                    0x00000000   Number         0  led.o ABSOLUTE
+    Lab11.c                                  0x00000000   Number         0  lab11.o ABSOLUTE
+    LaunchPad.c                              0x00000000   Number         0  launchpad.o ABSOLUTE
+    Motion.c                                 0x00000000   Number         0  motion.o ABSOLUTE
+    Music.c                                  0x00000000   Number         0  music.o ABSOLUTE
+    PLL.c                                    0x00000000   Number         0  pll.o ABSOLUTE
+    RGB.c                                    0x00000000   Number         0  rgb.o ABSOLUTE
+    Sound.c                                  0x00000000   Number         0  sound.o ABSOLUTE
+    Switches.c                               0x00000000   Number         0  switches.o ABSOLUTE
+    TExaS.c                                  0x00000000   Number         0  texas.o ABSOLUTE
+    Timer0A.c                                0x00000000   Number         0  timer0a.o ABSOLUTE
+    Timer1A.c                                0x00000000   Number         0  timer1a.o ABSOLUTE
+    Timer2A.c                                0x00000000   Number         0  timer2a.o ABSOLUTE
+    Timer3A.c                                0x00000000   Number         0  timer3a.o ABSOLUTE
+    Timer4A.c                                0x00000000   Number         0  timer4a.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    inc\startup.s                            0x00000000   Number         0  startup.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    RESET                                    0x00000000   Section      660  startup.o(RESET)
+    NMI_Handler                              0x00000281   Thumb Code     0  startup.o(RESET)
+    .ARM.Collect$$$$00000000                 0x00000294   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x00000294   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x00000298   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x0000029c   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x0000029c   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x0000029c   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    __lit__00000000                          0x000002a4   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .ARM.Collect$$$$0000000D                 0x000002a4   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000002a4   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000002a4   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000002a8   Section       28  startup.o(.text)
+    .text                                    0x000002c4   Section       36  init.o(.text)
+    GPIOArmSWBoth                            0x000002e9   Thumb Code    32  switches.o(.text.GPIOArmSWBoth)
+    [Anonymous Symbol]                       0x000002e8   Section        0  switches.o(.text.GPIOArmSWBoth)
+    [Anonymous Symbol]                       0x00000308   Section        0  switches.o(.text.GPIOPortA_Handler)
+    __arm_cp.2_1                             0x0000034c   Number         4  switches.o(.text.GPIOPortA_Handler)
+    __arm_cp.2_2                             0x00000350   Number         4  switches.o(.text.GPIOPortA_Handler)
+    [Anonymous Symbol]                       0x00000354   Section        0  motion.o(.text.GPIOPortB_Handler)
+    [Anonymous Symbol]                       0x00000358   Section        0  launchpad.o(.text.LaunchPad_Init)
+    __arm_cp.0_0                             0x00000388   Number         4  launchpad.o(.text.LaunchPad_Init)
+    __arm_cp.0_1                             0x0000038c   Number         4  launchpad.o(.text.LaunchPad_Init)
+    __arm_cp.0_2                             0x00000390   Number         4  launchpad.o(.text.LaunchPad_Init)
+    __arm_cp.0_3                             0x00000394   Number         4  launchpad.o(.text.LaunchPad_Init)
+    __arm_cp.0_4                             0x00000398   Number         4  launchpad.o(.text.LaunchPad_Init)
+    OUTLINED_FUNCTION_0                      0x0000039d   Thumb Code    14  switches.o(.text.OUTLINED_FUNCTION_0)
+    [Anonymous Symbol]                       0x0000039c   Section        0  switches.o(.text.OUTLINED_FUNCTION_0)
+    [Anonymous Symbol]                       0x000003ac   Section        0  pll.o(.text.PLL_Init)
+    __arm_cp.0_0                             0x00000408   Number         4  pll.o(.text.PLL_Init)
+    [Anonymous Symbol]                       0x0000040c   Section        0  timer0a.o(.text.Timer0A_Handler)
+    __arm_cp.1_0                             0x00000418   Number         4  timer0a.o(.text.Timer0A_Handler)
+    __arm_cp.1_1                             0x0000041c   Number         4  timer0a.o(.text.Timer0A_Handler)
+    [Anonymous Symbol]                       0x00000420   Section        0  switches.o(.text.Timer1A_Handler)
+    __arm_cp.3_0                             0x0000044c   Number         4  switches.o(.text.Timer1A_Handler)
+    [Anonymous Symbol]                       0x00000450   Section        0  timer1a.o(.text.Timer1Arm)
+    __arm_cp.1_1                             0x00000490   Number         4  timer1a.o(.text.Timer1Arm)
+    [Anonymous Symbol]                       0x00000494   Section        0  switches.o(.text.Timer2A_Handler)
+    __arm_cp.5_0                             0x000004c0   Number         4  switches.o(.text.Timer2A_Handler)
+    __arm_cp.5_1                             0x000004c4   Number         4  switches.o(.text.Timer2A_Handler)
+    __arm_cp.5_2                             0x000004c8   Number         4  switches.o(.text.Timer2A_Handler)
+    __arm_cp.5_3                             0x000004cc   Number         4  switches.o(.text.Timer2A_Handler)
+    [Anonymous Symbol]                       0x000004d0   Section        0  timer2a.o(.text.Timer2Arm)
+    __arm_cp.0_0                             0x00000510   Number         4  timer2a.o(.text.Timer2Arm)
+    __arm_cp.0_1                             0x00000514   Number         4  timer2a.o(.text.Timer2Arm)
+    __arm_cp.0_2                             0x00000518   Number         4  timer2a.o(.text.Timer2Arm)
+    __arm_cp.0_3                             0x0000051c   Number         4  timer2a.o(.text.Timer2Arm)
+    __arm_cp.0_4                             0x00000520   Number         4  timer2a.o(.text.Timer2Arm)
+    [Anonymous Symbol]                       0x00000524   Section        0  timer3a.o(.text.Timer3A_Handler)
+    __arm_cp.1_0                             0x00000530   Number         4  timer3a.o(.text.Timer3A_Handler)
+    __arm_cp.1_1                             0x00000534   Number         4  timer3a.o(.text.Timer3A_Handler)
+    [Anonymous Symbol]                       0x00000538   Section        0  timer4a.o(.text.Timer4A_Handler)
+    __arm_cp.1_0                             0x00000544   Number         4  timer4a.o(.text.Timer4A_Handler)
+    __arm_cp.1_1                             0x00000548   Number         4  timer4a.o(.text.Timer4A_Handler)
+    [Anonymous Symbol]                       0x0000054c   Section        0  texas.o(.text.Timer5A_Handler)
+    __arm_cp.2_0                             0x00000558   Number         4  texas.o(.text.Timer5A_Handler)
+    __arm_cp.2_1                             0x0000055c   Number         4  texas.o(.text.Timer5A_Handler)
+    [Anonymous Symbol]                       0x00000560   Section        0  lab11.o(.text.main)
+    i.__scatterload_copy                     0x00000578   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000586   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000588   Section       14  handlers.o(i.__scatterload_zeroinit)
+    StackMem                                 0x20000018   Data           0  startup.o(STACK)
+    STACK                                    0x20000018   Section     1024  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x00000000   Data           0  startup.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    Reset_Handler                            0x0000026d   Thumb Code     0  startup.o(RESET)
+    HardFault_Handler                        0x00000283   Thumb Code     2  startup.o(RESET)
+    MemManage_Handler                        0x00000285   Thumb Code     2  startup.o(RESET)
+    BusFault_Handler                         0x00000287   Thumb Code     2  startup.o(RESET)
+    UsageFault_Handler                       0x00000289   Thumb Code     2  startup.o(RESET)
+    SVC_Handler                              0x0000028b   Thumb Code     2  startup.o(RESET)
+    DebugMon_Handler                         0x0000028d   Thumb Code     2  startup.o(RESET)
+    PendSV_Handler                           0x0000028f   Thumb Code     2  startup.o(RESET)
+    SysTick_Handler                          0x00000291   Thumb Code     2  startup.o(RESET)
+    ADC0Seq0_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    ADC0Seq1_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    ADC0Seq2_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    ADC0Seq3_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    ADC1Seq0_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    ADC1Seq1_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    ADC1Seq2_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    ADC1Seq3_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    CAN0_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    CAN1_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    CAN2_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    Comp0_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    Comp1_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    Comp2_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    Ethernet_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    ExtBus_Handler                           0x00000293   Thumb Code     0  startup.o(RESET)
+    FPU_Handler                              0x00000293   Thumb Code     0  startup.o(RESET)
+    Fan0_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    FlashCtl_Handler                         0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortC_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortD_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortE_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortF_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortG_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortH_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortJ_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortK_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortL_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortM_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortN_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortP1_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortP2_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortP3_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortP4_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortP5_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortP6_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortP7_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortP_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ1_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ2_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ3_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ4_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ5_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ6_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ7_Handler                       0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortR_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    GPIOPortS_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    Hibernate_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    I2C0_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    I2C1_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    I2C2_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    I2C3_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    I2C4_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    I2C5_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    I2S0_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    LPC0_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    PECI0_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM0Fault_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM0Generator0_Handler                   0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM0Generator1_Handler                   0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM0Generator2_Handler                   0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM0Generator3_Handler                   0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM1Fault_Handler                        0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM1Generator0_Handler                   0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM1Generator1_Handler                   0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM1Generator2_Handler                   0x00000293   Thumb Code     0  startup.o(RESET)
+    PWM1Generator3_Handler                   0x00000293   Thumb Code     0  startup.o(RESET)
+    Quadrature0_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    Quadrature1_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    Quadrature2_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    SSI0_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    SSI1_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    SSI2_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    SSI3_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    SysCtl_Handler                           0x00000293   Thumb Code     0  startup.o(RESET)
+    Timer0B_Handler                          0x00000293   Thumb Code     0  startup.o(RESET)
+    Timer1B_Handler                          0x00000293   Thumb Code     0  startup.o(RESET)
+    Timer2B_Handler                          0x00000293   Thumb Code     0  startup.o(RESET)
+    Timer3B_Handler                          0x00000293   Thumb Code     0  startup.o(RESET)
+    Timer4B_Handler                          0x00000293   Thumb Code     0  startup.o(RESET)
+    Timer5B_Handler                          0x00000293   Thumb Code     0  startup.o(RESET)
+    UART0_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    UART1_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    UART2_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    UART3_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    UART4_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    UART5_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    UART6_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    UART7_Handler                            0x00000293   Thumb Code     0  startup.o(RESET)
+    USB0_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    WDT_Handler                              0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer0A_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer0B_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer1A_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer1B_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer2A_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer2B_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer3A_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer3B_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer4A_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer4B_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer5A_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    WideTimer5B_Handler                      0x00000293   Thumb Code     0  startup.o(RESET)
+    __aeabi_assert                           0x00000293   Thumb Code     0  startup.o(RESET)
+    uDMA_Error                               0x00000293   Thumb Code     0  startup.o(RESET)
+    uDMA_Handler                             0x00000293   Thumb Code     0  startup.o(RESET)
+    __main                                   0x00000295   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x00000295   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x00000299   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x0000029d   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x0000029d   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x0000029d   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x0000029d   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000002a5   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000002a5   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    DisableInterrupts                        0x000002a9   Thumb Code     0  startup.o(.text)
+    EnableInterrupts                         0x000002ad   Thumb Code     0  startup.o(.text)
+    StartCritical                            0x000002b1   Thumb Code     0  startup.o(.text)
+    EndCritical                              0x000002b9   Thumb Code     0  startup.o(.text)
+    WaitForInterrupt                         0x000002bf   Thumb Code     0  startup.o(.text)
+    __scatterload                            0x000002c5   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x000002c5   Thumb Code     0  init.o(.text)
+    GPIOPortA_Handler                        0x00000309   Thumb Code    68  switches.o(.text.GPIOPortA_Handler)
+    GPIOPortB_Handler                        0x00000355   Thumb Code     2  motion.o(.text.GPIOPortB_Handler)
+    LaunchPad_Init                           0x00000359   Thumb Code    48  launchpad.o(.text.LaunchPad_Init)
+    PLL_Init                                 0x000003ad   Thumb Code    92  pll.o(.text.PLL_Init)
+    Timer0A_Handler                          0x0000040d   Thumb Code    12  timer0a.o(.text.Timer0A_Handler)
+    Timer1A_Handler                          0x00000421   Thumb Code    44  switches.o(.text.Timer1A_Handler)
+    Timer1Arm                                0x00000451   Thumb Code    64  timer1a.o(.text.Timer1Arm)
+    Timer2A_Handler                          0x00000495   Thumb Code    44  switches.o(.text.Timer2A_Handler)
+    Timer2Arm                                0x000004d1   Thumb Code    64  timer2a.o(.text.Timer2Arm)
+    Timer3A_Handler                          0x00000525   Thumb Code    12  timer3a.o(.text.Timer3A_Handler)
+    Timer4A_Handler                          0x00000539   Thumb Code    12  timer4a.o(.text.Timer4A_Handler)
+    Timer5A_Handler                          0x0000054d   Thumb Code    12  texas.o(.text.Timer5A_Handler)
+    main                                     0x00000561   Thumb Code    24  lab11.o(.text.main)
+    __scatterload_copy                       0x00000579   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000587   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000589   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00000598   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000005a8   Number         0  anon$$obj.o(Region$$Table)
+    GameFlag                                 0x20000000   Data           4  switches.o(.bss.GameFlag)
+    PeriodicTask0                            0x20000004   Data           4  timer0a.o(.bss.PeriodicTask0)
+    PeriodicTask3                            0x20000008   Data           4  timer3a.o(.bss.PeriodicTask3)
+    PeriodicTask4                            0x2000000c   Data           4  timer4a.o(.bss.PeriodicTask4)
+    PeriodicTask5                            0x20000010   Data           4  texas.o(.bss.PeriodicTask5)
+    __initial_sp                             0x20000418   Data           0  startup.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000295
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000005a8, Max: 0x00040000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000005a8, Max: 0x00040000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x00000294   Code   RO           19    RESET               startup.o
+    0x00000294   0x00000294   0x00000000   Code   RO          381  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x00000294   0x00000294   0x00000004   Code   RO          384    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000298   0x00000298   0x00000004   Code   RO          387    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x0000029c   0x0000029c   0x00000000   Code   RO          389    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x0000029c   0x0000029c   0x00000000   Code   RO          391    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x0000029c   0x0000029c   0x00000008   Code   RO          392    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000002a4   0x000002a4   0x00000000   Code   RO          394    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000002a4   0x000002a4   0x00000000   Code   RO          396    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000002a4   0x000002a4   0x00000004   Code   RO          385    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000002a8   0x000002a8   0x0000001c   Code   RO           20    .text               startup.o
+    0x000002c4   0x000002c4   0x00000024   Code   RO          398    .text               mc_w.l(init.o)
+    0x000002e8   0x000002e8   0x00000020   Code   RO          130    .text.GPIOArmSWBoth  switches.o
+    0x00000308   0x00000308   0x0000004c   Code   RO          126    .text.GPIOPortA_Handler  switches.o
+    0x00000354   0x00000354   0x00000002   Code   RO          373    .text.GPIOPortB_Handler  motion.o
+    0x00000356   0x00000356   0x00000002   PAD
+    0x00000358   0x00000358   0x00000044   Code   RO           29    .text.LaunchPad_Init  launchpad.o
+    0x0000039c   0x0000039c   0x0000000e   Code   RO          134    .text.OUTLINED_FUNCTION_0  switches.o
+    0x000003aa   0x000003aa   0x00000002   PAD
+    0x000003ac   0x000003ac   0x00000060   Code   RO          113    .text.PLL_Init      pll.o
+    0x0000040c   0x0000040c   0x00000014   Code   RO           51    .text.Timer0A_Handler  timer0a.o
+    0x00000420   0x00000420   0x00000030   Code   RO          128    .text.Timer1A_Handler  switches.o
+    0x00000450   0x00000450   0x00000044   Code   RO          212    .text.Timer1Arm     timer1a.o
+    0x00000494   0x00000494   0x0000003c   Code   RO          132    .text.Timer2A_Handler  switches.o
+    0x000004d0   0x000004d0   0x00000054   Code   RO          198    .text.Timer2Arm     timer2a.o
+    0x00000524   0x00000524   0x00000014   Code   RO          309    .text.Timer3A_Handler  timer3a.o
+    0x00000538   0x00000538   0x00000014   Code   RO          146    .text.Timer4A_Handler  timer4a.o
+    0x0000054c   0x0000054c   0x00000014   Code   RO           68    .text.Timer5A_Handler  texas.o
+    0x00000560   0x00000560   0x00000018   Code   RO          362    .text.main          lab11.o
+    0x00000578   0x00000578   0x0000000e   Code   RO          402    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000586   0x00000586   0x00000002   Code   RO          403    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000588   0x00000588   0x0000000e   Code   RO          404    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000596   0x00000596   0x00000002   PAD
+    0x00000598   0x00000598   0x00000010   Data   RO          401    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x000005a8, Size: 0x00000418, Max: 0x00008000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000        -       0x00000004   Zero   RW          136    .bss.GameFlag       switches.o
+    0x20000004        -       0x00000004   Zero   RW           55    .bss.PeriodicTask0  timer0a.o
+    0x20000008        -       0x00000004   Zero   RW          313    .bss.PeriodicTask3  timer3a.o
+    0x2000000c        -       0x00000004   Zero   RW          150    .bss.PeriodicTask4  timer4a.o
+    0x20000010        -       0x00000004   Zero   RW          104    .bss.PeriodicTask5  texas.o
+    0x20000014   0x000005a8   0x00000004   PAD
+    0x20000018        -       0x00000400   Zero   RW           17    STACK               startup.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        24          0          0          0          0        363   lab11.o
+        68         20          0          0          0       1448   launchpad.o
+         2          0          0          0          0        446   motion.o
+        96          4          0          0          0        578   pll.o
+       688        622          0          0       1024        924   startup.o
+       230         28          0          0          4       1512   switches.o
+        20          8          0          0          4       3996   texas.o
+        20          8          0          0          4       1051   timer0a.o
+        68          4          0          0          0       1063   timer1a.o
+        84         20          0          0          0        739   timer2a.o
+        20          8          0          0          4       1016   timer3a.o
+        20          8          0          0          4       1016   timer4a.o
+
+    ----------------------------------------------------------------------
+      1344        730         16          0       1048      14152   Object Totals
+         0          0         16          0          0          0   (incl. Generated)
+         4          0          0          0          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+
+    ----------------------------------------------------------------------
+        88         16          0          0          0         68   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+        86         16          0          0          0         68   mc_w.l
+
+    ----------------------------------------------------------------------
+        88         16          0          0          0         68   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      1432        746         16          0       1048      14172   Grand Totals
+      1432        746         16          0       1048      14172   ELF Image Totals
+      1432        746         16          0          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 1448 (   1.41kB)
+    Total RW  Size (RW Data + ZI Data)              1048 (   1.02kB)
+    Total ROM Size (Code + RO Data + RW Data)       1448 (   1.41kB)
+
+==============================================================================
+

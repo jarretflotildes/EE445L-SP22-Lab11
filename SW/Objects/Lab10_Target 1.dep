@@ -1,0 +1,97 @@
+Dependencies for Project 'Lab10', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6160000::V6.16::ARMCLANG
+F (.\lib\RGB\RGB.c)(0x6260694E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/rgb.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x625485C7)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x6035BE9A)
+I (lib\RGB\LED.h)(0x6260694E)
+I (inc\Timer0A.h)(0x6260694C)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (lib\RGB\RGB.h)(0x6260694E)
+F (.\inc\startup.s)(0x6260694D)(--cpu Cortex-M4 --fpu=SoftVFP --pd "__EVAL SETA 1" -g --pd "__MICROLIB SETA 1"-IC:\Users\nolog\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 536"--pd "TM4C123GH6PM SETA 1"--list .\listings\startup.lst--xref -o .\objects\startup.o--depend .\objects\startup.d)
+F (.\inc\LaunchPad.c)(0x6260694A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/launchpad.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\..\inc\LaunchPad.h)(0x6260694B)
+I (inc\..\inc\tm4c123gh6pm.h)(0x6260694D)
+I (inc\..\inc\CortexM.h)(0x6260694A)
+F (.\inc\Timer0A.c)(0x6260694B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/timer0a.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\..\inc\tm4c123gh6pm.h)(0x6260694D)
+I (inc\..\inc\CortexM.h)(0x6260694A)
+F (.\inc\TExaS.c)(0x6260694B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/texas.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\..\inc\CortexM.h)(0x6260694A)
+I (inc\..\inc\tm4c123gh6pm.h)(0x6260694D)
+I (inc\..\inc\TExaS.h)(0x6260694B)
+I (inc\..\inc\PLL.h)(0x6260694B)
+F (.\inc\PLL.c)(0x6260694B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/pll.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\..\inc\PLL.h)(0x6260694B)
+I (inc\..\inc\tm4c123gh6pm.h)(0x6260694D)
+F (.\lib\IO\Switches.c)(0x62606B65)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/switches.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x625485C7)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x6035BE9A)
+I (inc\tm4c123gh6pm.h)(0x6260694D)
+I (inc\CortexM.h)(0x6260694A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (lib\IO\Switches.h)(0x6260694E)
+I (inc\Timer2A.h)(0x6260694C)
+I (inc\Timer1A.h)(0x62606C16)
+F (.\inc\Timer4A.c)(0x6260694C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/timer4a.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\..\inc\tm4c123gh6pm.h)(0x6260694D)
+F (.\Switches.h)(0x62606945)()
+F (.\lib\RGB\LED.h)(0x6260694E)()
+F (.\lib\RGB\LED.c)(0x6260694E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/led.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x625485C7)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x6035BE9A)
+I (inc\tm4c123gh6pm.h)(0x6260694D)
+I (inc\CortexM.h)(0x6260694A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+F (.\inc\Timer2A.c)(0x6260694C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/timer2a.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\..\inc\tm4c123gh6pm.h)(0x6260694D)
+F (.\inc\Timer1A.c)(0x62606AFA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/timer1a.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\..\inc\tm4c123gh6pm.h)(0x6260694D)
+F (.\lib\Sound\Music.c)(0x6260694E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/music.o -MD)
+I (lib\Sound\Music.h)(0x6260694E)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (lib\Sound\Sound.h)(0x6260694E)
+I (inc\Timer3A.h)(0x6260694C)
+I (inc\Timer4A.h)(0x6260694C)
+I (inc\tm4c123gh6pm.h)(0x6260694D)
+I (lib\Sound\Sounds.h)(0x6260694E)
+F (.\lib\Sound\Sound.c)(0x6260694E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/sound.o -MD)
+I (lib\Sound\Sound.h)(0x6260694E)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\tm4c123gh6pm.h)(0x6260694D)
+F (.\lib\Accelerometer\Accelerometer.c)(0x6260694D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/accelerometer.o -MD)
+I (lib\Accelerometer\Accelerometer.h)(0x6260694D)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\I2C1.h)(0x6260694A)
+I (inc\Timer5A.h)(0x6260694C)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x625485C7)
+F (.\inc\Timer3A.c)(0x6260694C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/timer3a.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\..\inc\tm4c123gh6pm.h)(0x6260694D)
+F (.\inc\I2C1.c)(0x6260694A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/i2c1.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\..\inc\I2C1.h)(0x6260694A)
+I (inc\..\inc\tm4c123gh6pm.h)(0x6260694D)
+F (.\Lab11.c)(0x62606945)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/lab11.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6035BEA4)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (C:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x6035BE9A)
+I (inc\tm4c123gh6pm.h)(0x6260694D)
+I (inc\LaunchPad.h)(0x6260694B)
+I (inc\CortexM.h)(0x6260694A)
+I (inc\TExaS.h)(0x6260694B)
+I (inc\ST7735.h)(0x6260694B)
+I (lib\RGB\RGB.h)(0x6260694E)
+I (inc\PLL.h)(0x6260694B)
+F (.\lib\Motion\Motion.c)(0x62606BB7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/motion.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6035BEA4)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (inc\PLL.h)(0x6260694B)
+I (inc\tm4c123gh6pm.h)(0x6260694D)
+I (inc\CortexM.h)(0x6260694A)

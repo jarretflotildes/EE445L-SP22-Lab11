@@ -1,0 +1,1606 @@
+	.text
+	.syntax unified
+	.eabi_attribute	67, "2.09"	@ Tag_conformance
+	.cpu	cortex-m4
+	.eabi_attribute	6, 13	@ Tag_CPU_arch
+	.eabi_attribute	7, 77	@ Tag_CPU_arch_profile
+	.eabi_attribute	8, 0	@ Tag_ARM_ISA_use
+	.eabi_attribute	9, 2	@ Tag_THUMB_ISA_use
+	.fpu	fpv4-sp-d16
+	.eabi_attribute	27, 1	@ Tag_ABI_HardFP_use
+	.eabi_attribute	36, 1	@ Tag_FP_HP_extension
+	.eabi_attribute	34, 1	@ Tag_CPU_unaligned_access
+	.eabi_attribute	17, 1	@ Tag_ABI_PCS_GOT_use
+	.eabi_attribute	20, 2	@ Tag_ABI_FP_denormal
+	.eabi_attribute	21, 0	@ Tag_ABI_FP_exceptions
+	.eabi_attribute	23, 1	@ Tag_ABI_FP_number_model
+	.eabi_attribute	24, 1	@ Tag_ABI_align_needed
+	.eabi_attribute	25, 1	@ Tag_ABI_align_preserved
+	.eabi_attribute	28, 1	@ Tag_ABI_VFP_args
+	.eabi_attribute	38, 1	@ Tag_ABI_FP_16bit_format
+	.eabi_attribute	18, 2	@ Tag_ABI_PCS_wchar_t
+	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
+	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
+	.file	"MedianFilter.c"
+	.file	1 "C:\\Users\\kcao3\\OneDrive\\Documents\\445L\\EE445L-SP22-Lab-4\\SW" ".\\./lib/Filter/Filter.h"
+	.section	.text.MedianFilterInit,"ax",%progbits
+	.hidden	MedianFilterInit        @ -- Begin function MedianFilterInit
+	.globl	MedianFilterInit
+	.p2align	2
+	.type	MedianFilterInit,%function
+	.code	16                      @ @MedianFilterInit
+	.thumb_func
+MedianFilterInit:
+.Lfunc_begin0:
+	.file	2 "C:\\Users\\kcao3\\OneDrive\\Documents\\445L\\EE445L-SP22-Lab-4\\SW" "lib/Filter/MedianFilter.c"
+	.loc	2 20 0                  @ lib/Filter/MedianFilter.c:20:0
+	.fnstart
+	.cfi_sections .debug_frame
+	.cfi_startproc
+@ %bb.0:
+	.save	{r4, lr}
+	push	{r4, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r4, -8
+	.pad	#40
+	sub	sp, #40
+	.cfi_def_cfa_offset 48
+.Ltmp0:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [$r0+0]
+	mov	r12, r3
+	mov	lr, r2
+	mov	r4, r1
+	str	r3, [sp, #36]
+	str	r2, [sp, #32]
+	str	r1, [sp, #28]
+.Ltmp1:
+	.loc	2 22 5 prologue_end     @ lib/Filter/MedianFilter.c:22:5
+	ldrb.w	r1, [sp, #28]
+	cmp	r1, #0
+	str	r0, [sp, #12]           @ 4-byte Spill
+.Ltmp2:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12] [$sp+0]
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	bne	.LBB0_2
+	b	.LBB0_1
+.Ltmp3:
+.LBB0_1:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	b	.LBB0_3
+.Ltmp4:
+.LBB0_2:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	movw	r0, :lower16:.L.str
+	movt	r0, :upper16:.L.str
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #22
+	bl	__aeabi_assert
+.Ltmp5:
+.LBB0_3:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	.loc	2 23 5                  @ lib/Filter/MedianFilter.c:23:5
+	ldr	r0, [sp, #32]
+	cmp	r0, #0
+	beq	.LBB0_5
+	b	.LBB0_4
+.Ltmp6:
+.LBB0_4:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	b	.LBB0_6
+.Ltmp7:
+.LBB0_5:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	movw	r0, :lower16:.L.str.2
+	movt	r0, :upper16:.L.str.2
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #23
+	bl	__aeabi_assert
+.Ltmp8:
+.LBB0_6:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	.loc	2 24 5                  @ lib/Filter/MedianFilter.c:24:5
+	ldrh.w	r0, [sp, #36]
+	cmp	r0, #2
+	blt	.LBB0_8
+	b	.LBB0_7
+.Ltmp9:
+.LBB0_7:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	b	.LBB0_9
+.Ltmp10:
+.LBB0_8:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	movw	r0, :lower16:.L.str.3
+	movt	r0, :upper16:.L.str.3
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #24
+	bl	__aeabi_assert
+.Ltmp11:
+.LBB0_9:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	.loc	2 27 22                 @ lib/Filter/MedianFilter.c:27:22
+	ldrb.w	r0, [sp, #28]
+	.loc	2 26 23                 @ lib/Filter/MedianFilter.c:26:23
+	strb.w	r0, [sp, #16]
+	.loc	2 28 24                 @ lib/Filter/MedianFilter.c:28:24
+	ldr	r0, [sp, #32]
+	.loc	2 26 23                 @ lib/Filter/MedianFilter.c:26:23
+	str	r0, [sp, #20]
+	.loc	2 29 28                 @ lib/Filter/MedianFilter.c:29:28
+	ldrh.w	r0, [sp, #36]
+	.loc	2 26 23                 @ lib/Filter/MedianFilter.c:26:23
+	strh.w	r0, [sp, #24]
+	.loc	2 33 17                 @ lib/Filter/MedianFilter.c:33:17
+	ldr	r0, [sp, #16]
+	ldr	r1, [sp, #20]
+	ldr	r2, [sp, #24]
+	ldr	r3, [sp, #12]           @ 4-byte Reload
+	str	r2, [r3, #8]
+	str	r1, [r3, #4]
+	str	r0, [r3]
+	movs	r0, #0
+	.loc	2 32 35                 @ lib/Filter/MedianFilter.c:32:35
+	strh	r0, [r3, #12]
+	add.w	r0, r3, #14
+	.loc	2 35 26                 @ lib/Filter/MedianFilter.c:35:26
+	ldrh.w	r1, [sp, #24]
+	lsls	r1, r1, #31
+	cmp	r1, #0
+	str	r0, [sp, #8]            @ 4-byte Spill
+	beq	.LBB0_11
+	b	.LBB0_10
+.Ltmp12:
+.LBB0_10:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	.loc	2 35 57 is_stmt 0       @ lib/Filter/MedianFilter.c:35:57
+	ldrh.w	r0, [sp, #24]
+	.loc	2 35 26                 @ lib/Filter/MedianFilter.c:35:26
+	str	r0, [sp, #4]            @ 4-byte Spill
+	b	.LBB0_12
+.Ltmp13:
+.LBB0_11:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	.loc	2 35 77                 @ lib/Filter/MedianFilter.c:35:77
+	ldrh.w	r0, [sp, #24]
+	.loc	2 35 88                 @ lib/Filter/MedianFilter.c:35:88
+	subs	r0, #1
+	.loc	2 35 26                 @ lib/Filter/MedianFilter.c:35:26
+	str	r0, [sp, #4]            @ 4-byte Spill
+	b	.LBB0_12
+.Ltmp14:
+.LBB0_12:
+	@DEBUG_VALUE: MedianFilterInit:medianFilter <- [DW_OP_plus_uconst 12, DW_OP_deref] [$sp+0]
+	ldr	r0, [sp, #4]            @ 4-byte Reload
+	.loc	2 32 35 is_stmt 1       @ lib/Filter/MedianFilter.c:32:35
+	ldr	r1, [sp, #8]            @ 4-byte Reload
+	strh	r0, [r1]
+	movs	r0, #0
+	ldr	r2, [sp, #12]           @ 4-byte Reload
+	str	r0, [r2, #16]
+	.loc	2 39 5                  @ lib/Filter/MedianFilter.c:39:5
+	add	sp, #40
+.Ltmp15:
+	pop	{r4, pc}
+.Ltmp16:
+.Lfunc_end0:
+	.size	MedianFilterInit, .Lfunc_end0-MedianFilterInit
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.MedianFilterAddSample,"ax",%progbits
+	.hidden	MedianFilterAddSample   @ -- Begin function MedianFilterAddSample
+	.globl	MedianFilterAddSample
+	.p2align	2
+	.type	MedianFilterAddSample,%function
+	.code	16                      @ @MedianFilterAddSample
+	.thumb_func
+MedianFilterAddSample:
+.Lfunc_begin1:
+	.loc	2 42 0                  @ lib/Filter/MedianFilter.c:42:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#32
+	sub	sp, #32
+	.cfi_def_cfa_offset 32
+	str	r0, [sp, #28]
+	vstr	s0, [sp, #24]
+.Ltmp17:
+	.loc	2 44 5 prologue_end     @ lib/Filter/MedianFilter.c:44:5
+	ldr	r0, [sp, #28]
+	cmp	r0, #0
+	beq	.LBB1_2
+	b	.LBB1_1
+.LBB1_1:
+	b	.LBB1_3
+.LBB1_2:
+	movw	r0, :lower16:.L.str.4
+	movt	r0, :upper16:.L.str.4
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #44
+	bl	__aeabi_assert
+.LBB1_3:
+	ldr	r0, [sp, #28]
+	.loc	2 45 5                  @ lib/Filter/MedianFilter.c:45:5
+	ldrb	r0, [r0]
+	cmp	r0, #0
+	bne	.LBB1_5
+	b	.LBB1_4
+.LBB1_4:
+	b	.LBB1_6
+.LBB1_5:
+	movw	r0, :lower16:.L.str.5
+	movt	r0, :upper16:.L.str.5
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #45
+	bl	__aeabi_assert
+.LBB1_6:
+	ldr	r0, [sp, #28]
+	.loc	2 46 5                  @ lib/Filter/MedianFilter.c:46:5
+	ldr	r0, [r0, #4]
+	cmp	r0, #0
+	beq	.LBB1_8
+	b	.LBB1_7
+.LBB1_7:
+	b	.LBB1_9
+.LBB1_8:
+	movw	r0, :lower16:.L.str.6
+	movt	r0, :upper16:.L.str.6
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #46
+	bl	__aeabi_assert
+.LBB1_9:
+	ldr	r0, [sp, #28]
+	.loc	2 47 5                  @ lib/Filter/MedianFilter.c:47:5
+	ldrh	r0, [r0, #8]
+	cmp	r0, #1
+	blt	.LBB1_11
+	b	.LBB1_10
+.LBB1_10:
+	b	.LBB1_12
+.LBB1_11:
+	movw	r0, :lower16:.L.str.7
+	movt	r0, :upper16:.L.str.7
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #47
+	bl	__aeabi_assert
+.LBB1_12:
+	ldr	r0, [sp, #28]
+	.loc	2 48 5                  @ lib/Filter/MedianFilter.c:48:5
+	ldrh	r0, [r0, #14]
+	lsls	r0, r0, #31
+	cmp	r0, #0
+	beq	.LBB1_15
+	b	.LBB1_13
+.LBB1_13:
+	ldr	r0, [sp, #28]
+	ldrh	r1, [r0, #14]
+	ldrh	r0, [r0, #8]
+	cmp	r1, r0
+	bgt	.LBB1_15
+	b	.LBB1_14
+.LBB1_14:
+	b	.LBB1_16
+.LBB1_15:
+	movw	r0, :lower16:.L.str.8
+	movt	r0, :upper16:.L.str.8
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #48
+	bl	__aeabi_assert
+.LBB1_16:
+	ldr	r0, [sp, #28]
+	ldrh	r0, [r0, #14]
+	movs	r1, #0
+	lsls	r0, r0, #31
+	cmp	r0, #0
+	str	r1, [sp]                @ 4-byte Spill
+	beq	.LBB1_18
+	b	.LBB1_17
+.LBB1_17:
+	ldr	r0, [sp, #28]
+	ldrh	r1, [r0, #14]
+	ldrh	r0, [r0, #8]
+	movs	r2, #0
+	cmp	r1, r0
+	it	le
+	movle	r2, #1
+	str	r2, [sp]                @ 4-byte Spill
+	b	.LBB1_18
+.LBB1_18:
+	.loc	2 0 0 is_stmt 0         @ lib/Filter/MedianFilter.c:0:0
+	ldr	r0, [sp]                @ 4-byte Reload
+	.loc	2 49 5 is_stmt 1        @ lib/Filter/MedianFilter.c:49:5
+	ldr	r1, [sp, #28]
+	ldrh	r2, [r1, #12]
+	ldrh	r1, [r1, #8]
+	cmp	r2, r1
+	bge	.LBB1_20
+	b	.LBB1_19
+.LBB1_19:
+	b	.LBB1_21
+.LBB1_20:
+	movw	r0, :lower16:.L.str.9
+	movt	r0, :upper16:.L.str.9
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #49
+	bl	__aeabi_assert
+.LBB1_21:
+	ldr	r0, [sp, #28]
+	ldrh	r1, [r0, #12]
+	.loc	2 52 40                 @ lib/Filter/MedianFilter.c:52:40
+	ldr	r0, [r0, #4]
+	.loc	2 52 25 is_stmt 0       @ lib/Filter/MedianFilter.c:52:25
+	ldr.w	r0, [r0, r1, lsl #2]
+	.loc	2 52 11                 @ lib/Filter/MedianFilter.c:52:11
+	str	r0, [sp, #20]
+	.loc	2 55 45 is_stmt 1       @ lib/Filter/MedianFilter.c:55:45
+	ldr	r0, [sp, #24]
+	.loc	2 55 5 is_stmt 0        @ lib/Filter/MedianFilter.c:55:5
+	ldr	r1, [sp, #28]
+	.loc	2 55 20                 @ lib/Filter/MedianFilter.c:55:20
+	ldr	r2, [r1, #4]
+	.loc	2 55 35                 @ lib/Filter/MedianFilter.c:55:35
+	ldrh	r1, [r1, #12]
+	.loc	2 55 43                 @ lib/Filter/MedianFilter.c:55:43
+	str.w	r0, [r2, r1, lsl #2]
+.Ltmp18:
+	.loc	2 58 9 is_stmt 1        @ lib/Filter/MedianFilter.c:58:9
+	vldr	s0, [sp, #24]
+	.loc	2 58 18 is_stmt 0       @ lib/Filter/MedianFilter.c:58:18
+	ldr	r0, [sp, #28]
+	.loc	2 58 26                 @ lib/Filter/MedianFilter.c:58:26
+	vldr	s2, [r0, #16]
+	.loc	2 58 33                 @ lib/Filter/MedianFilter.c:58:33
+	vcmpe.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB1_34
+	b	.LBB1_22
+.LBB1_22:
+	.loc	2 58 36                 @ lib/Filter/MedianFilter.c:58:36
+	vldr	s0, [sp, #20]
+	.loc	2 58 51                 @ lib/Filter/MedianFilter.c:58:51
+	ldr	r0, [sp, #28]
+	.loc	2 58 59                 @ lib/Filter/MedianFilter.c:58:59
+	vldr	s2, [r0, #16]
+.Ltmp19:
+	.loc	2 58 9                  @ lib/Filter/MedianFilter.c:58:9
+	vcmpe.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bgt	.LBB1_34
+	b	.LBB1_23
+.LBB1_23:
+	.loc	2 0 9                   @ lib/Filter/MedianFilter.c:0:9
+	movw	r0, #65535
+	movt	r0, #32639
+.Ltmp20:
+	.loc	2 59 15 is_stmt 1       @ lib/Filter/MedianFilter.c:59:15
+	str	r0, [sp, #16]
+	movs	r0, #0
+	.loc	2 60 18                 @ lib/Filter/MedianFilter.c:60:18
+	strh.w	r0, [sp, #14]
+.Ltmp21:
+	.loc	2 63 16                 @ lib/Filter/MedianFilter.c:63:16
+	strh.w	r0, [sp, #12]
+	.loc	2 63 14 is_stmt 0       @ lib/Filter/MedianFilter.c:63:14
+	b	.LBB1_24
+.LBB1_24:                               @ =>This Inner Loop Header: Depth=1
+.Ltmp22:
+	.loc	2 63 21                 @ lib/Filter/MedianFilter.c:63:21
+	ldrh.w	r0, [sp, #12]
+	.loc	2 63 25                 @ lib/Filter/MedianFilter.c:63:25
+	ldr	r1, [sp, #28]
+	.loc	2 63 33                 @ lib/Filter/MedianFilter.c:63:33
+	ldrh	r1, [r1, #14]
+.Ltmp23:
+	.loc	2 63 9                  @ lib/Filter/MedianFilter.c:63:9
+	cmp	r0, r1
+	bge	.LBB1_31
+	b	.LBB1_25
+.LBB1_25:                               @   in Loop: Header=BB1_24 Depth=1
+.Ltmp24:
+	.loc	2 64 17 is_stmt 1       @ lib/Filter/MedianFilter.c:64:17
+	ldr	r0, [sp, #28]
+	.loc	2 64 32 is_stmt 0       @ lib/Filter/MedianFilter.c:64:32
+	ldr	r1, [r0, #4]
+	.loc	2 64 39                 @ lib/Filter/MedianFilter.c:64:39
+	ldrh.w	r2, [sp, #12]
+	.loc	2 64 17                 @ lib/Filter/MedianFilter.c:64:17
+	add.w	r1, r1, r2, lsl #2
+	vldr	s0, [r1]
+	.loc	2 64 52                 @ lib/Filter/MedianFilter.c:64:52
+	vldr	s2, [r0, #16]
+.Ltmp25:
+	.loc	2 64 17                 @ lib/Filter/MedianFilter.c:64:17
+	vcmpe.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB1_29
+	b	.LBB1_26
+.LBB1_26:                               @   in Loop: Header=BB1_24 Depth=1
+.Ltmp26:
+	.loc	2 65 17 is_stmt 1       @ lib/Filter/MedianFilter.c:65:17
+	ldrh.w	r0, [sp, #14]
+	adds	r0, #1
+	strh.w	r0, [sp, #14]
+.Ltmp27:
+	.loc	2 66 21                 @ lib/Filter/MedianFilter.c:66:21
+	ldr	r0, [sp, #28]
+	.loc	2 66 36 is_stmt 0       @ lib/Filter/MedianFilter.c:66:36
+	ldr	r0, [r0, #4]
+	.loc	2 66 43                 @ lib/Filter/MedianFilter.c:66:43
+	ldrh.w	r1, [sp, #12]
+	.loc	2 66 21                 @ lib/Filter/MedianFilter.c:66:21
+	add.w	r0, r0, r1, lsl #2
+	vldr	s0, [r0]
+	.loc	2 66 48                 @ lib/Filter/MedianFilter.c:66:48
+	vldr	s2, [sp, #16]
+.Ltmp28:
+	.loc	2 66 21                 @ lib/Filter/MedianFilter.c:66:21
+	vcmpe.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB1_28
+	b	.LBB1_27
+.LBB1_27:                               @   in Loop: Header=BB1_24 Depth=1
+.Ltmp29:
+	.loc	2 67 41 is_stmt 1       @ lib/Filter/MedianFilter.c:67:41
+	ldr	r0, [sp, #28]
+	.loc	2 67 56 is_stmt 0       @ lib/Filter/MedianFilter.c:67:56
+	ldr	r0, [r0, #4]
+	.loc	2 67 63                 @ lib/Filter/MedianFilter.c:67:63
+	ldrh.w	r1, [sp, #12]
+	.loc	2 67 41                 @ lib/Filter/MedianFilter.c:67:41
+	ldr.w	r0, [r0, r1, lsl #2]
+	.loc	2 67 39                 @ lib/Filter/MedianFilter.c:67:39
+	str	r0, [sp, #16]
+	.loc	2 68 17 is_stmt 1       @ lib/Filter/MedianFilter.c:68:17
+	b	.LBB1_28
+.Ltmp30:
+.LBB1_28:                               @   in Loop: Header=BB1_24 Depth=1
+	.loc	2 69 13                 @ lib/Filter/MedianFilter.c:69:13
+	b	.LBB1_29
+.Ltmp31:
+.LBB1_29:                               @   in Loop: Header=BB1_24 Depth=1
+	.loc	2 70 9                  @ lib/Filter/MedianFilter.c:70:9
+	b	.LBB1_30
+.Ltmp32:
+.LBB1_30:                               @   in Loop: Header=BB1_24 Depth=1
+	.loc	2 63 50                 @ lib/Filter/MedianFilter.c:63:50
+	ldrh.w	r0, [sp, #12]
+	adds	r0, #1
+	strh.w	r0, [sp, #12]
+	.loc	2 63 9 is_stmt 0        @ lib/Filter/MedianFilter.c:63:9
+	b	.LBB1_24
+.Ltmp33:
+.LBB1_31:
+	.loc	2 71 13 is_stmt 1       @ lib/Filter/MedianFilter.c:71:13
+	ldrh.w	r0, [sp, #14]
+	.loc	2 71 31 is_stmt 0       @ lib/Filter/MedianFilter.c:71:31
+	ldr	r1, [sp, #28]
+	.loc	2 71 39                 @ lib/Filter/MedianFilter.c:71:39
+	ldrh	r1, [r1, #14]
+	.loc	2 71 55                 @ lib/Filter/MedianFilter.c:71:55
+	subs	r1, #1
+	.loc	2 71 59                 @ lib/Filter/MedianFilter.c:71:59
+	add.w	r1, r1, r1, lsr #31
+.Ltmp34:
+	.loc	2 71 13                 @ lib/Filter/MedianFilter.c:71:13
+	cmp.w	r0, r1, asr #1
+	ble	.LBB1_33
+	b	.LBB1_32
+.LBB1_32:
+.Ltmp35:
+	.loc	2 72 30 is_stmt 1       @ lib/Filter/MedianFilter.c:72:30
+	ldr	r0, [sp, #16]
+	.loc	2 72 13 is_stmt 0       @ lib/Filter/MedianFilter.c:72:13
+	ldr	r1, [sp, #28]
+	.loc	2 72 28                 @ lib/Filter/MedianFilter.c:72:28
+	str	r0, [r1, #16]
+	.loc	2 73 9 is_stmt 1        @ lib/Filter/MedianFilter.c:73:9
+	b	.LBB1_33
+.Ltmp36:
+.LBB1_33:
+	.loc	2 74 5                  @ lib/Filter/MedianFilter.c:74:5
+	b	.LBB1_48
+.Ltmp37:
+.LBB1_34:
+	.loc	2 74 16 is_stmt 0       @ lib/Filter/MedianFilter.c:74:16
+	vldr	s0, [sp, #24]
+	.loc	2 74 25                 @ lib/Filter/MedianFilter.c:74:25
+	ldr	r0, [sp, #28]
+	.loc	2 74 33                 @ lib/Filter/MedianFilter.c:74:33
+	vldr	s2, [r0, #16]
+	.loc	2 74 40                 @ lib/Filter/MedianFilter.c:74:40
+	vcmpe.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB1_47
+	b	.LBB1_35
+.LBB1_35:
+	.loc	2 74 43                 @ lib/Filter/MedianFilter.c:74:43
+	vldr	s0, [sp, #20]
+	.loc	2 74 58                 @ lib/Filter/MedianFilter.c:74:58
+	ldr	r0, [sp, #28]
+	.loc	2 74 66                 @ lib/Filter/MedianFilter.c:74:66
+	vldr	s2, [r0, #16]
+.Ltmp38:
+	.loc	2 74 16                 @ lib/Filter/MedianFilter.c:74:16
+	vcmpe.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	blt	.LBB1_47
+	b	.LBB1_36
+.LBB1_36:
+	.loc	2 0 16                  @ lib/Filter/MedianFilter.c:0:16
+	mov.w	r0, #8388608
+.Ltmp39:
+	.loc	2 75 15 is_stmt 1       @ lib/Filter/MedianFilter.c:75:15
+	str	r0, [sp, #8]
+	movs	r0, #0
+	.loc	2 76 18                 @ lib/Filter/MedianFilter.c:76:18
+	strh.w	r0, [sp, #6]
+.Ltmp40:
+	.loc	2 78 16                 @ lib/Filter/MedianFilter.c:78:16
+	strh.w	r0, [sp, #4]
+	.loc	2 78 14 is_stmt 0       @ lib/Filter/MedianFilter.c:78:14
+	b	.LBB1_37
+.LBB1_37:                               @ =>This Inner Loop Header: Depth=1
+.Ltmp41:
+	.loc	2 78 21                 @ lib/Filter/MedianFilter.c:78:21
+	ldrh.w	r0, [sp, #4]
+	.loc	2 78 25                 @ lib/Filter/MedianFilter.c:78:25
+	ldr	r1, [sp, #28]
+	.loc	2 78 33                 @ lib/Filter/MedianFilter.c:78:33
+	ldrh	r1, [r1, #14]
+.Ltmp42:
+	.loc	2 78 9                  @ lib/Filter/MedianFilter.c:78:9
+	cmp	r0, r1
+	bge	.LBB1_44
+	b	.LBB1_38
+.LBB1_38:                               @   in Loop: Header=BB1_37 Depth=1
+.Ltmp43:
+	.loc	2 79 17 is_stmt 1       @ lib/Filter/MedianFilter.c:79:17
+	ldr	r0, [sp, #28]
+	.loc	2 79 32 is_stmt 0       @ lib/Filter/MedianFilter.c:79:32
+	ldr	r1, [r0, #4]
+	.loc	2 79 39                 @ lib/Filter/MedianFilter.c:79:39
+	ldrh.w	r2, [sp, #4]
+	.loc	2 79 17                 @ lib/Filter/MedianFilter.c:79:17
+	add.w	r1, r1, r2, lsl #2
+	vldr	s0, [r1]
+	.loc	2 79 52                 @ lib/Filter/MedianFilter.c:79:52
+	vldr	s2, [r0, #16]
+.Ltmp44:
+	.loc	2 79 17                 @ lib/Filter/MedianFilter.c:79:17
+	vcmpe.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB1_42
+	b	.LBB1_39
+.LBB1_39:                               @   in Loop: Header=BB1_37 Depth=1
+.Ltmp45:
+	.loc	2 80 17 is_stmt 1       @ lib/Filter/MedianFilter.c:80:17
+	ldrh.w	r0, [sp, #6]
+	adds	r0, #1
+	strh.w	r0, [sp, #6]
+.Ltmp46:
+	.loc	2 81 21                 @ lib/Filter/MedianFilter.c:81:21
+	ldr	r0, [sp, #28]
+	.loc	2 81 36 is_stmt 0       @ lib/Filter/MedianFilter.c:81:36
+	ldr	r0, [r0, #4]
+	.loc	2 81 43                 @ lib/Filter/MedianFilter.c:81:43
+	ldrh.w	r1, [sp, #4]
+	.loc	2 81 21                 @ lib/Filter/MedianFilter.c:81:21
+	add.w	r0, r0, r1, lsl #2
+	vldr	s0, [r0]
+	.loc	2 81 48                 @ lib/Filter/MedianFilter.c:81:48
+	vldr	s2, [sp, #8]
+.Ltmp47:
+	.loc	2 81 21                 @ lib/Filter/MedianFilter.c:81:21
+	vcmpe.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB1_41
+	b	.LBB1_40
+.LBB1_40:                               @   in Loop: Header=BB1_37 Depth=1
+.Ltmp48:
+	.loc	2 82 42 is_stmt 1       @ lib/Filter/MedianFilter.c:82:42
+	ldr	r0, [sp, #28]
+	.loc	2 82 57 is_stmt 0       @ lib/Filter/MedianFilter.c:82:57
+	ldr	r0, [r0, #4]
+	.loc	2 82 64                 @ lib/Filter/MedianFilter.c:82:64
+	ldrh.w	r1, [sp, #4]
+	.loc	2 82 42                 @ lib/Filter/MedianFilter.c:82:42
+	ldr.w	r0, [r0, r1, lsl #2]
+	.loc	2 82 40                 @ lib/Filter/MedianFilter.c:82:40
+	str	r0, [sp, #8]
+	.loc	2 83 17 is_stmt 1       @ lib/Filter/MedianFilter.c:83:17
+	b	.LBB1_41
+.Ltmp49:
+.LBB1_41:                               @   in Loop: Header=BB1_37 Depth=1
+	.loc	2 84 13                 @ lib/Filter/MedianFilter.c:84:13
+	b	.LBB1_42
+.Ltmp50:
+.LBB1_42:                               @   in Loop: Header=BB1_37 Depth=1
+	.loc	2 85 9                  @ lib/Filter/MedianFilter.c:85:9
+	b	.LBB1_43
+.Ltmp51:
+.LBB1_43:                               @   in Loop: Header=BB1_37 Depth=1
+	.loc	2 78 50                 @ lib/Filter/MedianFilter.c:78:50
+	ldrh.w	r0, [sp, #4]
+	adds	r0, #1
+	strh.w	r0, [sp, #4]
+	.loc	2 78 9 is_stmt 0        @ lib/Filter/MedianFilter.c:78:9
+	b	.LBB1_37
+.Ltmp52:
+.LBB1_44:
+	.loc	2 86 13 is_stmt 1       @ lib/Filter/MedianFilter.c:86:13
+	ldrh.w	r0, [sp, #6]
+	.loc	2 86 31 is_stmt 0       @ lib/Filter/MedianFilter.c:86:31
+	ldr	r1, [sp, #28]
+	.loc	2 86 39                 @ lib/Filter/MedianFilter.c:86:39
+	ldrh	r1, [r1, #14]
+	.loc	2 86 55                 @ lib/Filter/MedianFilter.c:86:55
+	subs	r1, #1
+	.loc	2 86 59                 @ lib/Filter/MedianFilter.c:86:59
+	add.w	r1, r1, r1, lsr #31
+.Ltmp53:
+	.loc	2 86 13                 @ lib/Filter/MedianFilter.c:86:13
+	cmp.w	r0, r1, asr #1
+	ble	.LBB1_46
+	b	.LBB1_45
+.LBB1_45:
+.Ltmp54:
+	.loc	2 87 30 is_stmt 1       @ lib/Filter/MedianFilter.c:87:30
+	ldr	r0, [sp, #8]
+	.loc	2 87 13 is_stmt 0       @ lib/Filter/MedianFilter.c:87:13
+	ldr	r1, [sp, #28]
+	.loc	2 87 28                 @ lib/Filter/MedianFilter.c:87:28
+	str	r0, [r1, #16]
+	.loc	2 88 9 is_stmt 1        @ lib/Filter/MedianFilter.c:88:9
+	b	.LBB1_46
+.Ltmp55:
+.LBB1_46:
+	.loc	2 89 5                  @ lib/Filter/MedianFilter.c:89:5
+	b	.LBB1_47
+.Ltmp56:
+.LBB1_47:
+	.loc	2 0 5 is_stmt 0         @ lib/Filter/MedianFilter.c:0:5
+	b	.LBB1_48
+.LBB1_48:
+	.loc	2 91 23 is_stmt 1       @ lib/Filter/MedianFilter.c:91:23
+	ldr	r0, [sp, #28]
+	.loc	2 91 31 is_stmt 0       @ lib/Filter/MedianFilter.c:91:31
+	ldrh	r1, [r0, #12]
+	.loc	2 91 38                 @ lib/Filter/MedianFilter.c:91:38
+	adds	r1, #1
+	.loc	2 91 53                 @ lib/Filter/MedianFilter.c:91:53
+	ldrh	r2, [r0, #14]
+	.loc	2 91 43                 @ lib/Filter/MedianFilter.c:91:43
+	udiv	r3, r1, r2
+	mls	r1, r3, r2, r1
+	.loc	2 91 20                 @ lib/Filter/MedianFilter.c:91:20
+	strh	r1, [r0, #12]
+	.loc	2 92 1 is_stmt 1        @ lib/Filter/MedianFilter.c:92:1
+	add	sp, #32
+	bx	lr
+.Ltmp57:
+.Lfunc_end1:
+	.size	MedianFilterAddSample, .Lfunc_end1-MedianFilterAddSample
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.MedianFilterGetSample,"ax",%progbits
+	.hidden	MedianFilterGetSample   @ -- Begin function MedianFilterGetSample
+	.globl	MedianFilterGetSample
+	.p2align	2
+	.type	MedianFilterGetSample,%function
+	.code	16                      @ @MedianFilterGetSample
+	.thumb_func
+MedianFilterGetSample:
+.Lfunc_begin2:
+	.loc	2 94 0                  @ lib/Filter/MedianFilter.c:94:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#4
+	sub	sp, #4
+	.cfi_def_cfa_offset 4
+	str	r0, [sp]
+.Ltmp58:
+	.loc	2 95 12 prologue_end    @ lib/Filter/MedianFilter.c:95:12
+	ldr	r0, [sp]
+	.loc	2 95 20 is_stmt 0       @ lib/Filter/MedianFilter.c:95:20
+	vldr	s0, [r0, #16]
+	.loc	2 95 5                  @ lib/Filter/MedianFilter.c:95:5
+	add	sp, #4
+	bx	lr
+.Ltmp59:
+.Lfunc_end2:
+	.size	MedianFilterGetSample, .Lfunc_end2-MedianFilterGetSample
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.MedianFilterClear,"ax",%progbits
+	.hidden	MedianFilterClear       @ -- Begin function MedianFilterClear
+	.globl	MedianFilterClear
+	.p2align	2
+	.type	MedianFilterClear,%function
+	.code	16                      @ @MedianFilterClear
+	.thumb_func
+MedianFilterClear:
+.Lfunc_begin3:
+	.loc	2 98 0 is_stmt 1        @ lib/Filter/MedianFilter.c:98:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #12]
+.Ltmp60:
+	.loc	2 100 5 prologue_end    @ lib/Filter/MedianFilter.c:100:5
+	ldr	r0, [sp, #12]
+	cmp	r0, #0
+	beq	.LBB3_2
+	b	.LBB3_1
+.LBB3_1:
+	b	.LBB3_3
+.LBB3_2:
+	movw	r0, :lower16:.L.str.4
+	movt	r0, :upper16:.L.str.4
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #100
+	bl	__aeabi_assert
+.LBB3_3:
+	ldr	r0, [sp, #12]
+	.loc	2 101 5                 @ lib/Filter/MedianFilter.c:101:5
+	ldrb	r0, [r0]
+	cmp	r0, #0
+	bne	.LBB3_5
+	b	.LBB3_4
+.LBB3_4:
+	b	.LBB3_6
+.LBB3_5:
+	movw	r0, :lower16:.L.str.5
+	movt	r0, :upper16:.L.str.5
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #101
+	bl	__aeabi_assert
+.LBB3_6:
+	ldr	r0, [sp, #12]
+	.loc	2 102 5                 @ lib/Filter/MedianFilter.c:102:5
+	ldr	r0, [r0, #4]
+	cmp	r0, #0
+	beq	.LBB3_8
+	b	.LBB3_7
+.LBB3_7:
+	b	.LBB3_9
+.LBB3_8:
+	movw	r0, :lower16:.L.str.6
+	movt	r0, :upper16:.L.str.6
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #102
+	bl	__aeabi_assert
+.LBB3_9:
+	ldr	r0, [sp, #12]
+	.loc	2 103 5                 @ lib/Filter/MedianFilter.c:103:5
+	ldrh	r0, [r0, #14]
+	lsls	r0, r0, #31
+	cmp	r0, #0
+	beq	.LBB3_12
+	b	.LBB3_10
+.LBB3_10:
+	ldr	r0, [sp, #12]
+	ldrh	r1, [r0, #14]
+	ldrh	r0, [r0, #8]
+	cmp	r1, r0
+	bgt	.LBB3_12
+	b	.LBB3_11
+.LBB3_11:
+	b	.LBB3_13
+.LBB3_12:
+	movw	r0, :lower16:.L.str.8
+	movt	r0, :upper16:.L.str.8
+	movw	r1, :lower16:.L.str.1
+	movt	r1, :upper16:.L.str.1
+	movs	r2, #103
+	bl	__aeabi_assert
+.LBB3_13:
+	ldr	r0, [sp, #12]
+	ldrh	r0, [r0, #14]
+	movs	r1, #0
+	lsls	r0, r0, #31
+	cmp	r0, #0
+	str	r1, [sp, #4]            @ 4-byte Spill
+	beq	.LBB3_15
+	b	.LBB3_14
+.LBB3_14:
+	ldr	r0, [sp, #12]
+	ldrh	r1, [r0, #14]
+	ldrh	r0, [r0, #8]
+	movs	r2, #0
+	cmp	r1, r0
+	it	le
+	movle	r2, #1
+	str	r2, [sp, #4]            @ 4-byte Spill
+	b	.LBB3_15
+.LBB3_15:
+	.loc	2 0 0 is_stmt 0         @ lib/Filter/MedianFilter.c:0:0
+	ldr	r0, [sp, #4]            @ 4-byte Reload
+	.loc	2 105 5 is_stmt 1       @ lib/Filter/MedianFilter.c:105:5
+	ldr	r1, [sp, #12]
+	movs	r2, #0
+	.loc	2 105 20 is_stmt 0      @ lib/Filter/MedianFilter.c:105:20
+	strh	r2, [r1, #12]
+	.loc	2 106 5 is_stmt 1       @ lib/Filter/MedianFilter.c:106:5
+	ldr	r1, [sp, #12]
+	.loc	2 106 20 is_stmt 0      @ lib/Filter/MedianFilter.c:106:20
+	str	r2, [r1, #16]
+.Ltmp61:
+	.loc	2 108 12 is_stmt 1      @ lib/Filter/MedianFilter.c:108:12
+	strh.w	r2, [sp, #10]
+	.loc	2 108 10 is_stmt 0      @ lib/Filter/MedianFilter.c:108:10
+	b	.LBB3_16
+.LBB3_16:                               @ =>This Inner Loop Header: Depth=1
+.Ltmp62:
+	.loc	2 108 17                @ lib/Filter/MedianFilter.c:108:17
+	ldrh.w	r0, [sp, #10]
+	.loc	2 108 21                @ lib/Filter/MedianFilter.c:108:21
+	ldr	r1, [sp, #12]
+	.loc	2 108 29                @ lib/Filter/MedianFilter.c:108:29
+	ldrh	r1, [r1, #14]
+.Ltmp63:
+	.loc	2 108 5                 @ lib/Filter/MedianFilter.c:108:5
+	cmp	r0, r1
+	bge	.LBB3_19
+	b	.LBB3_17
+.LBB3_17:                               @   in Loop: Header=BB3_16 Depth=1
+.Ltmp64:
+	.loc	2 109 9 is_stmt 1       @ lib/Filter/MedianFilter.c:109:9
+	ldr	r0, [sp, #12]
+	.loc	2 109 24 is_stmt 0      @ lib/Filter/MedianFilter.c:109:24
+	ldr	r0, [r0, #4]
+	.loc	2 109 31                @ lib/Filter/MedianFilter.c:109:31
+	ldrh.w	r1, [sp, #10]
+	movs	r2, #0
+	.loc	2 109 34                @ lib/Filter/MedianFilter.c:109:34
+	str.w	r2, [r0, r1, lsl #2]
+	.loc	2 110 5 is_stmt 1       @ lib/Filter/MedianFilter.c:110:5
+	b	.LBB3_18
+.Ltmp65:
+.LBB3_18:                               @   in Loop: Header=BB3_16 Depth=1
+	.loc	2 108 46                @ lib/Filter/MedianFilter.c:108:46
+	ldrh.w	r0, [sp, #10]
+	adds	r0, #1
+	strh.w	r0, [sp, #10]
+	.loc	2 108 5 is_stmt 0       @ lib/Filter/MedianFilter.c:108:5
+	b	.LBB3_16
+.Ltmp66:
+.LBB3_19:
+	.loc	2 111 1 is_stmt 1       @ lib/Filter/MedianFilter.c:111:1
+	add	sp, #16
+	bx	lr
+.Ltmp67:
+.Lfunc_end3:
+	.size	MedianFilterClear, .Lfunc_end3-MedianFilterClear
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.type	.L.str,%object          @ @.str
+	.section	.rodata.str1.1,"aMS",%progbits,1
+.L.str:
+	.asciz	"config.type == FILTER_MEDIAN"
+	.size	.L.str, 29
+
+	.type	.L.str.1,%object        @ @.str.1
+.L.str.1:
+	.asciz	"lib/Filter/MedianFilter.c"
+	.size	.L.str.1, 26
+
+	.type	.L.str.2,%object        @ @.str.2
+.L.str.2:
+	.asciz	"config.buffer != NULL"
+	.size	.L.str.2, 22
+
+	.type	.L.str.3,%object        @ @.str.3
+.L.str.3:
+	.asciz	"config.bufferSize > 1"
+	.size	.L.str.3, 22
+
+	.type	.L.str.4,%object        @ @.str.4
+.L.str.4:
+	.asciz	"filter != NULL"
+	.size	.L.str.4, 15
+
+	.type	.L.str.5,%object        @ @.str.5
+.L.str.5:
+	.asciz	"filter->filter.type == FILTER_MEDIAN"
+	.size	.L.str.5, 37
+
+	.type	.L.str.6,%object        @ @.str.6
+.L.str.6:
+	.asciz	"filter->filter.buffer != NULL"
+	.size	.L.str.6, 30
+
+	.type	.L.str.7,%object        @ @.str.7
+.L.str.7:
+	.asciz	"filter->filter.bufferSize > 0"
+	.size	.L.str.7, 30
+
+	.type	.L.str.8,%object        @ @.str.8
+.L.str.8:
+	.asciz	"filter->maxSampleWindow % 2 && filter->maxSampleWindow <= filter->filter.bufferSize"
+	.size	.L.str.8, 84
+
+	.type	.L.str.9,%object        @ @.str.9
+.L.str.9:
+	.asciz	"filter->curIdx < filter->filter.bufferSize"
+	.size	.L.str.9, 43
+
+	.file	3 "C:\\" "Keil_v5\\ARM\\ARMCLANG\\Bin\\..\\include\\stdint.h"
+	.file	4 "C:\\Users\\kcao3\\OneDrive\\Documents\\445L\\EE445L-SP22-Lab-4\\SW" ".\\./lib/Filter/MedianFilter.h"
+	.section	.debug_str,"MS",%progbits,1
+.Linfo_string0:
+	.asciz	"Component: ARM Compiler 6.13.1 Tool: armclang [5d895d00]" @ string offset=0
+.Linfo_string1:
+	.asciz	"lib/Filter\\MedianFilter.c" @ string offset=57
+.Linfo_string2:
+	.asciz	"C:\\Users\\kcao3\\OneDrive\\Documents\\445L\\EE445L-SP22-Lab-4\\SW" @ string offset=83
+.Linfo_string3:
+	.asciz	"unsigned char"         @ string offset=143
+.Linfo_string4:
+	.asciz	"FILTER_MEDIAN"         @ string offset=157
+.Linfo_string5:
+	.asciz	"FILTER_EMA"            @ string offset=171
+.Linfo_string6:
+	.asciz	"FILTER_SMA"            @ string offset=182
+.Linfo_string7:
+	.asciz	"FILTER_KALMAN"         @ string offset=193
+.Linfo_string8:
+	.asciz	"NUM_FILTERS"           @ string offset=207
+.Linfo_string9:
+	.asciz	"FilterType"            @ string offset=219
+.Linfo_string10:
+	.asciz	"MedianFilterInit"      @ string offset=230
+.Linfo_string11:
+	.asciz	"filter"                @ string offset=247
+.Linfo_string12:
+	.asciz	"type"                  @ string offset=254
+.Linfo_string13:
+	.asciz	"buffer"                @ string offset=259
+.Linfo_string14:
+	.asciz	"float"                 @ string offset=266
+.Linfo_string15:
+	.asciz	"bufferSize"            @ string offset=272
+.Linfo_string16:
+	.asciz	"unsigned short"        @ string offset=283
+.Linfo_string17:
+	.asciz	"uint16_t"              @ string offset=298
+.Linfo_string18:
+	.asciz	"Filter"                @ string offset=307
+.Linfo_string19:
+	.asciz	"Filter_t"              @ string offset=314
+.Linfo_string20:
+	.asciz	"curIdx"                @ string offset=323
+.Linfo_string21:
+	.asciz	"maxSampleWindow"       @ string offset=330
+.Linfo_string22:
+	.asciz	"median"                @ string offset=346
+.Linfo_string23:
+	.asciz	"MedianFilter"          @ string offset=353
+.Linfo_string24:
+	.asciz	"MedianFilter_t"        @ string offset=366
+.Linfo_string25:
+	.asciz	"MedianFilterAddSample" @ string offset=381
+.Linfo_string26:
+	.asciz	"MedianFilterGetSample" @ string offset=403
+.Linfo_string27:
+	.asciz	"MedianFilterClear"     @ string offset=425
+.Linfo_string28:
+	.asciz	"config"                @ string offset=443
+.Linfo_string29:
+	.asciz	"FilterConfig"          @ string offset=450
+.Linfo_string30:
+	.asciz	"FilterConfig_t"        @ string offset=463
+.Linfo_string31:
+	.asciz	"medianFilter"          @ string offset=478
+.Linfo_string32:
+	.asciz	"sample"                @ string offset=491
+.Linfo_string33:
+	.asciz	"removeValue"           @ string offset=498
+.Linfo_string34:
+	.asciz	"lowestAboveMedian"     @ string offset=510
+.Linfo_string35:
+	.asciz	"numAboveMedian"        @ string offset=528
+.Linfo_string36:
+	.asciz	"i"                     @ string offset=543
+.Linfo_string37:
+	.asciz	"highestBelowMedian"    @ string offset=545
+.Linfo_string38:
+	.asciz	"numBelowMedian"        @ string offset=564
+	.section	.debug_loc,"",%progbits
+.Ldebug_loc0:
+	.long	.Ltmp0
+	.long	.Ltmp2
+	.short	2                       @ Loc expr size
+	.byte	112                     @ DW_OP_breg0
+	.byte	0                       @ 0
+	.long	.Ltmp2
+	.long	.Ltmp15
+	.short	3                       @ Loc expr size
+	.byte	125                     @ DW_OP_breg13
+	.byte	12                      @ 12
+	.byte	6                       @ DW_OP_deref
+	.long	0
+	.long	0
+	.section	.debug_abbrev,"",%progbits
+	.byte	1                       @ Abbreviation Code
+	.byte	17                      @ DW_TAG_compile_unit
+	.byte	1                       @ DW_CHILDREN_yes
+	.byte	37                      @ DW_AT_producer
+	.byte	14                      @ DW_FORM_strp
+	.byte	19                      @ DW_AT_language
+	.byte	5                       @ DW_FORM_data2
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	16                      @ DW_AT_stmt_list
+	.byte	6                       @ DW_FORM_data4
+	.byte	27                      @ DW_AT_comp_dir
+	.byte	14                      @ DW_FORM_strp
+	.byte	17                      @ DW_AT_low_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	85                      @ DW_AT_ranges
+	.byte	6                       @ DW_FORM_data4
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	2                       @ Abbreviation Code
+	.byte	4                       @ DW_TAG_enumeration_type
+	.byte	1                       @ DW_CHILDREN_yes
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	11                      @ DW_AT_byte_size
+	.byte	11                      @ DW_FORM_data1
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	3                       @ Abbreviation Code
+	.byte	40                      @ DW_TAG_enumerator
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	28                      @ DW_AT_const_value
+	.byte	15                      @ DW_FORM_udata
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	4                       @ Abbreviation Code
+	.byte	36                      @ DW_TAG_base_type
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	62                      @ DW_AT_encoding
+	.byte	11                      @ DW_FORM_data1
+	.byte	11                      @ DW_AT_byte_size
+	.byte	11                      @ DW_FORM_data1
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	5                       @ Abbreviation Code
+	.byte	46                      @ DW_TAG_subprogram
+	.byte	1                       @ DW_CHILDREN_yes
+	.byte	17                      @ DW_AT_low_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	18                      @ DW_AT_high_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	64                      @ DW_AT_frame_base
+	.byte	10                      @ DW_FORM_block1
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	39                      @ DW_AT_prototyped
+	.byte	12                      @ DW_FORM_flag
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	63                      @ DW_AT_external
+	.byte	12                      @ DW_FORM_flag
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	6                       @ Abbreviation Code
+	.byte	5                       @ DW_TAG_formal_parameter
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	2                       @ DW_AT_location
+	.byte	10                      @ DW_FORM_block1
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	7                       @ Abbreviation Code
+	.byte	52                      @ DW_TAG_variable
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	2                       @ DW_AT_location
+	.byte	10                      @ DW_FORM_block1
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	8                       @ Abbreviation Code
+	.byte	52                      @ DW_TAG_variable
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	2                       @ DW_AT_location
+	.byte	6                       @ DW_FORM_data4
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	9                       @ Abbreviation Code
+	.byte	46                      @ DW_TAG_subprogram
+	.byte	1                       @ DW_CHILDREN_yes
+	.byte	17                      @ DW_AT_low_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	18                      @ DW_AT_high_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	64                      @ DW_AT_frame_base
+	.byte	10                      @ DW_FORM_block1
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	39                      @ DW_AT_prototyped
+	.byte	12                      @ DW_FORM_flag
+	.byte	63                      @ DW_AT_external
+	.byte	12                      @ DW_FORM_flag
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	10                      @ Abbreviation Code
+	.byte	11                      @ DW_TAG_lexical_block
+	.byte	1                       @ DW_CHILDREN_yes
+	.byte	17                      @ DW_AT_low_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	18                      @ DW_AT_high_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	11                      @ Abbreviation Code
+	.byte	22                      @ DW_TAG_typedef
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	12                      @ Abbreviation Code
+	.byte	19                      @ DW_TAG_structure_type
+	.byte	1                       @ DW_CHILDREN_yes
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	11                      @ DW_AT_byte_size
+	.byte	11                      @ DW_FORM_data1
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	13                      @ Abbreviation Code
+	.byte	13                      @ DW_TAG_member
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	56                      @ DW_AT_data_member_location
+	.byte	11                      @ DW_FORM_data1
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	14                      @ Abbreviation Code
+	.byte	15                      @ DW_TAG_pointer_type
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	15                      @ Abbreviation Code
+	.byte	38                      @ DW_TAG_const_type
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	0                       @ EOM(3)
+	.section	.debug_info,"",%progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 @ Length of Unit
+.Ldebug_info_start0:
+	.short	3                       @ DWARF version number
+	.long	.debug_abbrev           @ Offset Into Abbrev. Section
+	.byte	4                       @ Address Size (in bytes)
+	.byte	1                       @ Abbrev [1] 0xb:0x26e DW_TAG_compile_unit
+	.long	.Linfo_string0          @ DW_AT_producer
+	.short	12                      @ DW_AT_language
+	.long	.Linfo_string1          @ DW_AT_name
+	.long	.Lline_table_start0     @ DW_AT_stmt_list
+	.long	.Linfo_string2          @ DW_AT_comp_dir
+	.long	0                       @ DW_AT_low_pc
+	.long	.Ldebug_ranges0         @ DW_AT_ranges
+	.byte	2                       @ Abbrev [2] 0x26:0x2b DW_TAG_enumeration_type
+	.long	81                      @ DW_AT_type
+	.long	.Linfo_string9          @ DW_AT_name
+	.byte	1                       @ DW_AT_byte_size
+	.byte	1                       @ DW_AT_decl_file
+	.byte	19                      @ DW_AT_decl_line
+	.byte	3                       @ Abbrev [3] 0x32:0x6 DW_TAG_enumerator
+	.long	.Linfo_string4          @ DW_AT_name
+	.byte	0                       @ DW_AT_const_value
+	.byte	3                       @ Abbrev [3] 0x38:0x6 DW_TAG_enumerator
+	.long	.Linfo_string5          @ DW_AT_name
+	.byte	1                       @ DW_AT_const_value
+	.byte	3                       @ Abbrev [3] 0x3e:0x6 DW_TAG_enumerator
+	.long	.Linfo_string6          @ DW_AT_name
+	.byte	2                       @ DW_AT_const_value
+	.byte	3                       @ Abbrev [3] 0x44:0x6 DW_TAG_enumerator
+	.long	.Linfo_string7          @ DW_AT_name
+	.byte	3                       @ DW_AT_const_value
+	.byte	3                       @ Abbrev [3] 0x4a:0x6 DW_TAG_enumerator
+	.long	.Linfo_string8          @ DW_AT_name
+	.byte	4                       @ DW_AT_const_value
+	.byte	0                       @ End Of Children Mark
+	.byte	4                       @ Abbrev [4] 0x51:0x7 DW_TAG_base_type
+	.long	.Linfo_string3          @ DW_AT_name
+	.byte	8                       @ DW_AT_encoding
+	.byte	1                       @ DW_AT_byte_size
+	.byte	5                       @ Abbrev [5] 0x58:0x43 DW_TAG_subprogram
+	.long	.Lfunc_begin0           @ DW_AT_low_pc
+	.long	.Lfunc_end0             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string10         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	20                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_prototyped
+	.long	407                     @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	6                       @ Abbrev [6] 0x6f:0xe DW_TAG_formal_parameter
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	28
+	.long	.Linfo_string28         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	20                      @ DW_AT_decl_line
+	.long	561                     @ DW_AT_type
+	.byte	7                       @ Abbrev [7] 0x7d:0xe DW_TAG_variable
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	16
+	.long	.Linfo_string11         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	26                      @ DW_AT_decl_line
+	.long	475                     @ DW_AT_type
+	.byte	8                       @ Abbrev [8] 0x8b:0xf DW_TAG_variable
+	.long	.Ldebug_loc0            @ DW_AT_location
+	.long	.Linfo_string31         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	32                      @ DW_AT_decl_line
+	.long	407                     @ DW_AT_type
+	.byte	0                       @ End Of Children Mark
+	.byte	9                       @ Abbrev [9] 0x9b:0xa6 DW_TAG_subprogram
+	.long	.Lfunc_begin1           @ DW_AT_low_pc
+	.long	.Lfunc_end1             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string25         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	42                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_prototyped
+	.byte	1                       @ DW_AT_external
+	.byte	6                       @ Abbrev [6] 0xae:0xe DW_TAG_formal_parameter
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	28
+	.long	.Linfo_string11         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	42                      @ DW_AT_decl_line
+	.long	622                     @ DW_AT_type
+	.byte	6                       @ Abbrev [6] 0xbc:0xe DW_TAG_formal_parameter
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	24
+	.long	.Linfo_string32         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	42                      @ DW_AT_decl_line
+	.long	627                     @ DW_AT_type
+	.byte	7                       @ Abbrev [7] 0xca:0xe DW_TAG_variable
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	20
+	.long	.Linfo_string33         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	52                      @ DW_AT_decl_line
+	.long	536                     @ DW_AT_type
+	.byte	10                      @ Abbrev [10] 0xd8:0x34 DW_TAG_lexical_block
+	.long	.Ltmp20                 @ DW_AT_low_pc
+	.long	.Ltmp37                 @ DW_AT_high_pc
+	.byte	7                       @ Abbrev [7] 0xe1:0xe DW_TAG_variable
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	16
+	.long	.Linfo_string34         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	59                      @ DW_AT_decl_line
+	.long	536                     @ DW_AT_type
+	.byte	7                       @ Abbrev [7] 0xef:0xe DW_TAG_variable
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	14
+	.long	.Linfo_string35         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	60                      @ DW_AT_decl_line
+	.long	543                     @ DW_AT_type
+	.byte	7                       @ Abbrev [7] 0xfd:0xe DW_TAG_variable
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string36         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	62                      @ DW_AT_decl_line
+	.long	543                     @ DW_AT_type
+	.byte	0                       @ End Of Children Mark
+	.byte	10                      @ Abbrev [10] 0x10c:0x34 DW_TAG_lexical_block
+	.long	.Ltmp39                 @ DW_AT_low_pc
+	.long	.Ltmp56                 @ DW_AT_high_pc
+	.byte	7                       @ Abbrev [7] 0x115:0xe DW_TAG_variable
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string37         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	75                      @ DW_AT_decl_line
+	.long	536                     @ DW_AT_type
+	.byte	7                       @ Abbrev [7] 0x123:0xe DW_TAG_variable
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	6
+	.long	.Linfo_string38         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	76                      @ DW_AT_decl_line
+	.long	543                     @ DW_AT_type
+	.byte	7                       @ Abbrev [7] 0x131:0xe DW_TAG_variable
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string36         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	77                      @ DW_AT_decl_line
+	.long	543                     @ DW_AT_type
+	.byte	0                       @ End Of Children Mark
+	.byte	0                       @ End Of Children Mark
+	.byte	5                       @ Abbrev [5] 0x141:0x26 DW_TAG_subprogram
+	.long	.Lfunc_begin2           @ DW_AT_low_pc
+	.long	.Lfunc_end2             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string26         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	94                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_prototyped
+	.long	536                     @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	6                       @ Abbrev [6] 0x158:0xe DW_TAG_formal_parameter
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string11         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	94                      @ DW_AT_decl_line
+	.long	622                     @ DW_AT_type
+	.byte	0                       @ End Of Children Mark
+	.byte	9                       @ Abbrev [9] 0x167:0x30 DW_TAG_subprogram
+	.long	.Lfunc_begin3           @ DW_AT_low_pc
+	.long	.Lfunc_end3             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string27         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	98                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_prototyped
+	.byte	1                       @ DW_AT_external
+	.byte	6                       @ Abbrev [6] 0x17a:0xe DW_TAG_formal_parameter
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string11         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	98                      @ DW_AT_decl_line
+	.long	622                     @ DW_AT_type
+	.byte	7                       @ Abbrev [7] 0x188:0xe DW_TAG_variable
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	10
+	.long	.Linfo_string36         @ DW_AT_name
+	.byte	2                       @ DW_AT_decl_file
+	.byte	107                     @ DW_AT_decl_line
+	.long	543                     @ DW_AT_type
+	.byte	0                       @ End Of Children Mark
+	.byte	11                      @ Abbrev [11] 0x197:0xb DW_TAG_typedef
+	.long	418                     @ DW_AT_type
+	.long	.Linfo_string24         @ DW_AT_name
+	.byte	4                       @ DW_AT_decl_file
+	.byte	40                      @ DW_AT_decl_line
+	.byte	12                      @ Abbrev [12] 0x1a2:0x39 DW_TAG_structure_type
+	.long	.Linfo_string23         @ DW_AT_name
+	.byte	20                      @ DW_AT_byte_size
+	.byte	4                       @ DW_AT_decl_file
+	.byte	23                      @ DW_AT_decl_line
+	.byte	13                      @ Abbrev [13] 0x1aa:0xc DW_TAG_member
+	.long	.Linfo_string11         @ DW_AT_name
+	.long	475                     @ DW_AT_type
+	.byte	4                       @ DW_AT_decl_file
+	.byte	29                      @ DW_AT_decl_line
+	.byte	0                       @ DW_AT_data_member_location
+	.byte	13                      @ Abbrev [13] 0x1b6:0xc DW_TAG_member
+	.long	.Linfo_string20         @ DW_AT_name
+	.long	543                     @ DW_AT_type
+	.byte	4                       @ DW_AT_decl_file
+	.byte	32                      @ DW_AT_decl_line
+	.byte	12                      @ DW_AT_data_member_location
+	.byte	13                      @ Abbrev [13] 0x1c2:0xc DW_TAG_member
+	.long	.Linfo_string21         @ DW_AT_name
+	.long	543                     @ DW_AT_type
+	.byte	4                       @ DW_AT_decl_file
+	.byte	36                      @ DW_AT_decl_line
+	.byte	14                      @ DW_AT_data_member_location
+	.byte	13                      @ Abbrev [13] 0x1ce:0xc DW_TAG_member
+	.long	.Linfo_string22         @ DW_AT_name
+	.long	536                     @ DW_AT_type
+	.byte	4                       @ DW_AT_decl_file
+	.byte	39                      @ DW_AT_decl_line
+	.byte	16                      @ DW_AT_data_member_location
+	.byte	0                       @ End Of Children Mark
+	.byte	11                      @ Abbrev [11] 0x1db:0xb DW_TAG_typedef
+	.long	486                     @ DW_AT_type
+	.long	.Linfo_string19         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	61                      @ DW_AT_decl_line
+	.byte	12                      @ Abbrev [12] 0x1e6:0x2d DW_TAG_structure_type
+	.long	.Linfo_string18         @ DW_AT_name
+	.byte	12                      @ DW_AT_byte_size
+	.byte	1                       @ DW_AT_decl_file
+	.byte	49                      @ DW_AT_decl_line
+	.byte	13                      @ Abbrev [13] 0x1ee:0xc DW_TAG_member
+	.long	.Linfo_string12         @ DW_AT_name
+	.long	38                      @ DW_AT_type
+	.byte	1                       @ DW_AT_decl_file
+	.byte	51                      @ DW_AT_decl_line
+	.byte	0                       @ DW_AT_data_member_location
+	.byte	13                      @ Abbrev [13] 0x1fa:0xc DW_TAG_member
+	.long	.Linfo_string13         @ DW_AT_name
+	.long	531                     @ DW_AT_type
+	.byte	1                       @ DW_AT_decl_file
+	.byte	57                      @ DW_AT_decl_line
+	.byte	4                       @ DW_AT_data_member_location
+	.byte	13                      @ Abbrev [13] 0x206:0xc DW_TAG_member
+	.long	.Linfo_string15         @ DW_AT_name
+	.long	543                     @ DW_AT_type
+	.byte	1                       @ DW_AT_decl_file
+	.byte	60                      @ DW_AT_decl_line
+	.byte	8                       @ DW_AT_data_member_location
+	.byte	0                       @ End Of Children Mark
+	.byte	14                      @ Abbrev [14] 0x213:0x5 DW_TAG_pointer_type
+	.long	536                     @ DW_AT_type
+	.byte	4                       @ Abbrev [4] 0x218:0x7 DW_TAG_base_type
+	.long	.Linfo_string14         @ DW_AT_name
+	.byte	4                       @ DW_AT_encoding
+	.byte	4                       @ DW_AT_byte_size
+	.byte	11                      @ Abbrev [11] 0x21f:0xb DW_TAG_typedef
+	.long	554                     @ DW_AT_type
+	.long	.Linfo_string17         @ DW_AT_name
+	.byte	3                       @ DW_AT_decl_file
+	.byte	63                      @ DW_AT_decl_line
+	.byte	4                       @ Abbrev [4] 0x22a:0x7 DW_TAG_base_type
+	.long	.Linfo_string16         @ DW_AT_name
+	.byte	7                       @ DW_AT_encoding
+	.byte	2                       @ DW_AT_byte_size
+	.byte	15                      @ Abbrev [15] 0x231:0x5 DW_TAG_const_type
+	.long	566                     @ DW_AT_type
+	.byte	11                      @ Abbrev [11] 0x236:0xb DW_TAG_typedef
+	.long	577                     @ DW_AT_type
+	.long	.Linfo_string30         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	43                      @ DW_AT_decl_line
+	.byte	12                      @ Abbrev [12] 0x241:0x2d DW_TAG_structure_type
+	.long	.Linfo_string29         @ DW_AT_name
+	.byte	12                      @ DW_AT_byte_size
+	.byte	1                       @ DW_AT_decl_file
+	.byte	31                      @ DW_AT_decl_line
+	.byte	13                      @ Abbrev [13] 0x249:0xc DW_TAG_member
+	.long	.Linfo_string12         @ DW_AT_name
+	.long	38                      @ DW_AT_type
+	.byte	1                       @ DW_AT_decl_file
+	.byte	33                      @ DW_AT_decl_line
+	.byte	0                       @ DW_AT_data_member_location
+	.byte	13                      @ Abbrev [13] 0x255:0xc DW_TAG_member
+	.long	.Linfo_string13         @ DW_AT_name
+	.long	531                     @ DW_AT_type
+	.byte	1                       @ DW_AT_decl_file
+	.byte	39                      @ DW_AT_decl_line
+	.byte	4                       @ DW_AT_data_member_location
+	.byte	13                      @ Abbrev [13] 0x261:0xc DW_TAG_member
+	.long	.Linfo_string15         @ DW_AT_name
+	.long	543                     @ DW_AT_type
+	.byte	1                       @ DW_AT_decl_file
+	.byte	42                      @ DW_AT_decl_line
+	.byte	8                       @ DW_AT_data_member_location
+	.byte	0                       @ End Of Children Mark
+	.byte	14                      @ Abbrev [14] 0x26e:0x5 DW_TAG_pointer_type
+	.long	407                     @ DW_AT_type
+	.byte	15                      @ Abbrev [15] 0x273:0x5 DW_TAG_const_type
+	.long	536                     @ DW_AT_type
+	.byte	0                       @ End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_ranges,"",%progbits
+.Ldebug_ranges0:
+	.long	.Lfunc_begin0
+	.long	.Lfunc_end0
+	.long	.Lfunc_begin1
+	.long	.Lfunc_end1
+	.long	.Lfunc_begin2
+	.long	.Lfunc_end2
+	.long	.Lfunc_begin3
+	.long	.Lfunc_end3
+	.long	0
+	.long	0
+	.section	.debug_macinfo,"",%progbits
+	.byte	0                       @ End Of Macro List Mark
+
+	.ident	"Component: ARM Compiler 6.13.1 Tool: armclang [5d895d00]"
+	.section	".note.GNU-stack","",%progbits
+	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals
+	.ARM_attribute	16, 1	@ Tag_AV_eba
+	.section	.debug_line,"",%progbits
+.Lline_table_start0:

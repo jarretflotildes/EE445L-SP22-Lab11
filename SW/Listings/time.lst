@@ -1,0 +1,1253 @@
+	.text
+	.syntax unified
+	.eabi_attribute	67, "2.09"	@ Tag_conformance
+	.cpu	cortex-m4
+	.eabi_attribute	6, 13	@ Tag_CPU_arch
+	.eabi_attribute	7, 77	@ Tag_CPU_arch_profile
+	.eabi_attribute	8, 0	@ Tag_ARM_ISA_use
+	.eabi_attribute	9, 2	@ Tag_THUMB_ISA_use
+	.fpu	fpv4-sp-d16
+	.eabi_attribute	27, 1	@ Tag_ABI_HardFP_use
+	.eabi_attribute	36, 1	@ Tag_FP_HP_extension
+	.eabi_attribute	34, 1	@ Tag_CPU_unaligned_access
+	.eabi_attribute	17, 1	@ Tag_ABI_PCS_GOT_use
+	.eabi_attribute	20, 2	@ Tag_ABI_FP_denormal
+	.eabi_attribute	21, 0	@ Tag_ABI_FP_exceptions
+	.eabi_attribute	23, 1	@ Tag_ABI_FP_number_model
+	.eabi_attribute	24, 1	@ Tag_ABI_align_needed
+	.eabi_attribute	25, 1	@ Tag_ABI_align_preserved
+	.eabi_attribute	28, 1	@ Tag_ABI_VFP_args
+	.eabi_attribute	38, 1	@ Tag_ABI_FP_16bit_format
+	.eabi_attribute	18, 2	@ Tag_ABI_PCS_wchar_t
+	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
+	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
+	.file	"Time.c"
+	.file	1 "C:\\Users\\kcao3\\OneDrive\\Documents\\445L\\EE445L-SP22-Lab-4\\SW" "Time.c"
+	.section	.text.TimerInit,"ax",%progbits
+	.hidden	TimerInit               @ -- Begin function TimerInit
+	.globl	TimerInit
+	.p2align	2
+	.type	TimerInit,%function
+	.code	16                      @ @TimerInit
+	.thumb_func
+TimerInit:
+.Lfunc_begin0:
+	.loc	1 18 0                  @ Time.c:18:0
+	.fnstart
+	.cfi_sections .debug_frame
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+.Ltmp0:
+	.loc	1 19 7 prologue_end     @ Time.c:19:7
+	movw	r0, :lower16:time
+	movt	r0, :upper16:time
+	mov.w	r1, #1200
+	str	r1, [r0]
+	.loc	1 20 7                  @ Time.c:20:7
+	movw	r0, :lower16:HOUR
+	movt	r0, :upper16:HOUR
+	movs	r1, #12
+	str	r1, [r0]
+	.loc	1 21 10                 @ Time.c:21:10
+	movw	r0, :lower16:MINUTES
+	movt	r0, :upper16:MINUTES
+	movs	r1, #0
+	str	r1, [r0]
+	.loc	1 22 8                  @ Time.c:22:8
+	movw	r0, :lower16:count
+	movt	r0, :upper16:count
+	str	r1, [r0]
+	.loc	1 23 12                 @ Time.c:23:12
+	movw	r0, :lower16:alarmTime
+	movt	r0, :upper16:alarmTime
+	mov.w	r2, #-1
+	str	r2, [r0]
+	.loc	1 24 13                 @ Time.c:24:13
+	movw	r0, :lower16:enableFlag
+	movt	r0, :upper16:enableFlag
+	str	r1, [r0]
+	.loc	1 25 13                 @ Time.c:25:13
+	movw	r0, :lower16:updateFlag
+	movt	r0, :upper16:updateFlag
+	str	r1, [r0]
+	.loc	1 26 12                 @ Time.c:26:12
+	movw	r0, :lower16:alarmFlag
+	movt	r0, :upper16:alarmFlag
+	str	r1, [r0]
+	.loc	1 27 2                  @ Time.c:27:2
+	movw	r0, :lower16:incrementTime
+	movt	r0, :upper16:incrementTime
+	movw	r2, #46080
+	movt	r2, #1220
+	str	r1, [sp, #4]            @ 4-byte Spill
+	mov	r1, r2
+	ldr	r2, [sp, #4]            @ 4-byte Reload
+	bl	Timer0A_Init
+	.loc	1 28 1                  @ Time.c:28:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp1:
+.Lfunc_end0:
+	.size	TimerInit, .Lfunc_end0-TimerInit
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.getTime,"ax",%progbits
+	.hidden	getTime                 @ -- Begin function getTime
+	.globl	getTime
+	.p2align	2
+	.type	getTime,%function
+	.code	16                      @ @getTime
+	.thumb_func
+getTime:
+.Lfunc_begin1:
+	.loc	1 30 0                  @ Time.c:30:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 31 9 prologue_end     @ Time.c:31:9
+	movw	r0, :lower16:time
+	movt	r0, :upper16:time
+	ldr	r0, [r0]
+	.loc	1 31 2 is_stmt 0        @ Time.c:31:2
+	bx	lr
+.Ltmp2:
+.Lfunc_end1:
+	.size	getTime, .Lfunc_end1-getTime
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.getFullTime,"ax",%progbits
+	.hidden	getFullTime             @ -- Begin function getFullTime
+	.globl	getFullTime
+	.p2align	2
+	.type	getFullTime,%function
+	.code	16                      @ @getFullTime
+	.thumb_func
+getFullTime:
+.Lfunc_begin2:
+	.loc	1 34 0 is_stmt 1        @ Time.c:34:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 35 14 prologue_end    @ Time.c:35:14
+	movw	r0, :lower16:time
+	movt	r0, :upper16:time
+	ldr	r0, [r0]
+	.loc	1 35 22 is_stmt 0       @ Time.c:35:22
+	movw	r1, :lower16:count
+	movt	r1, :upper16:count
+	ldr	r1, [r1]
+	movs	r2, #100
+	.loc	1 35 20                 @ Time.c:35:20
+	mla	r0, r0, r2, r1
+	.loc	1 35 2                  @ Time.c:35:2
+	bx	lr
+.Ltmp3:
+.Lfunc_end2:
+	.size	getFullTime, .Lfunc_end2-getFullTime
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.setTime,"ax",%progbits
+	.hidden	setTime                 @ -- Begin function setTime
+	.globl	setTime
+	.p2align	2
+	.type	setTime,%function
+	.code	16                      @ @setTime
+	.thumb_func
+setTime:
+.Lfunc_begin3:
+	.loc	1 39 0 is_stmt 1        @ Time.c:39:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #4]
+	str	r1, [sp]
+.Ltmp4:
+	.loc	1 40 2 prologue_end     @ Time.c:40:2
+	bl	Timer0A_Stop
+	.loc	1 41 9                  @ Time.c:41:9
+	ldr	r0, [sp, #4]
+	.loc	1 41 7 is_stmt 0        @ Time.c:41:7
+	movw	r1, :lower16:HOUR
+	movt	r1, :upper16:HOUR
+	str	r0, [r1]
+	.loc	1 42 12 is_stmt 1       @ Time.c:42:12
+	ldr	r0, [sp]
+	.loc	1 42 10 is_stmt 0       @ Time.c:42:10
+	movw	r1, :lower16:MINUTES
+	movt	r1, :upper16:MINUTES
+	str	r0, [r1]
+	.loc	1 43 8 is_stmt 1        @ Time.c:43:8
+	movw	r0, :lower16:count
+	movt	r0, :upper16:count
+	movs	r1, #0
+	str	r1, [r0]
+	.loc	1 44 16                 @ Time.c:44:16
+	ldr	r0, [sp, #4]
+	.loc	1 44 24 is_stmt 0       @ Time.c:44:24
+	ldr	r1, [sp]
+	movs	r2, #100
+	.loc	1 44 22                 @ Time.c:44:22
+	mla	r0, r0, r2, r1
+	.loc	1 44 7                  @ Time.c:44:7
+	movw	r1, :lower16:time
+	movt	r1, :upper16:time
+	str	r0, [r1]
+	.loc	1 45 2 is_stmt 1        @ Time.c:45:2
+	bl	resetTimer
+	.loc	1 46 1                  @ Time.c:46:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp5:
+.Lfunc_end3:
+	.size	setTime, .Lfunc_end3-setTime
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.resetTimer,"ax",%progbits
+	.hidden	resetTimer              @ -- Begin function resetTimer
+	.globl	resetTimer
+	.p2align	2
+	.type	resetTimer,%function
+	.code	16                      @ @resetTimer
+	.thumb_func
+resetTimer:
+.Lfunc_begin4:
+	.loc	1 49 0                  @ Time.c:49:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+.Ltmp6:
+	.loc	1 50 2 prologue_end     @ Time.c:50:2
+	movw	r0, :lower16:incrementTime
+	movt	r0, :upper16:incrementTime
+	movw	r1, #46080
+	movt	r1, #1220
+	movs	r2, #0
+	bl	Timer0A_Init
+	.loc	1 51 1                  @ Time.c:51:1
+	pop	{r7, pc}
+.Ltmp7:
+.Lfunc_end4:
+	.size	resetTimer, .Lfunc_end4-resetTimer
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.setAlarm,"ax",%progbits
+	.hidden	setAlarm                @ -- Begin function setAlarm
+	.globl	setAlarm
+	.p2align	2
+	.type	setAlarm,%function
+	.code	16                      @ @setAlarm
+	.thumb_func
+setAlarm:
+.Lfunc_begin5:
+	.loc	1 53 0                  @ Time.c:53:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 8
+	str	r0, [sp, #4]
+	str	r1, [sp]
+.Ltmp8:
+	.loc	1 54 21 prologue_end    @ Time.c:54:21
+	ldr	r0, [sp, #4]
+	.loc	1 54 29 is_stmt 0       @ Time.c:54:29
+	ldr	r1, [sp]
+	movs	r2, #100
+	.loc	1 54 27                 @ Time.c:54:27
+	mla	r0, r0, r2, r1
+	.loc	1 54 12                 @ Time.c:54:12
+	movw	r1, :lower16:alarmTime
+	movt	r1, :upper16:alarmTime
+	str	r0, [r1]
+	.loc	1 55 1 is_stmt 1        @ Time.c:55:1
+	add	sp, #8
+	bx	lr
+.Ltmp9:
+.Lfunc_end5:
+	.size	setAlarm, .Lfunc_end5-setAlarm
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.getAlarmTime,"ax",%progbits
+	.hidden	getAlarmTime            @ -- Begin function getAlarmTime
+	.globl	getAlarmTime
+	.p2align	2
+	.type	getAlarmTime,%function
+	.code	16                      @ @getAlarmTime
+	.thumb_func
+getAlarmTime:
+.Lfunc_begin6:
+	.loc	1 57 0                  @ Time.c:57:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 58 9 prologue_end     @ Time.c:58:9
+	movw	r0, :lower16:alarmTime
+	movt	r0, :upper16:alarmTime
+	ldr	r0, [r0]
+	.loc	1 58 2 is_stmt 0        @ Time.c:58:2
+	bx	lr
+.Ltmp10:
+.Lfunc_end6:
+	.size	getAlarmTime, .Lfunc_end6-getAlarmTime
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.checkAlarm,"ax",%progbits
+	.hidden	checkAlarm              @ -- Begin function checkAlarm
+	.globl	checkAlarm
+	.p2align	2
+	.type	checkAlarm,%function
+	.code	16                      @ @checkAlarm
+	.thumb_func
+checkAlarm:
+.Lfunc_begin7:
+	.loc	1 62 0 is_stmt 1        @ Time.c:62:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#4
+	sub	sp, #4
+	.cfi_def_cfa_offset 4
+.Ltmp11:
+	.loc	1 63 5 prologue_end     @ Time.c:63:5
+	movw	r0, :lower16:enableFlag
+	movt	r0, :upper16:enableFlag
+	ldr	r0, [r0]
+	.loc	1 63 16 is_stmt 0       @ Time.c:63:16
+	cmp	r0, #0
+	beq	.LBB7_3
+	b	.LBB7_1
+.LBB7_1:
+	.loc	1 63 19                 @ Time.c:63:19
+	movw	r0, :lower16:time
+	movt	r0, :upper16:time
+	ldr	r0, [r0]
+	.loc	1 63 27                 @ Time.c:63:27
+	movw	r1, :lower16:alarmTime
+	movt	r1, :upper16:alarmTime
+	ldr	r1, [r1]
+.Ltmp12:
+	.loc	1 63 5                  @ Time.c:63:5
+	cmp	r0, r1
+	bne	.LBB7_3
+	b	.LBB7_2
+.LBB7_2:
+.Ltmp13:
+	.loc	1 64 13 is_stmt 1       @ Time.c:64:13
+	movw	r0, :lower16:alarmFlag
+	movt	r0, :upper16:alarmFlag
+	movs	r1, #1
+	str	r1, [r0]
+	.loc	1 65 3                  @ Time.c:65:3
+	str	r1, [sp]
+	b	.LBB7_4
+.Ltmp14:
+.LBB7_3:
+	.loc	1 0 3 is_stmt 0         @ Time.c:0:3
+	movs	r0, #0
+	.loc	1 67 2 is_stmt 1        @ Time.c:67:2
+	str	r0, [sp]
+	b	.LBB7_4
+.LBB7_4:
+	.loc	1 68 1                  @ Time.c:68:1
+	ldr	r0, [sp]
+	add	sp, #4
+	bx	lr
+.Ltmp15:
+.Lfunc_end7:
+	.size	checkAlarm, .Lfunc_end7-checkAlarm
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.toggleAlarm,"ax",%progbits
+	.hidden	toggleAlarm             @ -- Begin function toggleAlarm
+	.globl	toggleAlarm
+	.p2align	2
+	.type	toggleAlarm,%function
+	.code	16                      @ @toggleAlarm
+	.thumb_func
+toggleAlarm:
+.Lfunc_begin8:
+	.loc	1 70 0                  @ Time.c:70:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 71 16 prologue_end    @ Time.c:71:16
+	movw	r0, :lower16:enableFlag
+	movt	r0, :upper16:enableFlag
+	ldr	r1, [r0]
+	.loc	1 71 15 is_stmt 0       @ Time.c:71:15
+	clz	r1, r1
+	lsrs	r1, r1, #5
+	.loc	1 71 13                 @ Time.c:71:13
+	str	r1, [r0]
+	.loc	1 72 1 is_stmt 1        @ Time.c:72:1
+	bx	lr
+.Ltmp16:
+.Lfunc_end8:
+	.size	toggleAlarm, .Lfunc_end8-toggleAlarm
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.getAlarmFlag,"ax",%progbits
+	.hidden	getAlarmFlag            @ -- Begin function getAlarmFlag
+	.globl	getAlarmFlag
+	.p2align	2
+	.type	getAlarmFlag,%function
+	.code	16                      @ @getAlarmFlag
+	.thumb_func
+getAlarmFlag:
+.Lfunc_begin9:
+	.loc	1 74 0                  @ Time.c:74:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 75 9 prologue_end     @ Time.c:75:9
+	movw	r0, :lower16:enableFlag
+	movt	r0, :upper16:enableFlag
+	ldr	r0, [r0]
+	.loc	1 75 2 is_stmt 0        @ Time.c:75:2
+	bx	lr
+.Ltmp17:
+.Lfunc_end9:
+	.size	getAlarmFlag, .Lfunc_end9-getAlarmFlag
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.getUpdateFlag,"ax",%progbits
+	.hidden	getUpdateFlag           @ -- Begin function getUpdateFlag
+	.globl	getUpdateFlag
+	.p2align	2
+	.type	getUpdateFlag,%function
+	.code	16                      @ @getUpdateFlag
+	.thumb_func
+getUpdateFlag:
+.Lfunc_begin10:
+	.loc	1 78 0 is_stmt 1        @ Time.c:78:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 79 9 prologue_end     @ Time.c:79:9
+	movw	r0, :lower16:updateFlag
+	movt	r0, :upper16:updateFlag
+	ldr	r0, [r0]
+	.loc	1 79 2 is_stmt 0        @ Time.c:79:2
+	bx	lr
+.Ltmp18:
+.Lfunc_end10:
+	.size	getUpdateFlag, .Lfunc_end10-getUpdateFlag
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.resetUpdateFlag,"ax",%progbits
+	.hidden	resetUpdateFlag         @ -- Begin function resetUpdateFlag
+	.globl	resetUpdateFlag
+	.p2align	2
+	.type	resetUpdateFlag,%function
+	.code	16                      @ @resetUpdateFlag
+	.thumb_func
+resetUpdateFlag:
+.Lfunc_begin11:
+	.loc	1 82 0 is_stmt 1        @ Time.c:82:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 83 13 prologue_end    @ Time.c:83:13
+	movw	r0, :lower16:updateFlag
+	movt	r0, :upper16:updateFlag
+	movs	r1, #0
+	str	r1, [r0]
+	.loc	1 84 1                  @ Time.c:84:1
+	bx	lr
+.Ltmp19:
+.Lfunc_end11:
+	.size	resetUpdateFlag, .Lfunc_end11-resetUpdateFlag
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.alarmPlaying,"ax",%progbits
+	.hidden	alarmPlaying            @ -- Begin function alarmPlaying
+	.globl	alarmPlaying
+	.p2align	2
+	.type	alarmPlaying,%function
+	.code	16                      @ @alarmPlaying
+	.thumb_func
+alarmPlaying:
+.Lfunc_begin12:
+	.loc	1 86 0                  @ Time.c:86:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 87 9 prologue_end     @ Time.c:87:9
+	movw	r0, :lower16:alarmFlag
+	movt	r0, :upper16:alarmFlag
+	ldr	r0, [r0]
+	.loc	1 87 2 is_stmt 0        @ Time.c:87:2
+	bx	lr
+.Ltmp20:
+.Lfunc_end12:
+	.size	alarmPlaying, .Lfunc_end12-alarmPlaying
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.resetAlarmFlag,"ax",%progbits
+	.hidden	resetAlarmFlag          @ -- Begin function resetAlarmFlag
+	.globl	resetAlarmFlag
+	.p2align	2
+	.type	resetAlarmFlag,%function
+	.code	16                      @ @resetAlarmFlag
+	.thumb_func
+resetAlarmFlag:
+.Lfunc_begin13:
+	.loc	1 90 0 is_stmt 1        @ Time.c:90:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 91 12 prologue_end    @ Time.c:91:12
+	movw	r0, :lower16:alarmFlag
+	movt	r0, :upper16:alarmFlag
+	movs	r1, #0
+	str	r1, [r0]
+	.loc	1 92 1                  @ Time.c:92:1
+	bx	lr
+.Ltmp21:
+.Lfunc_end13:
+	.size	resetAlarmFlag, .Lfunc_end13-resetAlarmFlag
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.incrementTime,"ax",%progbits
+	.hidden	incrementTime           @ -- Begin function incrementTime
+	.globl	incrementTime
+	.p2align	2
+	.type	incrementTime,%function
+	.code	16                      @ @incrementTime
+	.thumb_func
+incrementTime:
+.Lfunc_begin14:
+	.loc	1 93 0                  @ Time.c:93:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	1 94 7 prologue_end     @ Time.c:94:7
+	movw	r0, :lower16:count
+	movt	r0, :upper16:count
+	ldr	r1, [r0]
+	adds	r1, #1
+	str	r1, [r0]
+.Ltmp22:
+	.loc	1 95 5                  @ Time.c:95:5
+	ldr	r0, [r0]
+.Ltmp23:
+	.loc	1 95 5 is_stmt 0        @ Time.c:95:5
+	cmp	r0, #60
+	bne	.LBB14_2
+	b	.LBB14_1
+.LBB14_1:
+.Ltmp24:
+	.loc	1 96 9 is_stmt 1        @ Time.c:96:9
+	movw	r0, :lower16:count
+	movt	r0, :upper16:count
+	movs	r1, #0
+	str	r1, [r0]
+	.loc	1 97 10                 @ Time.c:97:10
+	movw	r0, :lower16:MINUTES
+	movt	r0, :upper16:MINUTES
+	ldr	r1, [r0]
+	adds	r1, #1
+	str	r1, [r0]
+	.loc	1 98 14                 @ Time.c:98:14
+	movw	r0, :lower16:updateFlag
+	movt	r0, :upper16:updateFlag
+	movs	r1, #1
+	str	r1, [r0]
+	.loc	1 99 2                  @ Time.c:99:2
+	b	.LBB14_2
+.Ltmp25:
+.LBB14_2:
+	.loc	1 100 5                 @ Time.c:100:5
+	movw	r0, :lower16:MINUTES
+	movt	r0, :upper16:MINUTES
+	ldr	r0, [r0]
+.Ltmp26:
+	.loc	1 100 5 is_stmt 0       @ Time.c:100:5
+	cmp	r0, #60
+	bne	.LBB14_7
+	b	.LBB14_3
+.LBB14_3:
+.Ltmp27:
+	.loc	1 101 11 is_stmt 1      @ Time.c:101:11
+	movw	r0, :lower16:MINUTES
+	movt	r0, :upper16:MINUTES
+	movs	r1, #0
+	str	r1, [r0]
+.Ltmp28:
+	.loc	1 102 6                 @ Time.c:102:6
+	movw	r0, :lower16:HOUR
+	movt	r0, :upper16:HOUR
+	ldr	r0, [r0]
+.Ltmp29:
+	.loc	1 102 6 is_stmt 0       @ Time.c:102:6
+	cmp	r0, #12
+	bne	.LBB14_5
+	b	.LBB14_4
+.LBB14_4:
+.Ltmp30:
+	.loc	1 103 9 is_stmt 1       @ Time.c:103:9
+	movw	r0, :lower16:HOUR
+	movt	r0, :upper16:HOUR
+	movs	r1, #1
+	str	r1, [r0]
+	.loc	1 104 3                 @ Time.c:104:3
+	b	.LBB14_6
+.Ltmp31:
+.LBB14_5:
+	.loc	1 106 8                 @ Time.c:106:8
+	movw	r0, :lower16:HOUR
+	movt	r0, :upper16:HOUR
+	ldr	r1, [r0]
+	adds	r1, #1
+	str	r1, [r0]
+	b	.LBB14_6
+.Ltmp32:
+.LBB14_6:
+	.loc	1 108 2                 @ Time.c:108:2
+	b	.LBB14_7
+.Ltmp33:
+.LBB14_7:
+	.loc	1 109 16                @ Time.c:109:16
+	movw	r0, :lower16:HOUR
+	movt	r0, :upper16:HOUR
+	ldr	r0, [r0]
+	.loc	1 109 24 is_stmt 0      @ Time.c:109:24
+	movw	r1, :lower16:MINUTES
+	movt	r1, :upper16:MINUTES
+	ldr	r1, [r1]
+	movs	r2, #100
+	.loc	1 109 22                @ Time.c:109:22
+	mla	r0, r0, r2, r1
+	.loc	1 109 7                 @ Time.c:109:7
+	movw	r1, :lower16:time
+	movt	r1, :upper16:time
+	str	r0, [r1]
+	.loc	1 110 1 is_stmt 1       @ Time.c:110:1
+	bx	lr
+.Ltmp34:
+.Lfunc_end14:
+	.size	incrementTime, .Lfunc_end14-incrementTime
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.hidden	time                    @ @time
+	.type	time,%object
+	.section	.bss.time,"aw",%nobits
+	.globl	time
+	.p2align	2
+time:
+	.long	0                       @ 0x0
+	.size	time, 4
+
+	.hidden	HOUR                    @ @HOUR
+	.type	HOUR,%object
+	.section	.bss.HOUR,"aw",%nobits
+	.globl	HOUR
+	.p2align	2
+HOUR:
+	.long	0                       @ 0x0
+	.size	HOUR, 4
+
+	.hidden	MINUTES                 @ @MINUTES
+	.type	MINUTES,%object
+	.section	.bss.MINUTES,"aw",%nobits
+	.globl	MINUTES
+	.p2align	2
+MINUTES:
+	.long	0                       @ 0x0
+	.size	MINUTES, 4
+
+	.hidden	count                   @ @count
+	.type	count,%object
+	.section	.bss.count,"aw",%nobits
+	.globl	count
+	.p2align	2
+count:
+	.long	0                       @ 0x0
+	.size	count, 4
+
+	.hidden	alarmTime               @ @alarmTime
+	.type	alarmTime,%object
+	.section	.bss.alarmTime,"aw",%nobits
+	.globl	alarmTime
+	.p2align	2
+alarmTime:
+	.long	0                       @ 0x0
+	.size	alarmTime, 4
+
+	.hidden	enableFlag              @ @enableFlag
+	.type	enableFlag,%object
+	.section	.bss.enableFlag,"aw",%nobits
+	.globl	enableFlag
+	.p2align	2
+enableFlag:
+	.long	0                       @ 0x0
+	.size	enableFlag, 4
+
+	.hidden	updateFlag              @ @updateFlag
+	.type	updateFlag,%object
+	.section	.bss.updateFlag,"aw",%nobits
+	.globl	updateFlag
+	.p2align	2
+updateFlag:
+	.long	0                       @ 0x0
+	.size	updateFlag, 4
+
+	.hidden	alarmFlag               @ @alarmFlag
+	.type	alarmFlag,%object
+	.section	.bss.alarmFlag,"aw",%nobits
+	.globl	alarmFlag
+	.p2align	2
+alarmFlag:
+	.long	0                       @ 0x0
+	.size	alarmFlag, 4
+
+	.section	.debug_str,"MS",%progbits,1
+.Linfo_string0:
+	.asciz	"Component: ARM Compiler 6.13.1 Tool: armclang [5d895d00]" @ string offset=0
+.Linfo_string1:
+	.asciz	"Time.c"                @ string offset=57
+.Linfo_string2:
+	.asciz	"C:\\Users\\kcao3\\OneDrive\\Documents\\445L\\EE445L-SP22-Lab-4\\SW" @ string offset=64
+.Linfo_string3:
+	.asciz	"count"                 @ string offset=124
+.Linfo_string4:
+	.asciz	"int"                   @ string offset=130
+.Linfo_string5:
+	.asciz	"time"                  @ string offset=134
+.Linfo_string6:
+	.asciz	"HOUR"                  @ string offset=139
+.Linfo_string7:
+	.asciz	"MINUTES"               @ string offset=144
+.Linfo_string8:
+	.asciz	"alarmTime"             @ string offset=152
+.Linfo_string9:
+	.asciz	"enableFlag"            @ string offset=162
+.Linfo_string10:
+	.asciz	"updateFlag"            @ string offset=173
+.Linfo_string11:
+	.asciz	"alarmFlag"             @ string offset=184
+.Linfo_string12:
+	.asciz	"TimerInit"             @ string offset=194
+.Linfo_string13:
+	.asciz	"getTime"               @ string offset=204
+.Linfo_string14:
+	.asciz	"getFullTime"           @ string offset=212
+.Linfo_string15:
+	.asciz	"setTime"               @ string offset=224
+.Linfo_string16:
+	.asciz	"resetTimer"            @ string offset=232
+.Linfo_string17:
+	.asciz	"setAlarm"              @ string offset=243
+.Linfo_string18:
+	.asciz	"getAlarmTime"          @ string offset=252
+.Linfo_string19:
+	.asciz	"checkAlarm"            @ string offset=265
+.Linfo_string20:
+	.asciz	"toggleAlarm"           @ string offset=276
+.Linfo_string21:
+	.asciz	"getAlarmFlag"          @ string offset=288
+.Linfo_string22:
+	.asciz	"getUpdateFlag"         @ string offset=301
+.Linfo_string23:
+	.asciz	"resetUpdateFlag"       @ string offset=315
+.Linfo_string24:
+	.asciz	"alarmPlaying"          @ string offset=331
+.Linfo_string25:
+	.asciz	"resetAlarmFlag"        @ string offset=344
+.Linfo_string26:
+	.asciz	"incrementTime"         @ string offset=359
+.Linfo_string27:
+	.asciz	"hour"                  @ string offset=373
+.Linfo_string28:
+	.asciz	"minute"                @ string offset=378
+	.section	.debug_abbrev,"",%progbits
+	.byte	1                       @ Abbreviation Code
+	.byte	17                      @ DW_TAG_compile_unit
+	.byte	1                       @ DW_CHILDREN_yes
+	.byte	37                      @ DW_AT_producer
+	.byte	14                      @ DW_FORM_strp
+	.byte	19                      @ DW_AT_language
+	.byte	5                       @ DW_FORM_data2
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	16                      @ DW_AT_stmt_list
+	.byte	6                       @ DW_FORM_data4
+	.byte	27                      @ DW_AT_comp_dir
+	.byte	14                      @ DW_FORM_strp
+	.byte	17                      @ DW_AT_low_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	85                      @ DW_AT_ranges
+	.byte	6                       @ DW_FORM_data4
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	2                       @ Abbreviation Code
+	.byte	52                      @ DW_TAG_variable
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	63                      @ DW_AT_external
+	.byte	12                      @ DW_FORM_flag
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	2                       @ DW_AT_location
+	.byte	10                      @ DW_FORM_block1
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	3                       @ Abbreviation Code
+	.byte	36                      @ DW_TAG_base_type
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	62                      @ DW_AT_encoding
+	.byte	11                      @ DW_FORM_data1
+	.byte	11                      @ DW_AT_byte_size
+	.byte	11                      @ DW_FORM_data1
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	4                       @ Abbreviation Code
+	.byte	46                      @ DW_TAG_subprogram
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	17                      @ DW_AT_low_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	18                      @ DW_AT_high_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	64                      @ DW_AT_frame_base
+	.byte	10                      @ DW_FORM_block1
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	63                      @ DW_AT_external
+	.byte	12                      @ DW_FORM_flag
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	5                       @ Abbreviation Code
+	.byte	46                      @ DW_TAG_subprogram
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	17                      @ DW_AT_low_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	18                      @ DW_AT_high_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	64                      @ DW_AT_frame_base
+	.byte	10                      @ DW_FORM_block1
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	63                      @ DW_AT_external
+	.byte	12                      @ DW_FORM_flag
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	6                       @ Abbreviation Code
+	.byte	46                      @ DW_TAG_subprogram
+	.byte	1                       @ DW_CHILDREN_yes
+	.byte	17                      @ DW_AT_low_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	18                      @ DW_AT_high_pc
+	.byte	1                       @ DW_FORM_addr
+	.byte	64                      @ DW_AT_frame_base
+	.byte	10                      @ DW_FORM_block1
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	39                      @ DW_AT_prototyped
+	.byte	12                      @ DW_FORM_flag
+	.byte	63                      @ DW_AT_external
+	.byte	12                      @ DW_FORM_flag
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	7                       @ Abbreviation Code
+	.byte	5                       @ DW_TAG_formal_parameter
+	.byte	0                       @ DW_CHILDREN_no
+	.byte	2                       @ DW_AT_location
+	.byte	10                      @ DW_FORM_block1
+	.byte	3                       @ DW_AT_name
+	.byte	14                      @ DW_FORM_strp
+	.byte	58                      @ DW_AT_decl_file
+	.byte	11                      @ DW_FORM_data1
+	.byte	59                      @ DW_AT_decl_line
+	.byte	11                      @ DW_FORM_data1
+	.byte	73                      @ DW_AT_type
+	.byte	19                      @ DW_FORM_ref4
+	.byte	0                       @ EOM(1)
+	.byte	0                       @ EOM(2)
+	.byte	0                       @ EOM(3)
+	.section	.debug_info,"",%progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 @ Length of Unit
+.Ldebug_info_start0:
+	.short	3                       @ DWARF version number
+	.long	.debug_abbrev           @ Offset Into Abbrev. Section
+	.byte	4                       @ Address Size (in bytes)
+	.byte	1                       @ Abbrev [1] 0xb:0x219 DW_TAG_compile_unit
+	.long	.Linfo_string0          @ DW_AT_producer
+	.short	12                      @ DW_AT_language
+	.long	.Linfo_string1          @ DW_AT_name
+	.long	.Lline_table_start0     @ DW_AT_stmt_list
+	.long	.Linfo_string2          @ DW_AT_comp_dir
+	.long	0                       @ DW_AT_low_pc
+	.long	.Ldebug_ranges0         @ DW_AT_ranges
+	.byte	2                       @ Abbrev [2] 0x26:0x12 DW_TAG_variable
+	.long	.Linfo_string3          @ DW_AT_name
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	1                       @ DW_AT_decl_file
+	.byte	8                       @ DW_AT_decl_line
+	.byte	5                       @ DW_AT_location
+	.byte	3
+	.long	count
+	.byte	3                       @ Abbrev [3] 0x38:0x7 DW_TAG_base_type
+	.long	.Linfo_string4          @ DW_AT_name
+	.byte	5                       @ DW_AT_encoding
+	.byte	4                       @ DW_AT_byte_size
+	.byte	2                       @ Abbrev [2] 0x3f:0x12 DW_TAG_variable
+	.long	.Linfo_string5          @ DW_AT_name
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	1                       @ DW_AT_decl_file
+	.byte	9                       @ DW_AT_decl_line
+	.byte	5                       @ DW_AT_location
+	.byte	3
+	.long	time
+	.byte	2                       @ Abbrev [2] 0x51:0x12 DW_TAG_variable
+	.long	.Linfo_string6          @ DW_AT_name
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	1                       @ DW_AT_decl_file
+	.byte	10                      @ DW_AT_decl_line
+	.byte	5                       @ DW_AT_location
+	.byte	3
+	.long	HOUR
+	.byte	2                       @ Abbrev [2] 0x63:0x12 DW_TAG_variable
+	.long	.Linfo_string7          @ DW_AT_name
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	1                       @ DW_AT_decl_file
+	.byte	11                      @ DW_AT_decl_line
+	.byte	5                       @ DW_AT_location
+	.byte	3
+	.long	MINUTES
+	.byte	2                       @ Abbrev [2] 0x75:0x12 DW_TAG_variable
+	.long	.Linfo_string8          @ DW_AT_name
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	1                       @ DW_AT_decl_file
+	.byte	12                      @ DW_AT_decl_line
+	.byte	5                       @ DW_AT_location
+	.byte	3
+	.long	alarmTime
+	.byte	2                       @ Abbrev [2] 0x87:0x12 DW_TAG_variable
+	.long	.Linfo_string9          @ DW_AT_name
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	1                       @ DW_AT_decl_file
+	.byte	13                      @ DW_AT_decl_line
+	.byte	5                       @ DW_AT_location
+	.byte	3
+	.long	enableFlag
+	.byte	2                       @ Abbrev [2] 0x99:0x12 DW_TAG_variable
+	.long	.Linfo_string10         @ DW_AT_name
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	1                       @ DW_AT_decl_file
+	.byte	14                      @ DW_AT_decl_line
+	.byte	5                       @ DW_AT_location
+	.byte	3
+	.long	updateFlag
+	.byte	2                       @ Abbrev [2] 0xab:0x12 DW_TAG_variable
+	.long	.Linfo_string11         @ DW_AT_name
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	1                       @ DW_AT_decl_file
+	.byte	15                      @ DW_AT_decl_line
+	.byte	5                       @ DW_AT_location
+	.byte	3
+	.long	alarmFlag
+	.byte	4                       @ Abbrev [4] 0xbd:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin0           @ DW_AT_low_pc
+	.long	.Lfunc_end0             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string12         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	18                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_external
+	.byte	5                       @ Abbrev [5] 0xcf:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin1           @ DW_AT_low_pc
+	.long	.Lfunc_end1             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string13         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	30                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	5                       @ Abbrev [5] 0xe5:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin2           @ DW_AT_low_pc
+	.long	.Lfunc_end2             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string14         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	34                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	6                       @ Abbrev [6] 0xfb:0x30 DW_TAG_subprogram
+	.long	.Lfunc_begin3           @ DW_AT_low_pc
+	.long	.Lfunc_end3             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string15         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	39                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_prototyped
+	.byte	1                       @ DW_AT_external
+	.byte	7                       @ Abbrev [7] 0x10e:0xe DW_TAG_formal_parameter
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string27         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	39                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	7                       @ Abbrev [7] 0x11c:0xe DW_TAG_formal_parameter
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string28         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	39                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	0                       @ End Of Children Mark
+	.byte	4                       @ Abbrev [4] 0x12b:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin4           @ DW_AT_low_pc
+	.long	.Lfunc_end4             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string16         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	49                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_external
+	.byte	6                       @ Abbrev [6] 0x13d:0x30 DW_TAG_subprogram
+	.long	.Lfunc_begin5           @ DW_AT_low_pc
+	.long	.Lfunc_end5             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string17         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	53                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_prototyped
+	.byte	1                       @ DW_AT_external
+	.byte	7                       @ Abbrev [7] 0x150:0xe DW_TAG_formal_parameter
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string27         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	53                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	7                       @ Abbrev [7] 0x15e:0xe DW_TAG_formal_parameter
+	.byte	2                       @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string28         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	53                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	0                       @ End Of Children Mark
+	.byte	5                       @ Abbrev [5] 0x16d:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin6           @ DW_AT_low_pc
+	.long	.Lfunc_end6             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string18         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	57                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	5                       @ Abbrev [5] 0x183:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin7           @ DW_AT_low_pc
+	.long	.Lfunc_end7             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string19         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	62                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	4                       @ Abbrev [4] 0x199:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin8           @ DW_AT_low_pc
+	.long	.Lfunc_end8             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string20         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	70                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_external
+	.byte	5                       @ Abbrev [5] 0x1ab:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin9           @ DW_AT_low_pc
+	.long	.Lfunc_end9             @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string21         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	74                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	5                       @ Abbrev [5] 0x1c1:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin10          @ DW_AT_low_pc
+	.long	.Lfunc_end10            @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string22         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	78                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	4                       @ Abbrev [4] 0x1d7:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin11          @ DW_AT_low_pc
+	.long	.Lfunc_end11            @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string23         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	82                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_external
+	.byte	5                       @ Abbrev [5] 0x1e9:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin12          @ DW_AT_low_pc
+	.long	.Lfunc_end12            @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string24         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	86                      @ DW_AT_decl_line
+	.long	56                      @ DW_AT_type
+	.byte	1                       @ DW_AT_external
+	.byte	4                       @ Abbrev [4] 0x1ff:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin13          @ DW_AT_low_pc
+	.long	.Lfunc_end13            @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string25         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	90                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_external
+	.byte	4                       @ Abbrev [4] 0x211:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin14          @ DW_AT_low_pc
+	.long	.Lfunc_end14            @ DW_AT_high_pc
+	.byte	1                       @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string26         @ DW_AT_name
+	.byte	1                       @ DW_AT_decl_file
+	.byte	93                      @ DW_AT_decl_line
+	.byte	1                       @ DW_AT_external
+	.byte	0                       @ End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_ranges,"",%progbits
+.Ldebug_ranges0:
+	.long	.Lfunc_begin0
+	.long	.Lfunc_end0
+	.long	.Lfunc_begin1
+	.long	.Lfunc_end1
+	.long	.Lfunc_begin2
+	.long	.Lfunc_end2
+	.long	.Lfunc_begin3
+	.long	.Lfunc_end3
+	.long	.Lfunc_begin4
+	.long	.Lfunc_end4
+	.long	.Lfunc_begin5
+	.long	.Lfunc_end5
+	.long	.Lfunc_begin6
+	.long	.Lfunc_end6
+	.long	.Lfunc_begin7
+	.long	.Lfunc_end7
+	.long	.Lfunc_begin8
+	.long	.Lfunc_end8
+	.long	.Lfunc_begin9
+	.long	.Lfunc_end9
+	.long	.Lfunc_begin10
+	.long	.Lfunc_end10
+	.long	.Lfunc_begin11
+	.long	.Lfunc_end11
+	.long	.Lfunc_begin12
+	.long	.Lfunc_end12
+	.long	.Lfunc_begin13
+	.long	.Lfunc_end13
+	.long	.Lfunc_begin14
+	.long	.Lfunc_end14
+	.long	0
+	.long	0
+	.section	.debug_macinfo,"",%progbits
+	.byte	0                       @ End Of Macro List Mark
+
+	.ident	"Component: ARM Compiler 6.13.1 Tool: armclang [5d895d00]"
+	.section	".note.GNU-stack","",%progbits
+	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals
+	.ARM_attribute	16, 1	@ Tag_AV_eba
+	.section	.debug_line,"",%progbits
+.Lline_table_start0:

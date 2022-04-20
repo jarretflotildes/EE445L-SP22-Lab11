@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\adcswtrigger.o"
+".\objects\startup.o"
+".\objects\st7735.o"
+".\objects\timer0a.o"
+".\objects\timer1a.o"
+".\objects\timer4a.o"
+".\objects\launchpad.o"
+".\objects\pll.o"
+".\objects\medianfilter.o"
+".\objects\rgb.o"
+".\objects\led.o"
+".\objects\blynk.o"
+".\objects\esp8266.o"
+".\objects\timer2a.o"
+".\objects\timer3a.o"
+".\objects\uart.o"
+".\objects\portf.o"
+".\objects\lab3_4.o"
+".\objects\lcd.o"
+".\objects\sound.o"
+".\objects\switches.o"
+".\objects\time.o"
+".\objects\timer5a.o"
+--library_type=microlib --strict --scatter ".\Objects\Lab3_4.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Lab3_4.map" -o .\Objects\Lab3_4.axf

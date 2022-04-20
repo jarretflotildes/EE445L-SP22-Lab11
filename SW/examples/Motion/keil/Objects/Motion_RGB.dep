@@ -1,0 +1,40 @@
+Dependencies for Project 'Motion', Target 'RGB': (DO NOT MODIFY !)
+CompilerVersion: 6160000::V6.16::ARMCLANG
+F (..\..\..\inc\startup.s)(0x6244BB67)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --pd "__MICROLIB SETA 1"-IC:\Users\nolog\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 536"--pd "TM4C123GH6PM SETA 1"--list .\listings\startup.lst--xref -o .\objects\startup.o--depend .\objects\startup.d)
+F (..\..\..\inc\Timer0A.c)(0x6244BB67)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I .. -I ../../..-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/timer0a.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (..\..\..\inc\..\inc\tm4c123gh6pm.h)(0x6244BB67)
+I (..\..\..\inc\..\inc\CortexM.h)(0x6244BB67)
+F (..\..\..\inc\PLL.c)(0x6244BB67)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I .. -I ../../..-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/pll.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (..\..\..\inc\..\inc\PLL.h)(0x6244BB67)
+I (..\..\..\inc\..\inc\tm4c123gh6pm.h)(0x6244BB67)
+F (.\MotionMain.c)(0x624DFD69)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I .. -I ../../..-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/motionmain.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6035BEA0)
+I (..\..\..\lib\Motion\Motion.h)(0x624A0A69)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (..\..\..\inc\tm4c123gh6pm.h)(0x6244BB67)
+I (..\..\..\.\inc\ST7735.h)(0x6244BB67)
+I (..\..\..\inc\CortexM.h)(0x6244BB67)
+I (..\..\..\.\inc\Timer0A.h)(0x6244BB67)
+I (LED.h)(0x624A08B7)
+I (..\..\..\inc\PLL.h)(0x6244BB67)
+F (.\Motion.c)(0x624E00E2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I .. -I ../../..-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/motion.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6035BEA4)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (..\..\..\.\inc\PLL.h)(0x6244BB67)
+I (..\..\..\.\inc\tm4c123gh6pm.h)(0x6244BB67)
+I (..\..\..\.\inc\CortexM.h)(0x6244BB67)
+I (LED.h)(0x624A08B7)
+I (..\..\..\inc\tm4c123gh6pm.h)(0x6244BB67)
+F (..\..\..\inc\ST7735.c)(0x6244BB67)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I .. -I ../../..-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/st7735.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6035BEA4)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6035BEA0)
+I (..\..\..\inc\ST7735.h)(0x6244BB67)
+I (..\..\..\inc\..\inc\tm4c123gh6pm.h)(0x6244BB67)
+F (.\LED.h)(0x624A08B7)()
+F (.\LED.c)(0x624DFD5B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I .. -I ../../..-IC:/Users/nolog/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="536" -DTM4C123GH6PM -Drvmdk -DPART_LM4F120H5QR-o ./objects/led.o -MD)
+I (LED.h)(0x624A08B7)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035BEA0)
+I (..\..\..\inc\tm4c123gh6pm.h)(0x6244BB67)
