@@ -219,12 +219,20 @@ extern __attribute__((__nothrow__)) int __C_library_version_number(void);
 
 
 # 1 "../../..\\lib/Motion/Motion.h" 1
-# 11 "../../..\\lib/Motion/Motion.h"
+
+
+
+
+
+
+
 void motionPortBInit(void);
 
 
 
 void motionDetectedAction(void);
+
+void GPIOPortB_Handler(void);
 # 16 "MotionMain.c" 2
 
 # 1 "C:\\Keil_v5\\ARM\\ARMCLANG\\Bin\\..\\include\\stdint.h" 1 3
@@ -282,196 +290,12 @@ typedef unsigned int uintptr_t;
 typedef signed long long intmax_t;
 typedef unsigned long long uintmax_t;
 # 18 "MotionMain.c" 2
-# 1 "../../../inc/tm4c123gh6pm.h" 1
+# 1 "../../..\\./inc/PLL.h" 1
+# 35 "../../..\\./inc/PLL.h"
+void PLL_Init(uint32_t freq);
 # 19 "MotionMain.c" 2
-
-# 1 "../../..\\./inc/ST7735.h" 1
-# 116 "../../..\\./inc/ST7735.h"
-enum initRFlags{
-  none,
-  INITR_GREENTAB,
-  INITR_REDTAB,
-  INITR_BLACKTAB
-};
-# 141 "../../..\\./inc/ST7735.h"
-void ST7735_InitB(void);
-
-
-
-
-
-
-void ST7735_InitR(enum initRFlags option);
-# 162 "../../..\\./inc/ST7735.h"
-void ST7735_DrawPixel(int16_t x, int16_t y, uint16_t color);
-# 173 "../../..\\./inc/ST7735.h"
-void ST7735_DrawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color);
-# 185 "../../..\\./inc/ST7735.h"
-void ST7735_DrawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
-
-
-
-
-
-
-
-void ST7735_FillScreen(uint16_t color);
-# 205 "../../..\\./inc/ST7735.h"
-void ST7735_FillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
-# 215 "../../..\\./inc/ST7735.h"
-void ST7735_DrawSmallCircle(int16_t x, int16_t y, uint16_t color);
-# 225 "../../..\\./inc/ST7735.h"
-void ST7735_DrawCircle(int16_t x, int16_t y, uint16_t color);
-
-
-
-
-
-
-uint16_t ST7735_Color565(uint8_t r, uint8_t g, uint8_t b);
-
-
-
-
-
-
-uint16_t ST7735_SwapColor(uint16_t x) ;
-# 261 "../../..\\./inc/ST7735.h"
-void ST7735_DrawBitmap(int16_t x, int16_t y, const uint16_t *image, int16_t w, int16_t h);
-# 278 "../../..\\./inc/ST7735.h"
-void ST7735_DrawCharS(int16_t x, int16_t y, char c, int16_t textColor, int16_t bgColor, uint8_t size);
-# 293 "../../..\\./inc/ST7735.h"
-void ST7735_DrawChar(int16_t x, int16_t y, char c, int16_t textColor, int16_t bgColor, uint8_t size);
-# 305 "../../..\\./inc/ST7735.h"
-uint32_t ST7735_DrawString(uint16_t x, uint16_t y, char *pt, int16_t textColor);;
-# 316 "../../..\\./inc/ST7735.h"
-void ST7735_SetCursor(uint32_t newX, uint32_t newY);
-# 325 "../../..\\./inc/ST7735.h"
-void ST7735_OutUDec(uint32_t n);
-# 334 "../../..\\./inc/ST7735.h"
-void ST7735_OutUDec4(uint32_t n);
-# 343 "../../..\\./inc/ST7735.h"
-void ST7735_OutUDec5(uint32_t n);
-
-
-
-
-
-
-void ST7735_SetRotation(uint8_t m) ;
-
-
-
-
-
-
-
-void ST7735_InvertDisplay(int i) ;
-# 370 "../../..\\./inc/ST7735.h"
-void ST7735_PlotClear(int32_t ymin, int32_t ymax);
-
-
-
-
-
-
-void ST7735_PlotPoint(int32_t y);
-
-
-
-
-
-
-void ST7735_PlotLine(int32_t y);
-
-
-
-
-
-
-
-void ST7735_PlotPoints(int32_t y1,int32_t y2);
-
-
-
-
-
-
-void ST7735_PlotBar(int32_t y);
-
-
-
-
-
-
-
-void ST7735_PlotdBfs(int32_t y);
-
-
-
-
-
-
-
-void ST7735_PlotNext(void);
-
-
-
-
-
-
-
-void ST7735_PlotNextErase(void);
-# 474 "../../..\\./inc/ST7735.h"
-void ST7735_OutChar(char ch);
-# 483 "../../..\\./inc/ST7735.h"
-void ST7735_OutString(char *ptr);
-
-
-
-
-
-
-
-void ST7735_SetTextColor(uint16_t color);
-
-
-
-
-
-
-void Output_Init(void);
-
-
-void Output_Clear(void);
-
-
-void Output_Off(void);
-
-
-void Output_On(void);
-
-
-
-
-
-void Output_Color(uint32_t newColor);
-# 531 "../../..\\./inc/ST7735.h"
-void ST7735_sDecOut2(int32_t n);
-# 555 "../../..\\./inc/ST7735.h"
-void ST7735_uBinOut6(uint32_t n);
-# 568 "../../..\\./inc/ST7735.h"
-void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY);
-# 579 "../../..\\./inc/ST7735.h"
-void ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]);
-# 593 "../../..\\./inc/ST7735.h"
-void ST7735_Line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
-                 uint16_t color);
-# 604 "../../..\\./inc/ST7735.h"
-void ST7735_SetX(int32_t newX);
-# 21 "MotionMain.c" 2
-# 1 "../../../inc/CortexM.h" 1
-# 45 "../../../inc/CortexM.h"
+# 1 "../../..\\./inc/CortexM.h" 1
+# 45 "../../..\\./inc/CortexM.h"
 void DisableInterrupts(void);
 
 
@@ -508,14 +332,122 @@ void Clock_Delay(uint32_t ulCount);
 
 
 void Clock_Delay1ms(uint32_t n);
+# 20 "MotionMain.c" 2
+# 1 "../../..\\./inc/UART0int.h" 1
+# 45 "../../..\\./inc/UART0int.h"
+void UART_Init(void);
+
+
+
+
+
+char UART_InChar(void);
+
+
+
+
+
+char UART_InCharNonBlock(void);
+
+
+
+
+
+void UART_OutChar(char data);
+
+
+
+
+
+
+void UART_OutCharNonBlock(char data);
+
+
+
+
+
+void UART_OutString(char *pt);
+# 86 "../../..\\./inc/UART0int.h"
+uint32_t UART_InUDec(void);
+
+
+
+
+
+
+void UART_OutUDec(uint32_t n);
+# 103 "../../..\\./inc/UART0int.h"
+void UART_OutSDec(long n);
+# 115 "../../..\\./inc/UART0int.h"
+uint32_t UART_InUHex(void);
+
+
+
+
+
+
+void UART_OutUHex(uint32_t number);
+# 136 "../../..\\./inc/UART0int.h"
+void UART_InString(char *bufPt, uint16_t max);
+# 149 "../../..\\./inc/UART0int.h"
+void UART_Fix2(long number);
+
+
+
+
+
+void Output_Init(void);
+# 21 "MotionMain.c" 2
+# 1 "../../..\\./inc/LaunchPad.h" 1
+# 54 "../../..\\./inc/LaunchPad.h"
+void LaunchPad_Init(void);
+# 65 "../../..\\./inc/LaunchPad.h"
+uint8_t LaunchPad_Input(void);
+void LaunchPad_WaitForTouch(void);
+void LaunchPad_WaitForRelease(void);
+
+
+
+
+
+void LaunchPad_Output(uint8_t data);
 # 22 "MotionMain.c" 2
+# 1 "../../..\\./inc/SysTickInts.h" 1
+# 36 "../../..\\./inc/SysTickInts.h"
+void SysTick_Init(uint32_t period);
 
 
-# 1 "../../..\\./inc/Timer0A.h" 1
-# 35 "../../..\\./inc/Timer0A.h"
-void Timer0A_Init(void(*task)(void), uint32_t period, uint32_t priority);
-void Timer0A_Stop(void);
-# 25 "MotionMain.c" 2
+
+void SysTick_Handler(void);
+# 23 "MotionMain.c" 2
+# 1 "../../..\\./inc/tm4c123gh6pm.h" 1
+# 24 "MotionMain.c" 2
+
+# 1 "../../..\\./inc/TExaS.h" 1
+# 30 "../../..\\./inc/TExaS.h"
+enum TExaSmode{
+  SCOPE,
+  SCOPE_PD2,
+  SCOPE_PE2,
+  SCOPE_PB5,
+  LOGICANALYZERA,
+  LOGICANALYZERB,
+  LOGICANALYZERC,
+  LOGICANALYZERE,
+  LOGICANALYZERF,
+  NONE
+};
+# 50 "../../..\\./inc/TExaS.h"
+void TExaS_Init(enum TExaSmode mode);
+
+
+
+
+
+void TExaS_Stop(void);
+# 26 "MotionMain.c" 2
+
+
 
 
 # 1 "./LED.h" 1
@@ -580,7 +512,7 @@ void LED_GreenOff(void);
 
 
 void LED_GreenToggle(void);
-# 28 "MotionMain.c" 2
+# 31 "MotionMain.c" 2
 
 
 
@@ -589,7 +521,7 @@ void LED_GreenToggle(void);
 # 1 "../../..\\inc/PLL.h" 1
 # 35 "../../..\\inc/PLL.h"
 void PLL_Init(uint32_t freq);
-# 34 "MotionMain.c" 2
+# 37 "MotionMain.c" 2
 
 
 
@@ -607,11 +539,22 @@ int main(void) {
 
 
    LED_Init();
+
   motionPortBInit();
+   SysTick_Init(1000000);
+   TExaS_Init(SCOPE_PB5);
+
 
     EnableInterrupts();
 
     while(1) {
-        WaitForInterrupt();
+   if((*((volatile uint32_t *)0x40005414)) & 0x20){
+    LED_BlueToggle();
+   }
+
     }
+}
+
+void SysTick_Handler(void){
+  LED_RedToggle();
 }

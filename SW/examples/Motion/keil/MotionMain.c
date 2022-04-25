@@ -15,13 +15,16 @@
 #include <lib/Motion/Motion.h>
 
 #include <stdint.h>
-#include "/inc/tm4c123gh6pm.h"
+#include "./inc/PLL.h"
+#include "./inc/CortexM.h"
+#include "./inc/UART0int.h"
+#include "./inc/LaunchPad.h"
+#include "./inc/SysTickInts.h"
+#include "./inc/tm4c123gh6pm.h"
 
-#include "./inc/ST7735.h"
-#include "/inc/CortexM.h"
+#include "./inc/TExaS.h"
 
 
-#include "./inc/Timer0A.h"
 
 
 #include "LED.h"
@@ -48,11 +51,23 @@ int main(void) {
     //RGBInit();
 	
 	  LED_Init();
-		motionPortBInit();
 	
+		motionPortBInit();
+	  SysTick_Init(1000000);
+	  TExaS_Init(SCOPE_PB5);
+	
+	  //TExaS_Init(LOGICANALYZERB);
     EnableInterrupts();
 
     while(1) {
-        WaitForInterrupt();
+			if(GPIO_PORTB_RIS_R & 0x20){//CHECK PB5
+				LED_BlueToggle(); //Toggle PF2 if high
+			}
+			
     }
 }
+
+void SysTick_Handler(void){
+  LED_RedToggle();
+}
+

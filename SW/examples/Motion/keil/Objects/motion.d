@@ -1,5 +1,5 @@
-./objects/motion.o: Motion.c \
+./objects/motion.o: ..\..\..\lib\Motion\Motion.c \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h ..\..\..\.\inc\PLL.h \
-  ..\..\..\.\inc\tm4c123gh6pm.h ..\..\..\.\inc\CortexM.h LED.h \
-  ..\..\..\inc\tm4c123gh6pm.h
+  ..\..\..\.\inc\tm4c123gh6pm.h ..\..\..\lib\Motion\Motion.h \
+  ..\..\..\.\inc\CortexM.h

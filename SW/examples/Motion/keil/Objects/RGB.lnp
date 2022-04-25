@@ -3,9 +3,11 @@
 ".\objects\timer0a.o"
 ".\objects\pll.o"
 ".\objects\motionmain.o"
-".\objects\motion.o"
 ".\objects\st7735.o"
 ".\objects\led.o"
+".\objects\motion.o"
+".\objects\systickints.o"
+".\objects\texas.o"
 --library_type=microlib --strict --scatter ".\Objects\RGB.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

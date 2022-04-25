@@ -1,10 +1,10 @@
-# 1 "Motion.c"
+# 1 "../../../lib/Motion/Motion.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 372 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "Motion.c" 2
+# 1 "../../../lib/Motion/Motion.c" 2
 # 1 "C:\\Keil_v5\\ARM\\ARMCLANG\\Bin\\..\\include\\stdio.h" 1 3
 # 53 "C:\\Keil_v5\\ARM\\ARMCLANG\\Bin\\..\\include\\stdio.h" 3
     typedef unsigned int size_t;
@@ -326,7 +326,7 @@ extern __attribute__((__nothrow__)) int _fisatty(FILE * ) __attribute__((__nonnu
 
 extern __attribute__((__nothrow__)) void __use_no_semihosting_swi(void);
 extern __attribute__((__nothrow__)) void __use_no_semihosting(void);
-# 2 "Motion.c" 2
+# 2 "../../../lib/Motion/Motion.c" 2
 # 1 "C:\\Keil_v5\\ARM\\ARMCLANG\\Bin\\..\\include\\stdint.h" 1 3
 # 56 "C:\\Keil_v5\\ARM\\ARMCLANG\\Bin\\..\\include\\stdint.h" 3
 typedef signed char int8_t;
@@ -381,13 +381,31 @@ typedef unsigned int uintptr_t;
 
 typedef signed long long intmax_t;
 typedef unsigned long long uintmax_t;
-# 3 "Motion.c" 2
+# 3 "../../../lib/Motion/Motion.c" 2
 # 1 "../../..\\./inc/PLL.h" 1
 # 35 "../../..\\./inc/PLL.h"
 void PLL_Init(uint32_t freq);
-# 4 "Motion.c" 2
+# 4 "../../../lib/Motion/Motion.c" 2
 # 1 "../../..\\./inc/tm4c123gh6pm.h" 1
-# 5 "Motion.c" 2
+# 5 "../../../lib/Motion/Motion.c" 2
+
+# 1 "../../..\\lib/Motion/Motion.h" 1
+
+
+
+
+
+
+
+void motionPortBInit(void);
+
+
+
+void motionDetectedAction(void);
+
+void GPIOPortB_Handler(void);
+# 7 "../../../lib/Motion/Motion.c" 2
+
 
 
 # 1 "../../..\\./inc/CortexM.h" 1
@@ -428,169 +446,37 @@ void Clock_Delay(uint32_t ulCount);
 
 
 void Clock_Delay1ms(uint32_t n);
-# 8 "Motion.c" 2
-
-# 1 "./LED.h" 1
-# 43 "./LED.h"
-void LED_Init(void);
-# 53 "./LED.h"
-uint32_t Board_Input(void);
-
-
-
-
-
-
-void LED_RedOn(void);
-
-
-
-
-
-void LED_RedOff(void);
-
-
-
-
-
-void LED_RedToggle(void);
-
-
-
-
-
-
-void LED_BlueOn(void);
-
-
-
-
-
-void LED_BlueOff(void);
-
-
-
-
-
-void LED_BlueToggle(void);
-
-
-
-
-
-
-void LED_GreenOn(void);
-
-
-
-
-
-void LED_GreenOff(void);
-
-
-
-
-
-void LED_GreenToggle(void);
-# 10 "Motion.c" 2
-
-static void GPIOArm(void){
-  (*((volatile uint32_t *)0x4002541C)) = 0x10;
-  (*((volatile uint32_t *)0x40025410)) |= 0x10;
-  (*((volatile uint32_t *)0xE000E41C)) = ((*((volatile uint32_t *)0xE000E41C))&0xFF00FFFF)|0x00A00000;
-  (*((volatile uint32_t *)0xE000E100)) = 0x40000000;
-}
-
-static void GPIOArmSWBoth(void){
-  (*((volatile uint32_t *)0x4002541C)) = 0x11;
-  (*((volatile uint32_t *)0x40025410)) |= 0x11;
-  (*((volatile uint32_t *)0xE000E41C)) = ((*((volatile uint32_t *)0xE000E41C))&0xFF00FFFF)|0x00A00000;
-  (*((volatile uint32_t *)0xE000E100)) = 0x40000000;
-}
-
-void Timer1A_Handler(void){
-   (*((volatile uint32_t *)0x40031024)) = 0x00000001;
-  (*((volatile uint32_t *)0x40031018)) = 0x0000000;
-GPIOArmSWBoth();
-}
-
-
-
-
-
-
-void PortF_Init(void) {
-
-   (*((volatile uint32_t *)0x400FE608)) |= 0x00000020;
-
-    while(((*((volatile uint32_t *)0x400FEA08)) & 0x00000020) == 0){};
-# 59 "Motion.c"
-  (*((volatile uint32_t *)0x40025520)) = 0x4C4F434B;
-    (*((volatile uint32_t *)0x40025524)) = 0x1F;
-    (*((volatile uint32_t *)0x40025400)) |= 0x0E;
-    (*((volatile uint32_t *)0x40025400)) &= ~0x11;
-    (*((volatile uint32_t *)0x40025420)) &= ~0x1F;
-    (*((volatile uint32_t *)0x4002551C)) |= 0x1F;
-    (*((volatile uint32_t *)0x4002552C)) &= ~0x000FFFFF;
-    (*((volatile uint32_t *)0x40025528)) = 0;
-    (*((volatile uint32_t *)0x40025510)) |= 0x11;
-    (*((volatile uint32_t *)0x40025404)) &= ~0x11;
-    (*((volatile uint32_t *)0x40025408)) &= ~0x11;
-    (*((volatile uint32_t *)0x4002540C)) &= 0x11;
-    (*((volatile uint32_t *)0x4002541C)) = 0x11;
-    (*((volatile uint32_t *)0x40025410)) |= 0x11;
-    (*((volatile uint32_t *)0xE000E41C)) = ((*((volatile uint32_t *)0xE000E41C))&0xFF00FFFF)|0x00A00000;
-    (*((volatile uint32_t *)0xE000E100)) = 0x40000000;
-
-  GPIOArmSWBoth();
-
-   (*((volatile uint32_t *)0x400FE604)) |= 0x06;
-  (*((volatile uint32_t *)0x400FE608)) |= 0x20;
-
-}
-
+# 11 "../../../lib/Motion/Motion.c" 2
 
 
 
 void motionPortBInit(void){
-# 98 "Motion.c"
- PortF_Init();
+
+   (*((volatile uint32_t *)0x400FE608)) |= 0x02;
+   while(((*((volatile uint32_t *)0x400FEA08))&0x02) == 0){};
+
+  (*((volatile uint32_t *)0x40005520)) = 0x4C4F434B;
+
+   (*((volatile uint32_t *)0x40005524)) = 0x20;
+
+   (*((volatile uint32_t *)0x40005420)) = 0;
+   (*((volatile uint32_t *)0x40005528)) = 0;
+
+
+   (*((volatile uint32_t *)0x40005510)) |= 0x20;
+   (*((volatile uint32_t *)0x40005404)) &= ~0x20;
+   (*((volatile uint32_t *)0x40005408)) &= ~0x20;
+   (*((volatile uint32_t *)0x4000540C)) |= 0x20;
+
+   (*((volatile uint32_t *)0x4000551C)) &= 0x20;
+   (*((volatile uint32_t *)0x4000552C)) &= ~0x00FFFFFF;
+
 }
 
 
-void Timer1Arm(void) {
-    volatile uint32_t delay;
-    (*((volatile uint32_t *)0x400FE604)) |= 0x02;
-    delay = (*((volatile uint32_t *)0x400FE604));
-    (*((volatile uint32_t *)0x4003100C)) = 0x00000000;
-    (*((volatile uint32_t *)0x4003100C)) = 0x00000000;
-    (*((volatile uint32_t *)0x40031000)) = 0x00000000;
-    (*((volatile uint32_t *)0x40031004)) = 0x00000001;
-    (*((volatile uint32_t *)0x40031028)) = 160000;
-    (*((volatile uint32_t *)0x40031038)) = 0;
-   (*((volatile uint32_t *)0x40031024)) = 0x00000001;
-   (*((volatile uint32_t *)0x40031018)) = 0x00000001;
-   (*((volatile uint32_t *)0xE000E414)) = ((*((volatile uint32_t *)0xE000E414))&0x00FFFFFF)|0x80000000;
-   (*((volatile uint32_t *)0xE000E100)) = 1<<23;
-    (*((volatile uint32_t *)0x4003100C)) = 0x00000001;
-}
 
 void GPIOPortB_Handler(void){
+ if((*((volatile uint32_t *)0x40005414)) & 0x20){
 
-   LED_RedToggle();
-   Timer1Arm();
-}
-# 139 "Motion.c"
-void GPIOPortF_Handler(void){
-
- if ((*((volatile uint32_t *)0x40025414)) & 0x01){
-   (*((volatile uint32_t *)0x40025410)) &= ~0x01;
-  (*((volatile uint32_t *)0x4002541C)) = 0x01;
-
-  LED_RedToggle();
-
-  Timer1Arm();
  }
-
-
 }

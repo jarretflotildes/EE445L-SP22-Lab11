@@ -11,3 +11,4 @@ void motionPortBInit(void);
 //Action to start after motion detected
 void motionDetectedAction(void);
 
+void GPIOPortB_Handler(void);
