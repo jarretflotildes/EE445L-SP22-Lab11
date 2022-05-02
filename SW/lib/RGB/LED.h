@@ -1,5 +1,9 @@
+
 void LED_Init(void);
 
+void LED_ON(void);
+
+void LED_OFF(void);
 void LED_0Toggle(void);
 
 void LED_0On(void);

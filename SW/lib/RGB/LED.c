@@ -15,50 +15,55 @@ void LED_Init(void){
   GPIO_PORTE_DEN_R = 0x1F;       // 7) enable digital I/O on PE0-PE4
 }
 
-
+void LED_ON(void){
+	GPIO_PORTE_DATA_R = 0x1F;
+}
+void LED_OFF(void){
+	GPIO_PORTE_DATA_R = ~0x1F;
+}
 void LED_0Toggle(void){
-  GPIO_PORTE_RIS_R ^= 0x01;
+  GPIO_PORTE_DATA_R ^= 0x01;
 }
 
 void LED_0On(void){
-  GPIO_PORTE_RIS_R = 0x01;
+  GPIO_PORTE_DATA_R |= 0x01;
 }
 
 void LED_0Off(void){
-  GPIO_PORTE_RIS_R = 0x00;
+  GPIO_PORTE_DATA_R |= ~0x01;
 }
 void LED_1On(void){
-  GPIO_PORTE_RIS_R = 0x02;
+  GPIO_PORTE_DATA_R |= 0x02;
 }
 void LED_1Off(void){
-  GPIO_PORTE_RIS_R = 0x00;
+  GPIO_PORTE_DATA_R |= ~0x02;
 }
 void LED_1Toggle(void){
-  GPIO_PORTE_RIS_R ^= 0x02;
+  GPIO_PORTE_DATA_R ^= 0x02;
 }
 void LED_2On(void){
-  GPIO_PORTE_RIS_R = 0x04;
+  GPIO_PORTE_DATA_R |= 0x04;
 }
 void LED_2Off(void){
-  GPIO_PORTE_RIS_R = 0x00;
+  GPIO_PORTE_DATA_R |= ~0x04;
 }
 void LED_2Toggle(void){
- GPIO_PORTE_RIS_R ^= 0x04;
+ GPIO_PORTE_DATA_R ^= 0x04;
 }
 void LED_3On(void){
-  GPIO_PORTE_RIS_R  = 0x08;
+  GPIO_PORTE_DATA_R  |= 0x08;
 }
 
 void LED_3Off(void){
-  GPIO_PORTE_RIS_R = 0x00;
+  GPIO_PORTE_DATA_R |= ~0x08;
 }
 
 void LED_4Toggle(void){
-  GPIO_PORTE_RIS_R ^= 0x10;
+  GPIO_PORTE_DATA_R ^= 0x10;
 }
 void LED_4On(void){
-  GPIO_PORTE_RIS_R = 0x10;
+  GPIO_PORTE_DATA_R |= 0x10;
 }
 void LED_4Off(void){
-  GPIO_PORTE_RIS_R = 0x00;
+  GPIO_PORTE_DATA_R |= ~0x10;
 }
