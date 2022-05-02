@@ -53,18 +53,19 @@ int main(void) {
 	  LED_Init();
 	
 		motionPortBInit();
-	  SysTick_Init(1000000);
-	  TExaS_Init(SCOPE_PB5);
+	  SysTick_Init(1000000); //heartbeat
+	  //TExaS_Init(SCOPE_PB5);
 	
-	  //TExaS_Init(LOGICANALYZERB);
+	  TExaS_Init(LOGICANALYZERB);
     EnableInterrupts();
 
-    while(1) {
-			if(GPIO_PORTB_RIS_R & 0x20){//CHECK PB5
-				LED_BlueToggle(); //Toggle PF2 if high
+    while(1){
+			if(Motion_Input()){
+				LED_BlueOn();
+			} else{
+				LED_BlueOff();  // turn off LED if switch not pressed
 			}
-			
-    }
+		}  
 }
 
 void SysTick_Handler(void){

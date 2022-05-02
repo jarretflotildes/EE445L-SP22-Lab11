@@ -12,3 +12,5 @@ void motionPortBInit(void);
 void motionDetectedAction(void);
 
 void GPIOPortB_Handler(void);
+
+unsigned long Motion_Input(void);
